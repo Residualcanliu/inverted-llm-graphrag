@@ -1,0 +1,89 @@
+{
+  "_note": "模型选型用的测试题。12 条，覆盖 A 类 + B1-B5。must_have 是粗判正确性的关键词，不是精确匹配——bench 的作用是筛掉不合格的模型，不是给最终准确率。真正的评测另有一套完整问题集。",
+  "questions": [
+    {
+      "id": "A1",
+      "cls": "A",
+      "question": "3号泵的型号是什么？",
+      "must_have": ["Equipment", "model"],
+      "why": "单跳事实查找。传统 RAG 也能做，这里有它应该打平"
+    },
+    {
+      "id": "A2",
+      "cls": "A",
+      "question": "A区泵房里有哪些设备？",
+      "must_have": ["Location", "CONTAINS", "Equipment"],
+      "why": "单跳事实查找"
+    },
+    {
+      "id": "B1_1",
+      "cls": "B1",
+      "question": "3号泵停机会影响哪些设备？",
+      "must_have": ["DEPENDS_ON"],
+      "why": "多跳依赖，需要变长路径。方向是考点：要反过来找依赖它的设备"
+    },
+    {
+      "id": "B1_2",
+      "cls": "B1",
+      "question": "更换3号泵的机械密封需要什么资质？",
+      "must_have": ["HAS_OPERATION", "REQUIRES_ROLE", "Role"],
+      "why": "三跳：设备 -> 作业 -> 岗位"
+    },
+    {
+      "id": "B2_1",
+      "cls": "B2",
+      "question": "3号泵一共发生过多少次故障，平均停机多久？",
+      "must_have": ["count", "avg", "WorkOrder"],
+      "why": "聚合统计。大模型数数是公认弱项"
+    },
+    {
+      "id": "B2_2",
+      "cls": "B2",
+      "question": "6号机组的平均停机时长是多少？",
+      "must_have": ["avg", "downtime_h"],
+      "why": "聚合统计"
+    },
+    {
+      "id": "B3_1",
+      "cls": "B3",
+      "question": "哪些作业没有识别出风险？",
+      "must_have": ["NOT", "HAS_HAZARD"],
+      "why": "否定查询。这类信息在文档里不作为句子存在，只有集合补集能答"
+    },
+    {
+      "id": "B3_2",
+      "cls": "B3",
+      "question": "哪些设备没有配置安全措施？",
+      "must_have": ["NOT", "SafetyMeasure"],
+      "why": "否定查询，跨度更长"
+    },
+    {
+      "id": "B4_1",
+      "cls": "B4",
+      "question": "按被依赖程度给设备排序，找出最关键的设备",
+      "must_have": ["DEPENDS_ON", "ORDER BY"],
+      "why": "排序。重要度是从拓扑算出来的，文档里没有这个字段"
+    },
+    {
+      "id": "B4_2",
+      "cls": "B4",
+      "question": "哪些设备被最多其他设备依赖？列出前五个",
+      "must_have": ["DEPENDS_ON", "ORDER BY", "LIMIT"],
+      "why": "排序 + 限制条数"
+    },
+    {
+      "id": "B5_1",
+      "cls": "B5",
+      "question": "追溯工单 WO-2024-0042 的故障链",
+      "must_have": ["CAUSED_BY", "FailureMode"],
+      "why": "根因追溯，路径查询"
+    },
+    {
+      "id": "B5_2",
+      "cls": "B5",
+      "question": "机械密封失效可能连锁引发哪些故障？",
+      "must_have": ["TRIGGERS"],
+      "why": "故障连锁，需要 TRIGGERS 变长路径"
+    }
+  ]
+}

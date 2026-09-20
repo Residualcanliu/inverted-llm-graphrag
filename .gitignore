@@ -1,0 +1,36 @@
+# 环境
+.env
+.venv/
+venv/
+__pycache__/
+*.py[cod]
+
+# 数据（原始文档可能含企业信息，不入库）
+data/raw/*
+!data/raw/.gitkeep
+
+# 生成物
+data/triples.json
+data/index/
+reports/*.html
+logs/
+*.log
+
+# 评测中间结果
+eval_runs/
+
+# 编辑器 / 系统
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+.pytest_cache/
+.ruff_cache/
+
+# 个人文件，不入公开仓库
+个人笔记.txt
+*.local.md
+
+# 合作方材料与生成的 Word，只留本地
+# 这些是给特定人看的交付物，不属于开源仓库内容
+docs/

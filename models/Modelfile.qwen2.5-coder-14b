@@ -1,0 +1,33 @@
+# 把本地 GGUF 注册成 Ollama 模型。
+#
+# 用法：
+#     ollama create qwen2.5-coder:14b -f models/Modelfile.qwen2.5-coder-14b
+#
+# 注意：ollama create 会把 GGUF 导入 Ollama 的 blob 存储，多占一份磁盘
+# （本文件对应 8.4 GB）。原文件可以留着当备份，也可以删掉。
+#
+# 选这个模型的原因记在 DESIGN.md 的模型选型一节：Text2Cypher 需要的是
+# 指令遵循强 + 代码能力 + 非 thinking，参数量不是关键。
+# 这个模型是 qwen2.5-coder 14B 的 Q4_K_M 量化，8.4 GB，能全量进 24G 显存。
+
+FROM D:\OllamaModels\models\qwen2.5-coder-14b-instruct-q4_k_m.gguf
+
+# Qwen2.5 用的是 ChatML 格式。GGUF 里通常带模板元数据，但显式写一遍更保险 ——
+# 模板错了模型会输出格式混乱，而且不容易发现。
+TEMPLATE """{{ if .System }}<|im_start|>system
+{{ .System }}<|im_end|>
+{{ end }}<|im_start|>user
+{{ .Prompt }}<|im_end|>
+<|im_start|>assistant
+"""
+
+# 两个停止符都要。少了 <|im_start|> 的话，模型可能自己续写下一轮对话，
+# 输出里会冒出 "user" 或 "system" 之类的字样。
+PARAMETER stop "<|im_end|>"
+PARAMETER stop "<|im_start|>"
+
+# 默认参数。程序里会按请求覆盖，这里只作为兜底。
+# 温度压低是因为这个任务要精确复现，不需要多样性。
+PARAMETER temperature 0.1
+PARAMETER num_predict 512
+PARAMETER top_p 0.9
