@@ -1,0 +1,1653 @@
+[
+  {
+    "id": "tenlong-001",
+    "model": "tenlong",
+    "shop": "一车间",
+    "function": "车削加工",
+    "tool_groups": [
+      "车削工具组"
+    ],
+    "uses_common_tools": true,
+    "warehouse": "备件仓库A",
+    "inspected": true,
+    "priority": ""
+  },
+  {
+    "id": "tenlong-002",
+    "model": "tenlong",
+    "shop": "一车间",
+    "function": "车削加工",
+    "tool_groups": [
+      "车削工具组"
+    ],
+    "uses_common_tools": true,
+    "warehouse": "备件仓库A",
+    "inspected": true,
+    "priority": ""
+  },
+  {
+    "id": "tenlong-003",
+    "model": "tenlong",
+    "shop": "一车间",
+    "function": "车削加工",
+    "tool_groups": [
+      "车削工具组"
+    ],
+    "uses_common_tools": true,
+    "warehouse": "备件仓库A",
+    "inspected": true,
+    "priority": "高频检修"
+  },
+  {
+    "id": "tenlong-004",
+    "model": "tenlong",
+    "shop": "一车间",
+    "function": "车削加工",
+    "tool_groups": [
+      "车削工具组"
+    ],
+    "uses_common_tools": true,
+    "warehouse": "备件仓库A",
+    "inspected": true,
+    "priority": ""
+  },
+  {
+    "id": "tenlong-005",
+    "model": "tenlong",
+    "shop": "一车间",
+    "function": "车削加工",
+    "tool_groups": [
+      "车削工具组"
+    ],
+    "uses_common_tools": true,
+    "warehouse": "备件仓库A",
+    "inspected": true,
+    "priority": ""
+  },
+  {
+    "id": "tenlong-006",
+    "model": "tenlong",
+    "shop": "一车间",
+    "function": "车削加工",
+    "tool_groups": [
+      "车削工具组"
+    ],
+    "uses_common_tools": true,
+    "warehouse": "备件仓库A",
+    "inspected": true,
+    "priority": ""
+  },
+  {
+    "id": "tenlong-007",
+    "model": "tenlong",
+    "shop": "一车间",
+    "function": "车削加工",
+    "tool_groups": [
+      "车削工具组"
+    ],
+    "uses_common_tools": true,
+    "warehouse": "备件仓库A",
+    "inspected": true,
+    "priority": ""
+  },
+  {
+    "id": "tenlong-008",
+    "model": "tenlong",
+    "shop": "一车间",
+    "function": "车削加工",
+    "tool_groups": [
+      "车削工具组"
+    ],
+    "uses_common_tools": true,
+    "warehouse": "备件仓库A",
+    "inspected": true,
+    "priority": ""
+  },
+  {
+    "id": "tenlong-009",
+    "model": "tenlong",
+    "shop": "一车间",
+    "function": "车削加工",
+    "tool_groups": [
+      "车削工具组"
+    ],
+    "uses_common_tools": true,
+    "warehouse": "备件仓库A",
+    "inspected": true,
+    "priority": ""
+  },
+  {
+    "id": "tenlong-010",
+    "model": "tenlong",
+    "shop": "一车间",
+    "function": "车削加工",
+    "tool_groups": [
+      "车削工具组"
+    ],
+    "uses_common_tools": true,
+    "warehouse": "备件仓库A",
+    "inspected": true,
+    "priority": ""
+  },
+  {
+    "id": "tenlong-011",
+    "model": "tenlong",
+    "shop": "一车间",
+    "function": "车削加工",
+    "tool_groups": [
+      "车削工具组"
+    ],
+    "uses_common_tools": true,
+    "warehouse": "备件仓库A",
+    "inspected": true,
+    "priority": ""
+  },
+  {
+    "id": "tenlong-012",
+    "model": "tenlong",
+    "shop": "一车间",
+    "function": "车削加工",
+    "tool_groups": [
+      "车削工具组"
+    ],
+    "uses_common_tools": true,
+    "warehouse": "备件仓库A",
+    "inspected": true,
+    "priority": ""
+  },
+  {
+    "id": "tenlong-013",
+    "model": "tenlong",
+    "shop": "一车间",
+    "function": "车削加工",
+    "tool_groups": [
+      "车削工具组"
+    ],
+    "uses_common_tools": true,
+    "warehouse": "备件仓库A",
+    "inspected": false,
+    "priority": ""
+  },
+  {
+    "id": "yuelong-001",
+    "model": "yuelong",
+    "shop": "一车间",
+    "function": "铣削加工",
+    "tool_groups": [
+      "铣削工具组"
+    ],
+    "uses_common_tools": true,
+    "warehouse": "备件仓库A",
+    "inspected": true,
+    "priority": ""
+  },
+  {
+    "id": "yuelong-002",
+    "model": "yuelong",
+    "shop": "一车间",
+    "function": "铣削加工",
+    "tool_groups": [
+      "铣削工具组"
+    ],
+    "uses_common_tools": true,
+    "warehouse": "备件仓库A",
+    "inspected": true,
+    "priority": ""
+  },
+  {
+    "id": "yuelong-003",
+    "model": "yuelong",
+    "shop": "一车间",
+    "function": "铣削加工",
+    "tool_groups": [
+      "铣削工具组"
+    ],
+    "uses_common_tools": true,
+    "warehouse": "备件仓库A",
+    "inspected": true,
+    "priority": ""
+  },
+  {
+    "id": "yuelong-004",
+    "model": "yuelong",
+    "shop": "一车间",
+    "function": "铣削加工",
+    "tool_groups": [
+      "铣削工具组"
+    ],
+    "uses_common_tools": true,
+    "warehouse": "备件仓库A",
+    "inspected": true,
+    "priority": ""
+  },
+  {
+    "id": "yuelong-005",
+    "model": "yuelong",
+    "shop": "一车间",
+    "function": "铣削加工",
+    "tool_groups": [
+      "铣削工具组"
+    ],
+    "uses_common_tools": true,
+    "warehouse": "备件仓库A",
+    "inspected": true,
+    "priority": ""
+  },
+  {
+    "id": "yuelong-006",
+    "model": "yuelong",
+    "shop": "一车间",
+    "function": "铣削加工",
+    "tool_groups": [
+      "铣削工具组"
+    ],
+    "uses_common_tools": true,
+    "warehouse": "备件仓库A",
+    "inspected": true,
+    "priority": ""
+  },
+  {
+    "id": "yuelong-007",
+    "model": "yuelong",
+    "shop": "一车间",
+    "function": "铣削加工",
+    "tool_groups": [
+      "铣削工具组"
+    ],
+    "uses_common_tools": true,
+    "warehouse": "备件仓库A",
+    "inspected": true,
+    "priority": ""
+  },
+  {
+    "id": "yuelong-008",
+    "model": "yuelong",
+    "shop": "一车间",
+    "function": "铣削加工",
+    "tool_groups": [
+      "铣削工具组"
+    ],
+    "uses_common_tools": true,
+    "warehouse": "备件仓库A",
+    "inspected": true,
+    "priority": ""
+  },
+  {
+    "id": "yuelong-009",
+    "model": "yuelong",
+    "shop": "一车间",
+    "function": "铣削加工",
+    "tool_groups": [
+      "铣削工具组"
+    ],
+    "uses_common_tools": true,
+    "warehouse": "备件仓库A",
+    "inspected": true,
+    "priority": ""
+  },
+  {
+    "id": "yuelong-010",
+    "model": "yuelong",
+    "shop": "一车间",
+    "function": "铣削加工",
+    "tool_groups": [
+      "铣削工具组"
+    ],
+    "uses_common_tools": true,
+    "warehouse": "备件仓库A",
+    "inspected": true,
+    "priority": ""
+  },
+  {
+    "id": "yuelong-011",
+    "model": "yuelong",
+    "shop": "一车间",
+    "function": "铣削加工",
+    "tool_groups": [
+      "铣削工具组"
+    ],
+    "uses_common_tools": true,
+    "warehouse": "备件仓库A",
+    "inspected": true,
+    "priority": "高频检修"
+  },
+  {
+    "id": "yuelong-012",
+    "model": "yuelong",
+    "shop": "一车间",
+    "function": "铣削加工",
+    "tool_groups": [
+      "铣削工具组"
+    ],
+    "uses_common_tools": true,
+    "warehouse": "备件仓库A",
+    "inspected": true,
+    "priority": ""
+  },
+  {
+    "id": "yuelong-013",
+    "model": "yuelong",
+    "shop": "一车间",
+    "function": "铣削加工",
+    "tool_groups": [
+      "铣削工具组"
+    ],
+    "uses_common_tools": true,
+    "warehouse": "备件仓库A",
+    "inspected": true,
+    "priority": ""
+  },
+  {
+    "id": "yuelong-014",
+    "model": "yuelong",
+    "shop": "一车间",
+    "function": "铣削加工",
+    "tool_groups": [
+      "铣削工具组"
+    ],
+    "uses_common_tools": true,
+    "warehouse": "备件仓库A",
+    "inspected": true,
+    "priority": ""
+  },
+  {
+    "id": "yuelong-015",
+    "model": "yuelong",
+    "shop": "一车间",
+    "function": "铣削加工",
+    "tool_groups": [
+      "铣削工具组"
+    ],
+    "uses_common_tools": true,
+    "warehouse": "备件仓库A",
+    "inspected": true,
+    "priority": ""
+  },
+  {
+    "id": "yuelong-016",
+    "model": "yuelong",
+    "shop": "一车间",
+    "function": "铣削加工",
+    "tool_groups": [
+      "铣削工具组"
+    ],
+    "uses_common_tools": true,
+    "warehouse": "备件仓库A",
+    "inspected": true,
+    "priority": ""
+  },
+  {
+    "id": "yuelong-017",
+    "model": "yuelong",
+    "shop": "一车间",
+    "function": "铣削加工",
+    "tool_groups": [
+      "铣削工具组"
+    ],
+    "uses_common_tools": true,
+    "warehouse": "备件仓库A",
+    "inspected": true,
+    "priority": ""
+  },
+  {
+    "id": "yuelong-018",
+    "model": "yuelong",
+    "shop": "一车间",
+    "function": "铣削加工",
+    "tool_groups": [
+      "铣削工具组"
+    ],
+    "uses_common_tools": true,
+    "warehouse": "备件仓库A",
+    "inspected": true,
+    "priority": ""
+  },
+  {
+    "id": "yuelong-019",
+    "model": "yuelong",
+    "shop": "一车间",
+    "function": "铣削加工",
+    "tool_groups": [
+      "铣削工具组"
+    ],
+    "uses_common_tools": true,
+    "warehouse": "备件仓库A",
+    "inspected": true,
+    "priority": ""
+  },
+  {
+    "id": "yuelong-020",
+    "model": "yuelong",
+    "shop": "一车间",
+    "function": "铣削加工",
+    "tool_groups": [
+      "铣削工具组"
+    ],
+    "uses_common_tools": true,
+    "warehouse": "备件仓库A",
+    "inspected": true,
+    "priority": ""
+  },
+  {
+    "id": "yuelong-021",
+    "model": "yuelong",
+    "shop": "一车间",
+    "function": "铣削加工",
+    "tool_groups": [
+      "铣削工具组"
+    ],
+    "uses_common_tools": true,
+    "warehouse": "备件仓库A",
+    "inspected": true,
+    "priority": ""
+  },
+  {
+    "id": "yuelong-022",
+    "model": "yuelong",
+    "shop": "一车间",
+    "function": "铣削加工",
+    "tool_groups": [
+      "铣削工具组"
+    ],
+    "uses_common_tools": true,
+    "warehouse": "备件仓库A",
+    "inspected": true,
+    "priority": ""
+  },
+  {
+    "id": "yuelong-023",
+    "model": "yuelong",
+    "shop": "一车间",
+    "function": "铣削加工",
+    "tool_groups": [
+      "铣削工具组"
+    ],
+    "uses_common_tools": true,
+    "warehouse": "备件仓库A",
+    "inspected": true,
+    "priority": ""
+  },
+  {
+    "id": "yuelong-024",
+    "model": "yuelong",
+    "shop": "一车间",
+    "function": "铣削加工",
+    "tool_groups": [
+      "铣削工具组"
+    ],
+    "uses_common_tools": true,
+    "warehouse": "备件仓库A",
+    "inspected": true,
+    "priority": ""
+  },
+  {
+    "id": "yuelong-025",
+    "model": "yuelong",
+    "shop": "一车间",
+    "function": "铣削加工",
+    "tool_groups": [
+      "铣削工具组"
+    ],
+    "uses_common_tools": true,
+    "warehouse": "备件仓库A",
+    "inspected": true,
+    "priority": ""
+  },
+  {
+    "id": "yuelong-026",
+    "model": "yuelong",
+    "shop": "一车间",
+    "function": "铣削加工",
+    "tool_groups": [
+      "铣削工具组"
+    ],
+    "uses_common_tools": true,
+    "warehouse": "备件仓库A",
+    "inspected": true,
+    "priority": ""
+  },
+  {
+    "id": "yuelong-027",
+    "model": "yuelong",
+    "shop": "一车间",
+    "function": "铣削加工",
+    "tool_groups": [
+      "铣削工具组"
+    ],
+    "uses_common_tools": true,
+    "warehouse": "备件仓库A",
+    "inspected": false,
+    "priority": ""
+  },
+  {
+    "id": "yuelong-028",
+    "model": "yuelong",
+    "shop": "一车间",
+    "function": "铣削加工",
+    "tool_groups": [
+      "铣削工具组"
+    ],
+    "uses_common_tools": true,
+    "warehouse": "备件仓库A",
+    "inspected": false,
+    "priority": ""
+  },
+  {
+    "id": "chengxin-001",
+    "model": "chengxin",
+    "shop": "二车间",
+    "function": "磨削加工",
+    "tool_groups": [
+      "磨削工具组"
+    ],
+    "uses_common_tools": true,
+    "warehouse": "备件仓库B",
+    "inspected": true,
+    "priority": ""
+  },
+  {
+    "id": "chengxin-002",
+    "model": "chengxin",
+    "shop": "二车间",
+    "function": "磨削加工",
+    "tool_groups": [
+      "磨削工具组"
+    ],
+    "uses_common_tools": true,
+    "warehouse": "备件仓库B",
+    "inspected": true,
+    "priority": ""
+  },
+  {
+    "id": "chengxin-003",
+    "model": "chengxin",
+    "shop": "二车间",
+    "function": "磨削加工",
+    "tool_groups": [
+      "磨削工具组"
+    ],
+    "uses_common_tools": true,
+    "warehouse": "备件仓库B",
+    "inspected": true,
+    "priority": ""
+  },
+  {
+    "id": "chengxin-004",
+    "model": "chengxin",
+    "shop": "二车间",
+    "function": "磨削加工",
+    "tool_groups": [
+      "磨削工具组"
+    ],
+    "uses_common_tools": true,
+    "warehouse": "备件仓库B",
+    "inspected": true,
+    "priority": ""
+  },
+  {
+    "id": "chengxin-005",
+    "model": "chengxin",
+    "shop": "二车间",
+    "function": "磨削加工",
+    "tool_groups": [
+      "磨削工具组"
+    ],
+    "uses_common_tools": true,
+    "warehouse": "备件仓库B",
+    "inspected": true,
+    "priority": ""
+  },
+  {
+    "id": "chengxin-006",
+    "model": "chengxin",
+    "shop": "二车间",
+    "function": "磨削加工",
+    "tool_groups": [
+      "磨削工具组"
+    ],
+    "uses_common_tools": true,
+    "warehouse": "备件仓库B",
+    "inspected": true,
+    "priority": ""
+  },
+  {
+    "id": "chengxin-007",
+    "model": "chengxin",
+    "shop": "二车间",
+    "function": "磨削加工",
+    "tool_groups": [
+      "磨削工具组"
+    ],
+    "uses_common_tools": true,
+    "warehouse": "备件仓库B",
+    "inspected": true,
+    "priority": ""
+  },
+  {
+    "id": "chengxin-008",
+    "model": "chengxin",
+    "shop": "二车间",
+    "function": "磨削加工",
+    "tool_groups": [
+      "磨削工具组"
+    ],
+    "uses_common_tools": true,
+    "warehouse": "备件仓库B",
+    "inspected": true,
+    "priority": ""
+  },
+  {
+    "id": "chengxin-009",
+    "model": "chengxin",
+    "shop": "二车间",
+    "function": "磨削加工",
+    "tool_groups": [
+      "磨削工具组"
+    ],
+    "uses_common_tools": true,
+    "warehouse": "备件仓库B",
+    "inspected": true,
+    "priority": ""
+  },
+  {
+    "id": "chengxin-010",
+    "model": "chengxin",
+    "shop": "二车间",
+    "function": "磨削加工",
+    "tool_groups": [
+      "磨削工具组"
+    ],
+    "uses_common_tools": true,
+    "warehouse": "备件仓库B",
+    "inspected": true,
+    "priority": ""
+  },
+  {
+    "id": "chengxin-011",
+    "model": "chengxin",
+    "shop": "二车间",
+    "function": "磨削加工",
+    "tool_groups": [
+      "磨削工具组"
+    ],
+    "uses_common_tools": true,
+    "warehouse": "备件仓库B",
+    "inspected": true,
+    "priority": ""
+  },
+  {
+    "id": "chengxin-012",
+    "model": "chengxin",
+    "shop": "二车间",
+    "function": "磨削加工",
+    "tool_groups": [
+      "磨削工具组"
+    ],
+    "uses_common_tools": true,
+    "warehouse": "备件仓库B",
+    "inspected": true,
+    "priority": ""
+  },
+  {
+    "id": "chengxin-013",
+    "model": "chengxin",
+    "shop": "二车间",
+    "function": "磨削加工",
+    "tool_groups": [
+      "磨削工具组"
+    ],
+    "uses_common_tools": true,
+    "warehouse": "备件仓库B",
+    "inspected": true,
+    "priority": ""
+  },
+  {
+    "id": "chengxin-014",
+    "model": "chengxin",
+    "shop": "二车间",
+    "function": "磨削加工",
+    "tool_groups": [
+      "磨削工具组"
+    ],
+    "uses_common_tools": true,
+    "warehouse": "备件仓库B",
+    "inspected": true,
+    "priority": ""
+  },
+  {
+    "id": "chengxin-015",
+    "model": "chengxin",
+    "shop": "二车间",
+    "function": "磨削加工",
+    "tool_groups": [
+      "磨削工具组"
+    ],
+    "uses_common_tools": true,
+    "warehouse": "备件仓库B",
+    "inspected": true,
+    "priority": ""
+  },
+  {
+    "id": "chengxin-016",
+    "model": "chengxin",
+    "shop": "二车间",
+    "function": "磨削加工",
+    "tool_groups": [
+      "磨削工具组"
+    ],
+    "uses_common_tools": true,
+    "warehouse": "备件仓库B",
+    "inspected": true,
+    "priority": ""
+  },
+  {
+    "id": "chengxin-017",
+    "model": "chengxin",
+    "shop": "二车间",
+    "function": "磨削加工",
+    "tool_groups": [
+      "磨削工具组"
+    ],
+    "uses_common_tools": true,
+    "warehouse": "备件仓库B",
+    "inspected": true,
+    "priority": ""
+  },
+  {
+    "id": "chengxin-018",
+    "model": "chengxin",
+    "shop": "二车间",
+    "function": "磨削加工",
+    "tool_groups": [
+      "磨削工具组"
+    ],
+    "uses_common_tools": true,
+    "warehouse": "备件仓库B",
+    "inspected": true,
+    "priority": ""
+  },
+  {
+    "id": "chengxin-019",
+    "model": "chengxin",
+    "shop": "二车间",
+    "function": "磨削加工",
+    "tool_groups": [
+      "磨削工具组"
+    ],
+    "uses_common_tools": true,
+    "warehouse": "备件仓库B",
+    "inspected": true,
+    "priority": ""
+  },
+  {
+    "id": "chengxin-020",
+    "model": "chengxin",
+    "shop": "二车间",
+    "function": "磨削加工",
+    "tool_groups": [
+      "磨削工具组"
+    ],
+    "uses_common_tools": true,
+    "warehouse": "备件仓库B",
+    "inspected": true,
+    "priority": "高频检修"
+  },
+  {
+    "id": "chengxin-021",
+    "model": "chengxin",
+    "shop": "二车间",
+    "function": "磨削加工",
+    "tool_groups": [
+      "磨削工具组"
+    ],
+    "uses_common_tools": true,
+    "warehouse": "备件仓库B",
+    "inspected": true,
+    "priority": ""
+  },
+  {
+    "id": "chengxin-022",
+    "model": "chengxin",
+    "shop": "二车间",
+    "function": "磨削加工",
+    "tool_groups": [
+      "磨削工具组"
+    ],
+    "uses_common_tools": true,
+    "warehouse": "备件仓库B",
+    "inspected": true,
+    "priority": ""
+  },
+  {
+    "id": "chengxin-023",
+    "model": "chengxin",
+    "shop": "二车间",
+    "function": "磨削加工",
+    "tool_groups": [
+      "磨削工具组"
+    ],
+    "uses_common_tools": true,
+    "warehouse": "备件仓库B",
+    "inspected": true,
+    "priority": ""
+  },
+  {
+    "id": "chengxin-024",
+    "model": "chengxin",
+    "shop": "二车间",
+    "function": "磨削加工",
+    "tool_groups": [
+      "磨削工具组"
+    ],
+    "uses_common_tools": true,
+    "warehouse": "备件仓库B",
+    "inspected": true,
+    "priority": ""
+  },
+  {
+    "id": "chengxin-025",
+    "model": "chengxin",
+    "shop": "二车间",
+    "function": "磨削加工",
+    "tool_groups": [
+      "磨削工具组"
+    ],
+    "uses_common_tools": true,
+    "warehouse": "备件仓库B",
+    "inspected": true,
+    "priority": ""
+  },
+  {
+    "id": "chengxin-026",
+    "model": "chengxin",
+    "shop": "二车间",
+    "function": "磨削加工",
+    "tool_groups": [
+      "磨削工具组"
+    ],
+    "uses_common_tools": true,
+    "warehouse": "备件仓库B",
+    "inspected": true,
+    "priority": ""
+  },
+  {
+    "id": "chengxin-027",
+    "model": "chengxin",
+    "shop": "二车间",
+    "function": "磨削加工",
+    "tool_groups": [
+      "磨削工具组"
+    ],
+    "uses_common_tools": true,
+    "warehouse": "备件仓库B",
+    "inspected": true,
+    "priority": ""
+  },
+  {
+    "id": "chengxin-028",
+    "model": "chengxin",
+    "shop": "二车间",
+    "function": "磨削加工",
+    "tool_groups": [
+      "磨削工具组"
+    ],
+    "uses_common_tools": true,
+    "warehouse": "备件仓库B",
+    "inspected": true,
+    "priority": ""
+  },
+  {
+    "id": "chengxin-029",
+    "model": "chengxin",
+    "shop": "二车间",
+    "function": "磨削加工",
+    "tool_groups": [
+      "磨削工具组"
+    ],
+    "uses_common_tools": true,
+    "warehouse": "备件仓库B",
+    "inspected": true,
+    "priority": ""
+  },
+  {
+    "id": "chengxin-030",
+    "model": "chengxin",
+    "shop": "二车间",
+    "function": "磨削加工",
+    "tool_groups": [
+      "磨削工具组"
+    ],
+    "uses_common_tools": true,
+    "warehouse": "备件仓库B",
+    "inspected": true,
+    "priority": ""
+  },
+  {
+    "id": "chengxin-031",
+    "model": "chengxin",
+    "shop": "二车间",
+    "function": "磨削加工",
+    "tool_groups": [
+      "磨削工具组"
+    ],
+    "uses_common_tools": true,
+    "warehouse": "备件仓库B",
+    "inspected": true,
+    "priority": ""
+  },
+  {
+    "id": "chengxin-032",
+    "model": "chengxin",
+    "shop": "二车间",
+    "function": "磨削加工",
+    "tool_groups": [
+      "磨削工具组"
+    ],
+    "uses_common_tools": true,
+    "warehouse": "备件仓库B",
+    "inspected": true,
+    "priority": ""
+  },
+  {
+    "id": "chengxin-033",
+    "model": "chengxin",
+    "shop": "二车间",
+    "function": "磨削加工",
+    "tool_groups": [
+      "磨削工具组"
+    ],
+    "uses_common_tools": true,
+    "warehouse": "备件仓库B",
+    "inspected": true,
+    "priority": ""
+  },
+  {
+    "id": "chengxin-034",
+    "model": "chengxin",
+    "shop": "二车间",
+    "function": "磨削加工",
+    "tool_groups": [
+      "磨削工具组"
+    ],
+    "uses_common_tools": true,
+    "warehouse": "备件仓库B",
+    "inspected": true,
+    "priority": ""
+  },
+  {
+    "id": "chengxin-035",
+    "model": "chengxin",
+    "shop": "二车间",
+    "function": "磨削加工",
+    "tool_groups": [
+      "磨削工具组"
+    ],
+    "uses_common_tools": true,
+    "warehouse": "备件仓库B",
+    "inspected": true,
+    "priority": ""
+  },
+  {
+    "id": "chengxin-036",
+    "model": "chengxin",
+    "shop": "二车间",
+    "function": "磨削加工",
+    "tool_groups": [
+      "磨削工具组"
+    ],
+    "uses_common_tools": true,
+    "warehouse": "备件仓库B",
+    "inspected": true,
+    "priority": ""
+  },
+  {
+    "id": "chengxin-037",
+    "model": "chengxin",
+    "shop": "二车间",
+    "function": "磨削加工",
+    "tool_groups": [
+      "磨削工具组"
+    ],
+    "uses_common_tools": true,
+    "warehouse": "备件仓库B",
+    "inspected": true,
+    "priority": ""
+  },
+  {
+    "id": "chengxin-038",
+    "model": "chengxin",
+    "shop": "二车间",
+    "function": "磨削加工",
+    "tool_groups": [
+      "磨削工具组"
+    ],
+    "uses_common_tools": true,
+    "warehouse": "备件仓库B",
+    "inspected": true,
+    "priority": ""
+  },
+  {
+    "id": "chengxin-039",
+    "model": "chengxin",
+    "shop": "二车间",
+    "function": "磨削加工",
+    "tool_groups": [
+      "磨削工具组"
+    ],
+    "uses_common_tools": true,
+    "warehouse": "备件仓库B",
+    "inspected": true,
+    "priority": ""
+  },
+  {
+    "id": "chengxin-040",
+    "model": "chengxin",
+    "shop": "二车间",
+    "function": "磨削加工",
+    "tool_groups": [
+      "磨削工具组"
+    ],
+    "uses_common_tools": true,
+    "warehouse": "备件仓库B",
+    "inspected": true,
+    "priority": ""
+  },
+  {
+    "id": "chengxin-041",
+    "model": "chengxin",
+    "shop": "二车间",
+    "function": "磨削加工",
+    "tool_groups": [
+      "磨削工具组"
+    ],
+    "uses_common_tools": true,
+    "warehouse": "备件仓库B",
+    "inspected": true,
+    "priority": ""
+  },
+  {
+    "id": "chengxin-042",
+    "model": "chengxin",
+    "shop": "二车间",
+    "function": "磨削加工",
+    "tool_groups": [
+      "磨削工具组"
+    ],
+    "uses_common_tools": true,
+    "warehouse": "备件仓库B",
+    "inspected": true,
+    "priority": ""
+  },
+  {
+    "id": "chengxin-043",
+    "model": "chengxin",
+    "shop": "二车间",
+    "function": "磨削加工",
+    "tool_groups": [
+      "磨削工具组"
+    ],
+    "uses_common_tools": true,
+    "warehouse": "备件仓库B",
+    "inspected": true,
+    "priority": ""
+  },
+  {
+    "id": "chengxin-044",
+    "model": "chengxin",
+    "shop": "二车间",
+    "function": "磨削加工",
+    "tool_groups": [
+      "磨削工具组"
+    ],
+    "uses_common_tools": true,
+    "warehouse": "备件仓库B",
+    "inspected": true,
+    "priority": ""
+  },
+  {
+    "id": "chengxin-045",
+    "model": "chengxin",
+    "shop": "二车间",
+    "function": "磨削加工",
+    "tool_groups": [
+      "磨削工具组"
+    ],
+    "uses_common_tools": true,
+    "warehouse": "备件仓库B",
+    "inspected": true,
+    "priority": ""
+  },
+  {
+    "id": "chengxin-046",
+    "model": "chengxin",
+    "shop": "二车间",
+    "function": "磨削加工",
+    "tool_groups": [
+      "磨削工具组"
+    ],
+    "uses_common_tools": true,
+    "warehouse": "备件仓库B",
+    "inspected": true,
+    "priority": ""
+  },
+  {
+    "id": "chengxin-047",
+    "model": "chengxin",
+    "shop": "二车间",
+    "function": "磨削加工",
+    "tool_groups": [
+      "磨削工具组"
+    ],
+    "uses_common_tools": true,
+    "warehouse": "备件仓库B",
+    "inspected": true,
+    "priority": ""
+  },
+  {
+    "id": "chengxin-048",
+    "model": "chengxin",
+    "shop": "二车间",
+    "function": "磨削加工",
+    "tool_groups": [
+      "磨削工具组"
+    ],
+    "uses_common_tools": true,
+    "warehouse": "备件仓库B",
+    "inspected": false,
+    "priority": ""
+  },
+  {
+    "id": "chengxin-049",
+    "model": "chengxin",
+    "shop": "二车间",
+    "function": "磨削加工",
+    "tool_groups": [
+      "磨削工具组"
+    ],
+    "uses_common_tools": true,
+    "warehouse": "备件仓库B",
+    "inspected": false,
+    "priority": ""
+  },
+  {
+    "id": "chengxin-050",
+    "model": "chengxin",
+    "shop": "二车间",
+    "function": "磨削加工",
+    "tool_groups": [
+      "磨削工具组"
+    ],
+    "uses_common_tools": true,
+    "warehouse": "备件仓库B",
+    "inspected": false,
+    "priority": ""
+  },
+  {
+    "id": "huanmai-001",
+    "model": "huanmai",
+    "shop": "二车间",
+    "function": "焊接作业",
+    "tool_groups": [
+      "焊接工具组"
+    ],
+    "uses_common_tools": true,
+    "warehouse": "备件仓库B",
+    "inspected": true,
+    "priority": ""
+  },
+  {
+    "id": "huanmai-002",
+    "model": "huanmai",
+    "shop": "二车间",
+    "function": "焊接作业",
+    "tool_groups": [
+      "焊接工具组"
+    ],
+    "uses_common_tools": true,
+    "warehouse": "备件仓库B",
+    "inspected": true,
+    "priority": ""
+  },
+  {
+    "id": "huanmai-003",
+    "model": "huanmai",
+    "shop": "二车间",
+    "function": "焊接作业",
+    "tool_groups": [
+      "焊接工具组"
+    ],
+    "uses_common_tools": true,
+    "warehouse": "备件仓库B",
+    "inspected": true,
+    "priority": ""
+  },
+  {
+    "id": "huanmai-004",
+    "model": "huanmai",
+    "shop": "二车间",
+    "function": "焊接作业",
+    "tool_groups": [
+      "焊接工具组"
+    ],
+    "uses_common_tools": true,
+    "warehouse": "备件仓库B",
+    "inspected": true,
+    "priority": ""
+  },
+  {
+    "id": "huanmai-005",
+    "model": "huanmai",
+    "shop": "二车间",
+    "function": "焊接作业",
+    "tool_groups": [
+      "焊接工具组"
+    ],
+    "uses_common_tools": true,
+    "warehouse": "备件仓库B",
+    "inspected": true,
+    "priority": ""
+  },
+  {
+    "id": "huanmai-006",
+    "model": "huanmai",
+    "shop": "二车间",
+    "function": "焊接作业",
+    "tool_groups": [
+      "焊接工具组"
+    ],
+    "uses_common_tools": true,
+    "warehouse": "备件仓库B",
+    "inspected": true,
+    "priority": ""
+  },
+  {
+    "id": "huanmai-007",
+    "model": "huanmai",
+    "shop": "二车间",
+    "function": "焊接作业",
+    "tool_groups": [
+      "焊接工具组"
+    ],
+    "uses_common_tools": true,
+    "warehouse": "备件仓库B",
+    "inspected": true,
+    "priority": "高频检修"
+  },
+  {
+    "id": "huanmai-008",
+    "model": "huanmai",
+    "shop": "二车间",
+    "function": "焊接作业",
+    "tool_groups": [
+      "焊接工具组"
+    ],
+    "uses_common_tools": true,
+    "warehouse": "备件仓库B",
+    "inspected": true,
+    "priority": ""
+  },
+  {
+    "id": "huanmai-009",
+    "model": "huanmai",
+    "shop": "二车间",
+    "function": "焊接作业",
+    "tool_groups": [
+      "焊接工具组"
+    ],
+    "uses_common_tools": true,
+    "warehouse": "备件仓库B",
+    "inspected": true,
+    "priority": ""
+  },
+  {
+    "id": "huanmai-010",
+    "model": "huanmai",
+    "shop": "二车间",
+    "function": "焊接作业",
+    "tool_groups": [
+      "焊接工具组"
+    ],
+    "uses_common_tools": true,
+    "warehouse": "备件仓库B",
+    "inspected": true,
+    "priority": ""
+  },
+  {
+    "id": "huanmai-011",
+    "model": "huanmai",
+    "shop": "二车间",
+    "function": "焊接作业",
+    "tool_groups": [
+      "焊接工具组"
+    ],
+    "uses_common_tools": true,
+    "warehouse": "备件仓库B",
+    "inspected": true,
+    "priority": ""
+  },
+  {
+    "id": "huanmai-012",
+    "model": "huanmai",
+    "shop": "二车间",
+    "function": "焊接作业",
+    "tool_groups": [
+      "焊接工具组"
+    ],
+    "uses_common_tools": true,
+    "warehouse": "备件仓库B",
+    "inspected": true,
+    "priority": ""
+  },
+  {
+    "id": "huanmai-013",
+    "model": "huanmai",
+    "shop": "二车间",
+    "function": "焊接作业",
+    "tool_groups": [
+      "焊接工具组"
+    ],
+    "uses_common_tools": true,
+    "warehouse": "备件仓库B",
+    "inspected": true,
+    "priority": ""
+  },
+  {
+    "id": "huanmai-014",
+    "model": "huanmai",
+    "shop": "二车间",
+    "function": "焊接作业",
+    "tool_groups": [
+      "焊接工具组"
+    ],
+    "uses_common_tools": true,
+    "warehouse": "备件仓库B",
+    "inspected": true,
+    "priority": ""
+  },
+  {
+    "id": "huanmai-015",
+    "model": "huanmai",
+    "shop": "二车间",
+    "function": "焊接作业",
+    "tool_groups": [
+      "焊接工具组"
+    ],
+    "uses_common_tools": true,
+    "warehouse": "备件仓库B",
+    "inspected": true,
+    "priority": ""
+  },
+  {
+    "id": "huanmai-016",
+    "model": "huanmai",
+    "shop": "二车间",
+    "function": "焊接作业",
+    "tool_groups": [
+      "焊接工具组"
+    ],
+    "uses_common_tools": true,
+    "warehouse": "备件仓库B",
+    "inspected": true,
+    "priority": ""
+  },
+  {
+    "id": "huanmai-017",
+    "model": "huanmai",
+    "shop": "二车间",
+    "function": "焊接作业",
+    "tool_groups": [
+      "焊接工具组"
+    ],
+    "uses_common_tools": true,
+    "warehouse": "备件仓库B",
+    "inspected": true,
+    "priority": ""
+  },
+  {
+    "id": "huanmai-018",
+    "model": "huanmai",
+    "shop": "二车间",
+    "function": "焊接作业",
+    "tool_groups": [
+      "焊接工具组"
+    ],
+    "uses_common_tools": true,
+    "warehouse": "备件仓库B",
+    "inspected": false,
+    "priority": ""
+  },
+  {
+    "id": "heyue-001",
+    "model": "heyue",
+    "shop": "三车间",
+    "function": "激光切割",
+    "tool_groups": [
+      "切割工具组"
+    ],
+    "uses_common_tools": true,
+    "warehouse": "备件仓库C",
+    "inspected": true,
+    "priority": ""
+  },
+  {
+    "id": "heyue-002",
+    "model": "heyue",
+    "shop": "三车间",
+    "function": "激光切割",
+    "tool_groups": [
+      "切割工具组"
+    ],
+    "uses_common_tools": true,
+    "warehouse": "备件仓库C",
+    "inspected": true,
+    "priority": ""
+  },
+  {
+    "id": "heyue-003",
+    "model": "heyue",
+    "shop": "三车间",
+    "function": "激光切割",
+    "tool_groups": [
+      "切割工具组"
+    ],
+    "uses_common_tools": true,
+    "warehouse": "备件仓库C",
+    "inspected": true,
+    "priority": ""
+  },
+  {
+    "id": "heyue-004",
+    "model": "heyue",
+    "shop": "三车间",
+    "function": "激光切割",
+    "tool_groups": [
+      "切割工具组"
+    ],
+    "uses_common_tools": true,
+    "warehouse": "备件仓库C",
+    "inspected": true,
+    "priority": ""
+  },
+  {
+    "id": "heyue-005",
+    "model": "heyue",
+    "shop": "三车间",
+    "function": "激光切割",
+    "tool_groups": [
+      "切割工具组"
+    ],
+    "uses_common_tools": true,
+    "warehouse": "备件仓库C",
+    "inspected": true,
+    "priority": ""
+  },
+  {
+    "id": "heyue-006",
+    "model": "heyue",
+    "shop": "三车间",
+    "function": "激光切割",
+    "tool_groups": [
+      "切割工具组"
+    ],
+    "uses_common_tools": true,
+    "warehouse": "备件仓库C",
+    "inspected": true,
+    "priority": ""
+  },
+  {
+    "id": "heyue-007",
+    "model": "heyue",
+    "shop": "三车间",
+    "function": "激光切割",
+    "tool_groups": [
+      "切割工具组"
+    ],
+    "uses_common_tools": true,
+    "warehouse": "备件仓库C",
+    "inspected": true,
+    "priority": ""
+  },
+  {
+    "id": "heyue-008",
+    "model": "heyue",
+    "shop": "三车间",
+    "function": "激光切割",
+    "tool_groups": [
+      "切割工具组"
+    ],
+    "uses_common_tools": true,
+    "warehouse": "备件仓库C",
+    "inspected": true,
+    "priority": ""
+  },
+  {
+    "id": "heyue-009",
+    "model": "heyue",
+    "shop": "三车间",
+    "function": "激光切割",
+    "tool_groups": [
+      "切割工具组"
+    ],
+    "uses_common_tools": true,
+    "warehouse": "备件仓库C",
+    "inspected": true,
+    "priority": ""
+  },
+  {
+    "id": "heyue-010",
+    "model": "heyue",
+    "shop": "三车间",
+    "function": "激光切割",
+    "tool_groups": [
+      "切割工具组"
+    ],
+    "uses_common_tools": true,
+    "warehouse": "备件仓库C",
+    "inspected": true,
+    "priority": ""
+  },
+  {
+    "id": "heyue-011",
+    "model": "heyue",
+    "shop": "三车间",
+    "function": "激光切割",
+    "tool_groups": [
+      "切割工具组"
+    ],
+    "uses_common_tools": true,
+    "warehouse": "备件仓库C",
+    "inspected": true,
+    "priority": ""
+  },
+  {
+    "id": "heyue-012",
+    "model": "heyue",
+    "shop": "三车间",
+    "function": "激光切割",
+    "tool_groups": [
+      "切割工具组"
+    ],
+    "uses_common_tools": true,
+    "warehouse": "备件仓库C",
+    "inspected": true,
+    "priority": ""
+  },
+  {
+    "id": "heyue-013",
+    "model": "heyue",
+    "shop": "三车间",
+    "function": "激光切割",
+    "tool_groups": [
+      "切割工具组"
+    ],
+    "uses_common_tools": true,
+    "warehouse": "备件仓库C",
+    "inspected": true,
+    "priority": ""
+  },
+  {
+    "id": "heyue-014",
+    "model": "heyue",
+    "shop": "三车间",
+    "function": "激光切割",
+    "tool_groups": [
+      "切割工具组"
+    ],
+    "uses_common_tools": true,
+    "warehouse": "备件仓库C",
+    "inspected": true,
+    "priority": ""
+  },
+  {
+    "id": "heyue-015",
+    "model": "heyue",
+    "shop": "三车间",
+    "function": "激光切割",
+    "tool_groups": [
+      "切割工具组"
+    ],
+    "uses_common_tools": true,
+    "warehouse": "备件仓库C",
+    "inspected": true,
+    "priority": ""
+  },
+  {
+    "id": "heyue-016",
+    "model": "heyue",
+    "shop": "三车间",
+    "function": "激光切割",
+    "tool_groups": [
+      "切割工具组"
+    ],
+    "uses_common_tools": true,
+    "warehouse": "备件仓库C",
+    "inspected": true,
+    "priority": ""
+  },
+  {
+    "id": "heyue-017",
+    "model": "heyue",
+    "shop": "三车间",
+    "function": "激光切割",
+    "tool_groups": [
+      "切割工具组"
+    ],
+    "uses_common_tools": true,
+    "warehouse": "备件仓库C",
+    "inspected": true,
+    "priority": ""
+  },
+  {
+    "id": "heyue-018",
+    "model": "heyue",
+    "shop": "三车间",
+    "function": "激光切割",
+    "tool_groups": [
+      "切割工具组"
+    ],
+    "uses_common_tools": true,
+    "warehouse": "备件仓库C",
+    "inspected": false,
+    "priority": ""
+  }
+]

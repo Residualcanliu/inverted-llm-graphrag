@@ -290,7 +290,9 @@ vanilla RAG 会打败所有图方法。我们用问题分层和「作弊版基�
 
 | 文件 | 内容 |
 |---|---|
-| [DESIGN.md](DESIGN.md) | 技术设计。11 条核心决策，每条都写了代价；评测设计；调研依据 |
+| [DESIGN.md](DESIGN.md) | 技术设计。核心决策逐条写清代价；调研依据 |
+| [docs/数据管线.md](docs/数据管线.md) | 规范化 → 归一 → 建图 → 对账，四步怎么走，脏数据怎么清 |
+| [docs/评测框架.md](docs/评测框架.md) | 四条链路的对照实验：问题集分层、判定方式、统计方法、已知陷阱 |
 | [LOG.md](LOG.md) | 开发日志。按时间记做了什么、为什么、踩了什么坑 |
 
 DESIGN.md 可以用 `python scripts/md2docx.py` 转成 Word，给不看 Markdown 的人用。

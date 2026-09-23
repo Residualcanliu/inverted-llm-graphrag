@@ -28,7 +28,7 @@ from __future__ import annotations
 import re
 from dataclasses import dataclass, field
 
-from app.graph import schema_def as S
+from app.graph import schema as schema_mod
 
 # ---------- 只读拦截 ----------
 
@@ -266,17 +266,15 @@ def check_readonly(cypher: str) -> list[Issue]:
 
 
 def check_schema(cypher: str, nodes: list[NodePattern]) -> list[Issue]:
+    sc = schema_mod.get()
     out: list[Issue] = []
 
     for n in nodes:
         for lb in n.labels:
-            if lb not in S.LABELS:
+            if lb not in sc.labels:
                 out.append(Issue("error", "unknown_label",
-                                 f"标签 {lb} 在 schema 里不存在", n.raw))
-        known = set()
-        for lb in n.labels:
-            if lb in S.NODES:
-                known |= set(S.NODES[lb][1])
+                                 f"标签 {lb} 在图谱里不存在", n.raw))
+        known = sc.props_of(n.labels)
         for p in n.props:
             if known and p not in known:
                 out.append(Issue("error", "unknown_property",
@@ -290,10 +288,7 @@ def check_schema(cypher: str, nodes: list[NodePattern]) -> list[Issue]:
         if var not in binding or (var, prop) in seen:
             continue
         seen.add((var, prop))
-        known = set()
-        for lb in binding[var]:
-            if lb in S.NODES:
-                known |= set(S.NODES[lb][1])
+        known = sc.props_of(binding[var])
         if known and prop not in known:
             out.append(Issue("error", "unknown_property",
                              f"属性 {prop} 不属于 {var}（{'/'.join(sorted(binding[var]))}）",
@@ -301,13 +296,30 @@ def check_schema(cypher: str, nodes: list[NodePattern]) -> list[Issue]:
     return out
 
 
-def check_directions(rels: list[RelPattern]) -> list[Issue]:
-    """抓「关系方向写反」。这是占比最高的一类语义错误。"""
+def check_directions(rels: list[RelPattern],
+                     binding: dict[str, set[str]] | None = None) -> list[Issue]:
+    """抓「关系方向写反」。这是占比最高的一类语义错误。
+
+    binding 是变量名 → 标签集合的映射，来自整个查询里所有 `(var:Label)` 的绑定。
+
+    **为什么需要它**：只看关系模式里的内联标签是不够的。
+    `MATCH (e:Equipment) ... OPTIONAL MATCH (e)-[:USES]->(o:Operation)`
+    这里 `(e)` 没有内联标签，标签是前面绑定的。早期版本遇到这种就跳过方向检查，
+    而实测发现**溜过去的恰恰是错得最有价值的那一类**：
+
+        MATCH (e:Equipment) OPTIONAL MATCH (e)-[:USES]->(o:Operation)
+        -- 方向反了（真实方向是 Operation->Equipment），匹配不到东西，
+           条件恒真，返回全部 127 台设备，而正确答案是 18 台
+
+    方向错误占 Text2Cypher 全部语义错误的 33%，跳过检查等于漏掉头号错误类型。
+    """
+    sc = schema_mod.get()
+    binding = binding or {}
     out: list[Issue] = []
     for r in rels:
         if not r.rel_type or r.direction == "--":
             continue
-        if r.rel_type not in S.REL_TYPES:
+        if r.rel_type not in sc.rel_types:
             out.append(Issue("error", "unknown_rel",
                              f"关系类型 {r.rel_type} 在 schema 里不存在", r.raw))
             continue
@@ -317,10 +329,21 @@ def check_directions(rels: list[RelPattern]) -> list[Issue]:
                              r.raw))
             continue
 
-        frm, to = S.rel_direction(r.rel_type)      # type: ignore[misc]
-        left_labels = set(r.left.labels) if r.left else set()
-        right_labels = set(r.right.labels) if r.right else set()
-        # 两端都有标签才判得了方向；靠变量引用的查不到，跳过
+        direction = sc.rel_direction(r.rel_type)
+        if direction is None:
+            continue
+        frm, to = direction
+
+        def labels_of(n: NodePattern | None) -> set[str]:
+            """先看内联标签，没有就查绑定表。"""
+            if n is None:
+                return set()
+            if n.labels:
+                return set(n.labels)
+            return set(binding.get(n.var, set())) if n.var else set()
+
+        left_labels, right_labels = labels_of(r.left), labels_of(r.right)
+        # 两边都不知道标签才跳过 —— 那是真的查不到（比如变量从未绑定过标签）
         if not left_labels or not right_labels:
             continue
 
@@ -353,7 +376,9 @@ def validate(cypher: str) -> ValidationResult:
     issues += check_readonly(cypher)
     nodes, rels = parse_patterns(cypher)
     issues += check_schema(cypher, nodes)
-    issues += check_directions(rels)
+    # 把变量绑定传给方向检查 —— 关系模式里的端点可能没有内联标签，
+    # 标签是前面 `MATCH (e:Label)` 绑定的，不看绑定表就会漏掉方向错误。
+    issues += check_directions(rels, bind_vars(nodes))
     return ValidationResult(
         ok=not any(i.level == "error" for i in issues),
         issues=issues,

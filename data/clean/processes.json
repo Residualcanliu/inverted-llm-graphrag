@@ -1,0 +1,302 @@
+[
+  {
+    "id": "流程1",
+    "name": "轴类件工艺",
+    "part_type": "轴、销、套筒等回转体",
+    "steps": [
+      {
+        "order": 1,
+        "operation": "车削",
+        "batch": "tenlong系列",
+        "devices": [
+          "tenlong-001",
+          "tenlong-002",
+          "tenlong-003",
+          "tenlong-004"
+        ],
+        "note": ""
+      },
+      {
+        "order": 2,
+        "operation": "磨削",
+        "batch": "chengxin系列",
+        "devices": [
+          "chengxin-001",
+          "chengxin-002",
+          "chengxin-003",
+          "chengxin-004",
+          "chengxin-005",
+          "chengxin-006",
+          "chengxin-007",
+          "chengxin-008",
+          "chengxin-009",
+          "chengxin-010",
+          "chengxin-011",
+          "chengxin-012"
+        ],
+        "note": ""
+      }
+    ]
+  },
+  {
+    "id": "流程2",
+    "name": "盘套类件工艺",
+    "part_type": "法兰、盘、齿轮坯、箱盖",
+    "steps": [
+      {
+        "order": 1,
+        "operation": "车削",
+        "batch": "tenlong系列",
+        "devices": [
+          "tenlong-001",
+          "tenlong-002",
+          "tenlong-005",
+          "tenlong-006"
+        ],
+        "note": "001、002 与流程1共用，需改装"
+      },
+      {
+        "order": 2,
+        "operation": "铣削",
+        "batch": "yuelong系列",
+        "devices": [
+          "yuelong-001",
+          "yuelong-002",
+          "yuelong-003",
+          "yuelong-004",
+          "yuelong-005",
+          "yuelong-006",
+          "yuelong-007",
+          "yuelong-008"
+        ],
+        "note": ""
+      },
+      {
+        "order": 3,
+        "operation": "磨削",
+        "batch": "chengxin系列",
+        "devices": [
+          "chengxin-013",
+          "chengxin-014",
+          "chengxin-015",
+          "chengxin-016",
+          "chengxin-017",
+          "chengxin-018",
+          "chengxin-019",
+          "chengxin-020",
+          "chengxin-021",
+          "chengxin-022",
+          "chengxin-023",
+          "chengxin-024"
+        ],
+        "note": ""
+      }
+    ]
+  },
+  {
+    "id": "流程3",
+    "name": "焊接结构件工艺",
+    "part_type": "焊接机架、支架、筒体",
+    "steps": [
+      {
+        "order": 1,
+        "operation": "车削",
+        "batch": "tenlong系列",
+        "devices": [
+          "tenlong-007",
+          "tenlong-008",
+          "tenlong-009"
+        ],
+        "note": ""
+      },
+      {
+        "order": 2,
+        "operation": "焊接",
+        "batch": "huanmai系列",
+        "devices": [
+          "huanmai-001",
+          "huanmai-002",
+          "huanmai-003",
+          "huanmai-004",
+          "huanmai-005",
+          "huanmai-006"
+        ],
+        "note": ""
+      },
+      {
+        "order": 3,
+        "operation": "磨削",
+        "batch": "chengxin系列",
+        "devices": [
+          "chengxin-001",
+          "chengxin-002",
+          "chengxin-003",
+          "chengxin-004",
+          "chengxin-005",
+          "chengxin-006",
+          "chengxin-025",
+          "chengxin-026",
+          "chengxin-027",
+          "chengxin-028",
+          "chengxin-029",
+          "chengxin-030"
+        ],
+        "note": "001～006 与流程1共用，需改装"
+      }
+    ]
+  },
+  {
+    "id": "流程4",
+    "name": "铣焊复合件工艺",
+    "part_type": "钣金拼焊件、框架",
+    "steps": [
+      {
+        "order": 1,
+        "operation": "铣削",
+        "batch": "yuelong系列",
+        "devices": [
+          "yuelong-009",
+          "yuelong-010",
+          "yuelong-011",
+          "yuelong-012",
+          "yuelong-013",
+          "yuelong-014"
+        ],
+        "note": ""
+      },
+      {
+        "order": 2,
+        "operation": "焊接",
+        "batch": "huanmai系列",
+        "devices": [
+          "huanmai-007",
+          "huanmai-008",
+          "huanmai-009",
+          "huanmai-010",
+          "huanmai-011",
+          "huanmai-012"
+        ],
+        "note": ""
+      }
+    ]
+  },
+  {
+    "id": "流程5",
+    "name": "全工序精密件工艺",
+    "part_type": "高精度复合零件",
+    "steps": [
+      {
+        "order": 1,
+        "operation": "车削",
+        "batch": "tenlong系列",
+        "devices": [
+          "tenlong-010",
+          "tenlong-011",
+          "tenlong-012",
+          "tenlong-013"
+        ],
+        "note": ""
+      },
+      {
+        "order": 2,
+        "operation": "铣削",
+        "batch": "yuelong系列",
+        "devices": [
+          "yuelong-001",
+          "yuelong-002",
+          "yuelong-003",
+          "yuelong-004",
+          "yuelong-015",
+          "yuelong-016",
+          "yuelong-017",
+          "yuelong-018",
+          "yuelong-019",
+          "yuelong-020"
+        ],
+        "note": "001～004 与流程2共用，需改装"
+      },
+      {
+        "order": 3,
+        "operation": "焊接",
+        "batch": "huanmai系列",
+        "devices": [
+          "huanmai-001",
+          "huanmai-002",
+          "huanmai-003",
+          "huanmai-013",
+          "huanmai-014",
+          "huanmai-015",
+          "huanmai-016",
+          "huanmai-017",
+          "huanmai-018"
+        ],
+        "note": "001～003 与流程3共用，需改装"
+      },
+      {
+        "order": 4,
+        "operation": "磨削",
+        "batch": "chengxin系列",
+        "devices": [
+          "chengxin-031",
+          "chengxin-032",
+          "chengxin-033",
+          "chengxin-034",
+          "chengxin-035",
+          "chengxin-036",
+          "chengxin-037",
+          "chengxin-038",
+          "chengxin-039",
+          "chengxin-040"
+        ],
+        "note": ""
+      }
+    ]
+  },
+  {
+    "id": "流程6",
+    "name": "简单铣磨件工艺",
+    "part_type": "板类、条类件",
+    "steps": [
+      {
+        "order": 1,
+        "operation": "铣削",
+        "batch": "yuelong系列",
+        "devices": [
+          "yuelong-021",
+          "yuelong-022",
+          "yuelong-023",
+          "yuelong-024",
+          "yuelong-025",
+          "yuelong-026",
+          "yuelong-027",
+          "yuelong-028"
+        ],
+        "note": ""
+      },
+      {
+        "order": 2,
+        "operation": "磨削",
+        "batch": "chengxin系列",
+        "devices": [
+          "chengxin-013",
+          "chengxin-014",
+          "chengxin-015",
+          "chengxin-016",
+          "chengxin-017",
+          "chengxin-018",
+          "chengxin-041",
+          "chengxin-042",
+          "chengxin-043",
+          "chengxin-044",
+          "chengxin-045",
+          "chengxin-046",
+          "chengxin-047",
+          "chengxin-048",
+          "chengxin-049",
+          "chengxin-050"
+        ],
+        "note": "013～018 与流程2共用，需改装"
+      }
+    ]
+  }
+]

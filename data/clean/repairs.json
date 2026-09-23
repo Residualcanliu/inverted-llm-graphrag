@@ -1,0 +1,4266 @@
+[
+  {
+    "device": "chengxin-009",
+    "date": "2026-04-01",
+    "failure": "磨头磨损",
+    "parts": [],
+    "tools": [
+      "平衡轴",
+      "砂轮"
+    ],
+    "done": true
+  },
+  {
+    "device": "chengxin-019",
+    "date": "2026-04-08",
+    "failure": "磨头磨损",
+    "parts": [],
+    "tools": [
+      "平衡轴",
+      "砂轮"
+    ],
+    "done": true
+  },
+  {
+    "device": "chengxin-029",
+    "date": "2026-04-15",
+    "failure": "磨头磨损",
+    "parts": [],
+    "tools": [
+      "平衡轴",
+      "砂轮"
+    ],
+    "done": true
+  },
+  {
+    "device": "chengxin-039",
+    "date": "2026-04-22",
+    "failure": "磨头磨损",
+    "parts": [],
+    "tools": [
+      "平衡轴",
+      "砂轮"
+    ],
+    "done": true
+  },
+  {
+    "device": "heyue-001",
+    "date": "2026-04-29",
+    "failure": "冷却水流量不足",
+    "parts": [],
+    "tools": [
+      "保护镜片",
+      "聚焦镜片"
+    ],
+    "done": true
+  },
+  {
+    "device": "heyue-011",
+    "date": "2026-04-06",
+    "failure": "冷却水流量不足",
+    "parts": [],
+    "tools": [
+      "喷嘴扳手",
+      "切割喷嘴"
+    ],
+    "done": true
+  },
+  {
+    "device": "huanmai-009",
+    "date": "2026-04-13",
+    "failure": "电弧不稳定",
+    "parts": [],
+    "tools": [
+      "清渣锤",
+      "焊枪"
+    ],
+    "done": true
+  },
+  {
+    "device": "tenlong-010",
+    "date": "2026-04-20",
+    "failure": "丝杠间隙过大",
+    "parts": [],
+    "tools": [
+      "内孔车刀",
+      "顶尖"
+    ],
+    "done": true
+  },
+  {
+    "device": "yuelong-007",
+    "date": "2026-04-27",
+    "failure": "刀具夹不紧",
+    "parts": [],
+    "tools": [
+      "平口钳",
+      "立铣刀"
+    ],
+    "done": true
+  },
+  {
+    "device": "yuelong-017",
+    "date": "2026-04-04",
+    "failure": "刀具夹不紧",
+    "parts": [],
+    "tools": [
+      "平口钳",
+      "立铣刀"
+    ],
+    "done": true
+  },
+  {
+    "device": "chengxin-003",
+    "date": "2026-05-01",
+    "failure": "电磁吸盘失效",
+    "parts": [],
+    "tools": [
+      "永磁吸盘",
+      "平衡轴"
+    ],
+    "done": true
+  },
+  {
+    "device": "chengxin-006",
+    "date": "2026-05-08",
+    "failure": "主轴精度下降",
+    "parts": [
+      "冷却泵"
+    ],
+    "tools": [
+      "金刚石修整笔"
+    ],
+    "done": true
+  },
+  {
+    "device": "chengxin-009",
+    "date": "2026-05-15",
+    "failure": "砂轮不平衡",
+    "parts": [
+      "冷却泵"
+    ],
+    "tools": [
+      "砂轮"
+    ],
+    "done": true
+  },
+  {
+    "device": "chengxin-012",
+    "date": "2026-05-22",
+    "failure": "冷却系统堵塞",
+    "parts": [
+      "白刚玉砂轮（Φ400）"
+    ],
+    "tools": [
+      "千分表"
+    ],
+    "done": true
+  },
+  {
+    "device": "chengxin-013",
+    "date": "2026-05-29",
+    "failure": "电磁吸盘失效",
+    "parts": [],
+    "tools": [
+      "永磁吸盘",
+      "平衡轴"
+    ],
+    "done": true
+  },
+  {
+    "device": "chengxin-018",
+    "date": "2026-05-05",
+    "failure": "电磁吸盘失效",
+    "parts": [
+      "冷却泵"
+    ],
+    "tools": [
+      "永磁吸盘"
+    ],
+    "done": true
+  },
+  {
+    "device": "chengxin-019",
+    "date": "2026-05-12",
+    "failure": "砂轮不平衡",
+    "parts": [
+      "白刚玉砂轮（Φ400）"
+    ],
+    "tools": [
+      "砂轮"
+    ],
+    "done": true
+  },
+  {
+    "device": "chengxin-023",
+    "date": "2026-05-19",
+    "failure": "电磁吸盘失效",
+    "parts": [],
+    "tools": [
+      "永磁吸盘",
+      "平衡轴"
+    ],
+    "done": true
+  },
+  {
+    "device": "chengxin-024",
+    "date": "2026-05-26",
+    "failure": "磨头磨损",
+    "parts": [
+      "白刚玉砂轮（Φ400）"
+    ],
+    "tools": [
+      "平衡轴"
+    ],
+    "done": true
+  },
+  {
+    "device": "chengxin-029",
+    "date": "2026-05-02",
+    "failure": "砂轮不平衡",
+    "parts": [
+      "冷却泵"
+    ],
+    "tools": [
+      "砂轮"
+    ],
+    "done": true
+  },
+  {
+    "device": "chengxin-030",
+    "date": "2026-05-09",
+    "failure": "砂轮不平衡",
+    "parts": [
+      "冷却泵"
+    ],
+    "tools": [
+      "砂轮"
+    ],
+    "done": true
+  },
+  {
+    "device": "chengxin-033",
+    "date": "2026-05-16",
+    "failure": "电磁吸盘失效",
+    "parts": [],
+    "tools": [
+      "永磁吸盘",
+      "平衡轴"
+    ],
+    "done": true
+  },
+  {
+    "device": "chengxin-036",
+    "date": "2026-05-23",
+    "failure": "主轴精度下降",
+    "parts": [
+      "白刚玉砂轮（Φ400）"
+    ],
+    "tools": [
+      "金刚石修整笔"
+    ],
+    "done": true
+  },
+  {
+    "device": "chengxin-039",
+    "date": "2026-05-30",
+    "failure": "砂轮不平衡",
+    "parts": [
+      "白刚玉砂轮（Φ400）"
+    ],
+    "tools": [
+      "砂轮"
+    ],
+    "done": true
+  },
+  {
+    "device": "chengxin-042",
+    "date": "2026-05-06",
+    "failure": "冷却系统堵塞",
+    "parts": [
+      "冷却泵"
+    ],
+    "tools": [
+      "千分表"
+    ],
+    "done": true
+  },
+  {
+    "device": "chengxin-043",
+    "date": "2026-05-13",
+    "failure": "电磁吸盘失效",
+    "parts": [],
+    "tools": [
+      "永磁吸盘",
+      "平衡轴"
+    ],
+    "done": true
+  },
+  {
+    "device": "heyue-001",
+    "date": "2026-05-20",
+    "failure": "激光功率下降",
+    "parts": [
+      "切割喷嘴"
+    ],
+    "tools": [
+      "聚焦镜片"
+    ],
+    "done": true
+  },
+  {
+    "device": "heyue-004",
+    "date": "2026-05-27",
+    "failure": "喷嘴堵塞",
+    "parts": [
+      "聚焦镜片"
+    ],
+    "tools": [
+      "切割喷嘴"
+    ],
+    "done": true
+  },
+  {
+    "device": "heyue-005",
+    "date": "2026-05-03",
+    "failure": "聚焦偏移",
+    "parts": [],
+    "tools": [
+      "保护镜片",
+      "聚焦镜片"
+    ],
+    "done": true
+  },
+  {
+    "device": "heyue-010",
+    "date": "2026-05-10",
+    "failure": "聚焦偏移",
+    "parts": [
+      "切割喷嘴"
+    ],
+    "tools": [
+      "聚焦镜片"
+    ],
+    "done": true
+  },
+  {
+    "device": "heyue-011",
+    "date": "2026-05-17",
+    "failure": "激光功率下降",
+    "parts": [
+      "聚焦镜片"
+    ],
+    "tools": [
+      "切割喷嘴"
+    ],
+    "done": true
+  },
+  {
+    "device": "heyue-015",
+    "date": "2026-05-24",
+    "failure": "聚焦偏移",
+    "parts": [],
+    "tools": [
+      "喷嘴扳手",
+      "切割喷嘴"
+    ],
+    "done": true
+  },
+  {
+    "device": "heyue-016",
+    "date": "2026-05-31",
+    "failure": "冷却水流量不足",
+    "parts": [
+      "聚焦镜片"
+    ],
+    "tools": [
+      "切割喷嘴"
+    ],
+    "done": true
+  },
+  {
+    "device": "huanmai-003",
+    "date": "2026-05-07",
+    "failure": "接地不良",
+    "parts": [],
+    "tools": [
+      "钢丝刷",
+      "焊钳"
+    ],
+    "done": true
+  },
+  {
+    "device": "huanmai-004",
+    "date": "2026-05-14",
+    "failure": "电弧不稳定",
+    "parts": [
+      "气管"
+    ],
+    "tools": [
+      "焊钳"
+    ],
+    "done": true
+  },
+  {
+    "device": "huanmai-007",
+    "date": "2026-05-21",
+    "failure": "送丝不畅",
+    "parts": [
+      "送丝轮"
+    ],
+    "tools": [
+      "钢丝刷",
+      "焊钳"
+    ],
+    "done": true
+  },
+  {
+    "device": "huanmai-007",
+    "date": "2026-05-28",
+    "failure": "焊枪堵塞",
+    "parts": [
+      "焊枪导电嘴"
+    ],
+    "tools": [
+      "焊枪",
+      "钢丝刷"
+    ],
+    "done": true
+  },
+  {
+    "device": "huanmai-007",
+    "date": "2026-05-04",
+    "failure": "电弧不稳定",
+    "parts": [
+      "地线夹"
+    ],
+    "tools": [
+      "清渣锤",
+      "焊枪"
+    ],
+    "done": true
+  },
+  {
+    "device": "huanmai-007",
+    "date": "2026-05-11",
+    "failure": "接地不良",
+    "parts": [
+      "气管"
+    ],
+    "tools": [
+      "焊钳",
+      "清渣锤"
+    ],
+    "done": true
+  },
+  {
+    "device": "huanmai-009",
+    "date": "2026-05-18",
+    "failure": "焊枪堵塞",
+    "parts": [
+      "焊枪导电嘴"
+    ],
+    "tools": [
+      "焊枪"
+    ],
+    "done": true
+  },
+  {
+    "device": "huanmai-010",
+    "date": "2026-05-25",
+    "failure": "焊枪堵塞",
+    "parts": [
+      "焊枪导电嘴"
+    ],
+    "tools": [
+      "焊枪"
+    ],
+    "done": true
+  },
+  {
+    "device": "huanmai-013",
+    "date": "2026-05-01",
+    "failure": "接地不良",
+    "parts": [],
+    "tools": [
+      "清渣锤",
+      "焊枪"
+    ],
+    "done": true
+  },
+  {
+    "device": "huanmai-016",
+    "date": "2026-05-08",
+    "failure": "气路泄漏",
+    "parts": [
+      "气管"
+    ],
+    "tools": [
+      "焊钳"
+    ],
+    "done": true
+  },
+  {
+    "device": "tenlong-004",
+    "date": "2026-05-15",
+    "failure": "丝杠间隙过大",
+    "parts": [],
+    "tools": [
+      "内孔车刀",
+      "顶尖"
+    ],
+    "done": true
+  },
+  {
+    "device": "tenlong-005",
+    "date": "2026-05-22",
+    "failure": "冷却液泄漏",
+    "parts": [
+      "回转顶尖"
+    ],
+    "tools": [
+      "顶尖"
+    ],
+    "done": true
+  },
+  {
+    "device": "tenlong-010",
+    "date": "2026-05-29",
+    "failure": "冷却液泄漏",
+    "parts": [
+      "主轴轴承"
+    ],
+    "tools": [
+      "顶尖"
+    ],
+    "done": true
+  },
+  {
+    "device": "tenlong-011",
+    "date": "2026-05-05",
+    "failure": "冷却液泄漏",
+    "parts": [
+      "主轴轴承"
+    ],
+    "tools": [
+      "顶尖"
+    ],
+    "done": true
+  },
+  {
+    "device": "yuelong-001",
+    "date": "2026-05-12",
+    "failure": "伺服报警",
+    "parts": [],
+    "tools": [
+      "压板组",
+      "平口钳"
+    ],
+    "done": true
+  },
+  {
+    "device": "yuelong-004",
+    "date": "2026-05-19",
+    "failure": "导轨磨损",
+    "parts": [
+      "主轴轴承"
+    ],
+    "tools": [
+      "寻边器"
+    ],
+    "done": true
+  },
+  {
+    "device": "yuelong-007",
+    "date": "2026-05-26",
+    "failure": "主轴轴承过热",
+    "parts": [
+      "主轴轴承"
+    ],
+    "tools": [
+      "立铣刀"
+    ],
+    "done": true
+  },
+  {
+    "device": "yuelong-010",
+    "date": "2026-05-02",
+    "failure": "换刀失败",
+    "parts": [
+      "弹簧夹头（ER32）"
+    ],
+    "tools": [
+      "千分表"
+    ],
+    "done": true
+  },
+  {
+    "device": "yuelong-016",
+    "date": "2026-05-09",
+    "failure": "伺服报警",
+    "parts": [
+      "主轴轴承"
+    ],
+    "tools": [
+      "压板组"
+    ],
+    "done": true
+  },
+  {
+    "device": "yuelong-017",
+    "date": "2026-05-16",
+    "failure": "主轴轴承过热",
+    "parts": [
+      "弹簧夹头（ER32）"
+    ],
+    "tools": [
+      "立铣刀"
+    ],
+    "done": true
+  },
+  {
+    "device": "yuelong-021",
+    "date": "2026-05-23",
+    "failure": "伺服报警",
+    "parts": [],
+    "tools": [
+      "压板组",
+      "平口钳"
+    ],
+    "done": true
+  },
+  {
+    "device": "yuelong-022",
+    "date": "2026-05-30",
+    "failure": "刀具夹不紧",
+    "parts": [
+      "弹簧夹头（ER32）"
+    ],
+    "tools": [
+      "平口钳"
+    ],
+    "done": true
+  },
+  {
+    "device": "chengxin-003",
+    "date": "2026-06-01",
+    "failure": "磨头磨损",
+    "parts": [
+      "白刚玉砂轮（Φ400）"
+    ],
+    "tools": [
+      "平衡轴"
+    ],
+    "done": true
+  },
+  {
+    "device": "chengxin-006",
+    "date": "2026-06-08",
+    "failure": "冷却系统堵塞",
+    "parts": [],
+    "tools": [
+      "千分表",
+      "永磁吸盘"
+    ],
+    "done": true
+  },
+  {
+    "device": "chengxin-007",
+    "date": "2026-06-15",
+    "failure": "冷却系统堵塞",
+    "parts": [],
+    "tools": [
+      "千分表",
+      "永磁吸盘"
+    ],
+    "done": true
+  },
+  {
+    "device": "chengxin-009",
+    "date": "2026-06-22",
+    "failure": "主轴精度下降",
+    "parts": [],
+    "tools": [
+      "金刚石修整笔",
+      "千分表"
+    ],
+    "done": true
+  },
+  {
+    "device": "chengxin-012",
+    "date": "2026-06-29",
+    "failure": "电磁吸盘失效",
+    "parts": [],
+    "tools": [
+      "永磁吸盘",
+      "平衡轴"
+    ],
+    "done": true
+  },
+  {
+    "device": "chengxin-013",
+    "date": "2026-06-06",
+    "failure": "磨头磨损",
+    "parts": [
+      "冷却泵"
+    ],
+    "tools": [
+      "平衡轴"
+    ],
+    "done": true
+  },
+  {
+    "device": "chengxin-017",
+    "date": "2026-06-13",
+    "failure": "冷却系统堵塞",
+    "parts": [],
+    "tools": [
+      "千分表",
+      "永磁吸盘"
+    ],
+    "done": true
+  },
+  {
+    "device": "chengxin-018",
+    "date": "2026-06-20",
+    "failure": "磨头磨损",
+    "parts": [],
+    "tools": [
+      "平衡轴",
+      "砂轮"
+    ],
+    "done": true
+  },
+  {
+    "device": "chengxin-019",
+    "date": "2026-06-27",
+    "failure": "主轴精度下降",
+    "parts": [],
+    "tools": [
+      "金刚石修整笔",
+      "千分表"
+    ],
+    "done": true
+  },
+  {
+    "device": "chengxin-023",
+    "date": "2026-06-04",
+    "failure": "磨头磨损",
+    "parts": [
+      "白刚玉砂轮（Φ400）"
+    ],
+    "tools": [
+      "平衡轴"
+    ],
+    "done": true
+  },
+  {
+    "device": "chengxin-024",
+    "date": "2026-06-11",
+    "failure": "砂轮不平衡",
+    "parts": [],
+    "tools": [
+      "砂轮",
+      "金刚石修整笔"
+    ],
+    "done": true
+  },
+  {
+    "device": "chengxin-027",
+    "date": "2026-06-18",
+    "failure": "冷却系统堵塞",
+    "parts": [],
+    "tools": [
+      "千分表",
+      "永磁吸盘"
+    ],
+    "done": true
+  },
+  {
+    "device": "chengxin-029",
+    "date": "2026-06-25",
+    "failure": "主轴精度下降",
+    "parts": [],
+    "tools": [
+      "金刚石修整笔",
+      "千分表"
+    ],
+    "done": true
+  },
+  {
+    "device": "chengxin-030",
+    "date": "2026-06-02",
+    "failure": "主轴精度下降",
+    "parts": [],
+    "tools": [
+      "金刚石修整笔",
+      "千分表"
+    ],
+    "done": true
+  },
+  {
+    "device": "chengxin-033",
+    "date": "2026-06-09",
+    "failure": "磨头磨损",
+    "parts": [
+      "冷却泵"
+    ],
+    "tools": [
+      "平衡轴"
+    ],
+    "done": true
+  },
+  {
+    "device": "chengxin-036",
+    "date": "2026-06-16",
+    "failure": "冷却系统堵塞",
+    "parts": [],
+    "tools": [
+      "千分表",
+      "永磁吸盘"
+    ],
+    "done": true
+  },
+  {
+    "device": "chengxin-037",
+    "date": "2026-06-23",
+    "failure": "冷却系统堵塞",
+    "parts": [],
+    "tools": [
+      "千分表",
+      "永磁吸盘"
+    ],
+    "done": true
+  },
+  {
+    "device": "chengxin-039",
+    "date": "2026-06-30",
+    "failure": "主轴精度下降",
+    "parts": [],
+    "tools": [
+      "金刚石修整笔",
+      "千分表"
+    ],
+    "done": true
+  },
+  {
+    "device": "chengxin-042",
+    "date": "2026-06-07",
+    "failure": "电磁吸盘失效",
+    "parts": [],
+    "tools": [
+      "永磁吸盘",
+      "平衡轴"
+    ],
+    "done": true
+  },
+  {
+    "device": "chengxin-043",
+    "date": "2026-06-14",
+    "failure": "磨头磨损",
+    "parts": [
+      "白刚玉砂轮（Φ400）"
+    ],
+    "tools": [
+      "平衡轴"
+    ],
+    "done": true
+  },
+  {
+    "device": "chengxin-047",
+    "date": "2026-06-21",
+    "failure": "冷却系统堵塞",
+    "parts": [],
+    "tools": [
+      "千分表",
+      "永磁吸盘"
+    ],
+    "done": true
+  },
+  {
+    "device": "heyue-001",
+    "date": "2026-06-28",
+    "failure": "镜片污染",
+    "parts": [],
+    "tools": [
+      "喷嘴扳手",
+      "切割喷嘴"
+    ],
+    "done": true
+  },
+  {
+    "device": "heyue-004",
+    "date": "2026-06-05",
+    "failure": "聚焦偏移",
+    "parts": [],
+    "tools": [
+      "保护镜片",
+      "聚焦镜片"
+    ],
+    "done": true
+  },
+  {
+    "device": "heyue-005",
+    "date": "2026-06-12",
+    "failure": "冷却水流量不足",
+    "parts": [
+      "切割喷嘴"
+    ],
+    "tools": [
+      "聚焦镜片"
+    ],
+    "done": true
+  },
+  {
+    "device": "heyue-009",
+    "date": "2026-06-19",
+    "failure": "喷嘴堵塞",
+    "parts": [],
+    "tools": [
+      "保护镜片",
+      "聚焦镜片"
+    ],
+    "done": true
+  },
+  {
+    "device": "heyue-010",
+    "date": "2026-06-26",
+    "failure": "冷却水流量不足",
+    "parts": [],
+    "tools": [
+      "喷嘴扳手",
+      "切割喷嘴"
+    ],
+    "done": true
+  },
+  {
+    "device": "heyue-011",
+    "date": "2026-06-03",
+    "failure": "镜片污染",
+    "parts": [],
+    "tools": [
+      "保护镜片",
+      "聚焦镜片"
+    ],
+    "done": true
+  },
+  {
+    "device": "heyue-015",
+    "date": "2026-06-10",
+    "failure": "冷却水流量不足",
+    "parts": [
+      "聚焦镜片"
+    ],
+    "tools": [
+      "切割喷嘴"
+    ],
+    "done": true
+  },
+  {
+    "device": "heyue-016",
+    "date": "2026-06-17",
+    "failure": "激光功率下降",
+    "parts": [],
+    "tools": [
+      "保护镜片",
+      "聚焦镜片"
+    ],
+    "done": true
+  },
+  {
+    "device": "huanmai-003",
+    "date": "2026-06-24",
+    "failure": "电弧不稳定",
+    "parts": [
+      "气管"
+    ],
+    "tools": [
+      "焊钳"
+    ],
+    "done": true
+  },
+  {
+    "device": "huanmai-004",
+    "date": "2026-06-01",
+    "failure": "焊枪堵塞",
+    "parts": [],
+    "tools": [
+      "清渣锤",
+      "焊枪"
+    ],
+    "done": true
+  },
+  {
+    "device": "huanmai-009",
+    "date": "2026-06-08",
+    "failure": "气路泄漏",
+    "parts": [],
+    "tools": [
+      "钢丝刷",
+      "焊钳"
+    ],
+    "done": true
+  },
+  {
+    "device": "huanmai-010",
+    "date": "2026-06-15",
+    "failure": "气路泄漏",
+    "parts": [],
+    "tools": [
+      "钢丝刷",
+      "焊钳"
+    ],
+    "done": true
+  },
+  {
+    "device": "huanmai-013",
+    "date": "2026-06-22",
+    "failure": "电弧不稳定",
+    "parts": [
+      "焊枪导电嘴"
+    ],
+    "tools": [
+      "焊枪"
+    ],
+    "done": true
+  },
+  {
+    "device": "huanmai-016",
+    "date": "2026-06-29",
+    "failure": "送丝不畅",
+    "parts": [],
+    "tools": [
+      "清渣锤",
+      "焊枪"
+    ],
+    "done": true
+  },
+  {
+    "device": "huanmai-017",
+    "date": "2026-06-06",
+    "failure": "送丝不畅",
+    "parts": [],
+    "tools": [
+      "清渣锤",
+      "焊枪"
+    ],
+    "done": true
+  },
+  {
+    "device": "tenlong-003",
+    "date": "2026-06-13",
+    "failure": "进给系统故障",
+    "parts": [
+      "丝杠螺母"
+    ],
+    "tools": [
+      "千分尺",
+      "内孔车刀"
+    ],
+    "done": true
+  },
+  {
+    "device": "tenlong-003",
+    "date": "2026-06-20",
+    "failure": "轴承磨损",
+    "parts": [
+      "主轴轴承"
+    ],
+    "tools": [
+      "丝锥",
+      "扳手"
+    ],
+    "done": true
+  },
+  {
+    "device": "tenlong-003",
+    "date": "2026-06-27",
+    "failure": "冷却液泄漏",
+    "parts": [
+      "回转顶尖"
+    ],
+    "tools": [
+      "顶尖",
+      "丝锥"
+    ],
+    "done": true
+  },
+  {
+    "device": "tenlong-003",
+    "date": "2026-06-04",
+    "failure": "丝杠间隙过大",
+    "parts": [
+      "冷却液软管"
+    ],
+    "tools": [
+      "内孔车刀",
+      "顶尖"
+    ],
+    "done": true
+  },
+  {
+    "device": "tenlong-004",
+    "date": "2026-06-11",
+    "failure": "冷却液泄漏",
+    "parts": [
+      "回转顶尖"
+    ],
+    "tools": [
+      "顶尖"
+    ],
+    "done": true
+  },
+  {
+    "device": "tenlong-005",
+    "date": "2026-06-18",
+    "failure": "轴承磨损",
+    "parts": [],
+    "tools": [
+      "丝锥",
+      "扳手"
+    ],
+    "done": true
+  },
+  {
+    "device": "tenlong-008",
+    "date": "2026-06-25",
+    "failure": "刀架卡滞",
+    "parts": [],
+    "tools": [
+      "游标卡尺",
+      "千分尺"
+    ],
+    "done": true
+  },
+  {
+    "device": "tenlong-010",
+    "date": "2026-06-02",
+    "failure": "轴承磨损",
+    "parts": [],
+    "tools": [
+      "丝锥",
+      "扳手"
+    ],
+    "done": true
+  },
+  {
+    "device": "tenlong-011",
+    "date": "2026-06-09",
+    "failure": "轴承磨损",
+    "parts": [],
+    "tools": [
+      "丝锥",
+      "扳手"
+    ],
+    "done": true
+  },
+  {
+    "device": "yuelong-001",
+    "date": "2026-06-16",
+    "failure": "刀具夹不紧",
+    "parts": [
+      "弹簧夹头（ER32）"
+    ],
+    "tools": [
+      "平口钳"
+    ],
+    "done": true
+  },
+  {
+    "device": "yuelong-004",
+    "date": "2026-06-23",
+    "failure": "换刀失败",
+    "parts": [],
+    "tools": [
+      "千分表",
+      "压板组"
+    ],
+    "done": true
+  },
+  {
+    "device": "yuelong-005",
+    "date": "2026-06-30",
+    "failure": "换刀失败",
+    "parts": [],
+    "tools": [
+      "千分表",
+      "压板组"
+    ],
+    "done": true
+  },
+  {
+    "device": "yuelong-007",
+    "date": "2026-06-07",
+    "failure": "导轨磨损",
+    "parts": [],
+    "tools": [
+      "寻边器",
+      "千分表"
+    ],
+    "done": true
+  },
+  {
+    "device": "yuelong-010",
+    "date": "2026-06-14",
+    "failure": "伺服报警",
+    "parts": [],
+    "tools": [
+      "压板组",
+      "平口钳"
+    ],
+    "done": true
+  },
+  {
+    "device": "yuelong-015",
+    "date": "2026-06-21",
+    "failure": "换刀失败",
+    "parts": [],
+    "tools": [
+      "千分表",
+      "压板组"
+    ],
+    "done": true
+  },
+  {
+    "device": "yuelong-016",
+    "date": "2026-06-28",
+    "failure": "刀具夹不紧",
+    "parts": [],
+    "tools": [
+      "平口钳",
+      "立铣刀"
+    ],
+    "done": true
+  },
+  {
+    "device": "yuelong-017",
+    "date": "2026-06-05",
+    "failure": "导轨磨损",
+    "parts": [],
+    "tools": [
+      "寻边器",
+      "千分表"
+    ],
+    "done": true
+  },
+  {
+    "device": "yuelong-021",
+    "date": "2026-06-12",
+    "failure": "刀具夹不紧",
+    "parts": [
+      "弹簧夹头（ER32）"
+    ],
+    "tools": [
+      "平口钳"
+    ],
+    "done": true
+  },
+  {
+    "device": "yuelong-022",
+    "date": "2026-06-19",
+    "failure": "主轴轴承过热",
+    "parts": [],
+    "tools": [
+      "立铣刀",
+      "寻边器"
+    ],
+    "done": true
+  },
+  {
+    "device": "yuelong-025",
+    "date": "2026-06-26",
+    "failure": "换刀失败",
+    "parts": [],
+    "tools": [
+      "千分表",
+      "压板组"
+    ],
+    "done": true
+  },
+  {
+    "device": "chengxin-001",
+    "date": "2026-07-01",
+    "failure": "主轴精度下降",
+    "parts": [],
+    "tools": [
+      "金刚石修整笔",
+      "千分表"
+    ],
+    "done": true
+  },
+  {
+    "device": "chengxin-003",
+    "date": "2026-07-08",
+    "failure": "砂轮不平衡",
+    "parts": [],
+    "tools": [
+      "砂轮",
+      "金刚石修整笔"
+    ],
+    "done": true
+  },
+  {
+    "device": "chengxin-004",
+    "date": "2026-07-15",
+    "failure": "磨头磨损",
+    "parts": [
+      "白刚玉砂轮（Φ400）"
+    ],
+    "tools": [
+      "平衡轴"
+    ],
+    "done": true
+  },
+  {
+    "device": "chengxin-006",
+    "date": "2026-07-22",
+    "failure": "电磁吸盘失效",
+    "parts": [
+      "白刚玉砂轮（Φ400）"
+    ],
+    "tools": [
+      "永磁吸盘"
+    ],
+    "done": true
+  },
+  {
+    "device": "chengxin-007",
+    "date": "2026-07-29",
+    "failure": "电磁吸盘失效",
+    "parts": [
+      "白刚玉砂轮（Φ400）"
+    ],
+    "tools": [
+      "永磁吸盘"
+    ],
+    "done": true
+  },
+  {
+    "device": "chengxin-009",
+    "date": "2026-07-05",
+    "failure": "冷却系统堵塞",
+    "parts": [
+      "白刚玉砂轮（Φ400）"
+    ],
+    "tools": [
+      "千分表"
+    ],
+    "done": true
+  },
+  {
+    "device": "chengxin-010",
+    "date": "2026-07-12",
+    "failure": "砂轮不平衡",
+    "parts": [
+      "冷却泵"
+    ],
+    "tools": [
+      "砂轮"
+    ],
+    "done": true
+  },
+  {
+    "device": "chengxin-011",
+    "date": "2026-07-19",
+    "failure": "主轴精度下降",
+    "parts": [],
+    "tools": [
+      "金刚石修整笔",
+      "千分表"
+    ],
+    "done": true
+  },
+  {
+    "device": "chengxin-012",
+    "date": "2026-07-26",
+    "failure": "磨头磨损",
+    "parts": [
+      "冷却泵"
+    ],
+    "tools": [
+      "平衡轴"
+    ],
+    "done": true
+  },
+  {
+    "device": "chengxin-013",
+    "date": "2026-07-02",
+    "failure": "砂轮不平衡",
+    "parts": [],
+    "tools": [
+      "砂轮",
+      "金刚石修整笔"
+    ],
+    "done": true
+  },
+  {
+    "device": "chengxin-016",
+    "date": "2026-07-09",
+    "failure": "主轴精度下降",
+    "parts": [
+      "白刚玉砂轮（Φ400）"
+    ],
+    "tools": [
+      "金刚石修整笔"
+    ],
+    "done": true
+  },
+  {
+    "device": "chengxin-017",
+    "date": "2026-07-16",
+    "failure": "电磁吸盘失效",
+    "parts": [
+      "冷却泵"
+    ],
+    "tools": [
+      "永磁吸盘"
+    ],
+    "done": true
+  },
+  {
+    "device": "chengxin-018",
+    "date": "2026-07-23",
+    "failure": "砂轮不平衡",
+    "parts": [
+      "白刚玉砂轮（Φ400）"
+    ],
+    "tools": [
+      "砂轮"
+    ],
+    "done": true
+  },
+  {
+    "device": "chengxin-019",
+    "date": "2026-07-30",
+    "failure": "冷却系统堵塞",
+    "parts": [
+      "冷却泵"
+    ],
+    "tools": [
+      "千分表"
+    ],
+    "done": true
+  },
+  {
+    "device": "chengxin-021",
+    "date": "2026-07-06",
+    "failure": "主轴精度下降",
+    "parts": [],
+    "tools": [
+      "金刚石修整笔",
+      "千分表"
+    ],
+    "done": true
+  },
+  {
+    "device": "chengxin-022",
+    "date": "2026-07-13",
+    "failure": "冷却系统堵塞",
+    "parts": [
+      "冷却泵"
+    ],
+    "tools": [
+      "千分表"
+    ],
+    "done": true
+  },
+  {
+    "device": "chengxin-023",
+    "date": "2026-07-20",
+    "failure": "砂轮不平衡",
+    "parts": [],
+    "tools": [
+      "砂轮",
+      "金刚石修整笔"
+    ],
+    "done": true
+  },
+  {
+    "device": "chengxin-024",
+    "date": "2026-07-27",
+    "failure": "主轴精度下降",
+    "parts": [
+      "冷却泵"
+    ],
+    "tools": [
+      "金刚石修整笔"
+    ],
+    "done": true
+  },
+  {
+    "device": "chengxin-027",
+    "date": "2026-07-03",
+    "failure": "电磁吸盘失效",
+    "parts": [
+      "白刚玉砂轮（Φ400）"
+    ],
+    "tools": [
+      "永磁吸盘"
+    ],
+    "done": true
+  },
+  {
+    "device": "chengxin-028",
+    "date": "2026-07-10",
+    "failure": "电磁吸盘失效",
+    "parts": [
+      "白刚玉砂轮（Φ400）"
+    ],
+    "tools": [
+      "永磁吸盘"
+    ],
+    "done": true
+  },
+  {
+    "device": "chengxin-029",
+    "date": "2026-07-17",
+    "failure": "冷却系统堵塞",
+    "parts": [
+      "白刚玉砂轮（Φ400）"
+    ],
+    "tools": [
+      "千分表"
+    ],
+    "done": true
+  },
+  {
+    "device": "chengxin-030",
+    "date": "2026-07-24",
+    "failure": "冷却系统堵塞",
+    "parts": [
+      "白刚玉砂轮（Φ400）"
+    ],
+    "tools": [
+      "千分表"
+    ],
+    "done": true
+  },
+  {
+    "device": "chengxin-031",
+    "date": "2026-07-31",
+    "failure": "主轴精度下降",
+    "parts": [],
+    "tools": [
+      "金刚石修整笔",
+      "千分表"
+    ],
+    "done": true
+  },
+  {
+    "device": "chengxin-033",
+    "date": "2026-07-07",
+    "failure": "砂轮不平衡",
+    "parts": [],
+    "tools": [
+      "砂轮",
+      "金刚石修整笔"
+    ],
+    "done": true
+  },
+  {
+    "device": "chengxin-034",
+    "date": "2026-07-14",
+    "failure": "磨头磨损",
+    "parts": [
+      "冷却泵"
+    ],
+    "tools": [
+      "平衡轴"
+    ],
+    "done": true
+  },
+  {
+    "device": "chengxin-036",
+    "date": "2026-07-21",
+    "failure": "电磁吸盘失效",
+    "parts": [
+      "冷却泵"
+    ],
+    "tools": [
+      "永磁吸盘"
+    ],
+    "done": true
+  },
+  {
+    "device": "chengxin-037",
+    "date": "2026-07-28",
+    "failure": "电磁吸盘失效",
+    "parts": [
+      "冷却泵"
+    ],
+    "tools": [
+      "永磁吸盘"
+    ],
+    "done": true
+  },
+  {
+    "device": "chengxin-039",
+    "date": "2026-07-04",
+    "failure": "冷却系统堵塞",
+    "parts": [
+      "冷却泵"
+    ],
+    "tools": [
+      "千分表"
+    ],
+    "done": true
+  },
+  {
+    "device": "chengxin-040",
+    "date": "2026-07-11",
+    "failure": "砂轮不平衡",
+    "parts": [
+      "白刚玉砂轮（Φ400）"
+    ],
+    "tools": [
+      "砂轮"
+    ],
+    "done": true
+  },
+  {
+    "device": "chengxin-041",
+    "date": "2026-07-18",
+    "failure": "主轴精度下降",
+    "parts": [],
+    "tools": [
+      "金刚石修整笔",
+      "千分表"
+    ],
+    "done": true
+  },
+  {
+    "device": "chengxin-042",
+    "date": "2026-07-25",
+    "failure": "磨头磨损",
+    "parts": [
+      "白刚玉砂轮（Φ400）"
+    ],
+    "tools": [
+      "平衡轴"
+    ],
+    "done": true
+  },
+  {
+    "device": "chengxin-043",
+    "date": "2026-07-01",
+    "failure": "砂轮不平衡",
+    "parts": [],
+    "tools": [
+      "砂轮",
+      "金刚石修整笔"
+    ],
+    "done": true
+  },
+  {
+    "device": "chengxin-046",
+    "date": "2026-07-08",
+    "failure": "主轴精度下降",
+    "parts": [
+      "冷却泵"
+    ],
+    "tools": [
+      "金刚石修整笔"
+    ],
+    "done": true
+  },
+  {
+    "device": "chengxin-047",
+    "date": "2026-07-15",
+    "failure": "电磁吸盘失效",
+    "parts": [
+      "白刚玉砂轮（Φ400）"
+    ],
+    "tools": [
+      "永磁吸盘"
+    ],
+    "done": true
+  },
+  {
+    "device": "heyue-001",
+    "date": "2026-07-22",
+    "failure": "喷嘴堵塞",
+    "parts": [
+      "聚焦镜片"
+    ],
+    "tools": [
+      "切割喷嘴"
+    ],
+    "done": true
+  },
+  {
+    "device": "heyue-002",
+    "date": "2026-07-29",
+    "failure": "激光功率下降",
+    "parts": [
+      "切割喷嘴"
+    ],
+    "tools": [
+      "聚焦镜片"
+    ],
+    "done": true
+  },
+  {
+    "device": "heyue-003",
+    "date": "2026-07-05",
+    "failure": "镜片污染",
+    "parts": [],
+    "tools": [
+      "喷嘴扳手",
+      "切割喷嘴"
+    ],
+    "done": true
+  },
+  {
+    "device": "heyue-004",
+    "date": "2026-07-12",
+    "failure": "冷却水流量不足",
+    "parts": [
+      "切割喷嘴"
+    ],
+    "tools": [
+      "聚焦镜片"
+    ],
+    "done": true
+  },
+  {
+    "device": "heyue-005",
+    "date": "2026-07-19",
+    "failure": "激光功率下降",
+    "parts": [],
+    "tools": [
+      "喷嘴扳手",
+      "切割喷嘴"
+    ],
+    "done": true
+  },
+  {
+    "device": "heyue-008",
+    "date": "2026-07-26",
+    "failure": "镜片污染",
+    "parts": [
+      "聚焦镜片"
+    ],
+    "tools": [
+      "切割喷嘴"
+    ],
+    "done": true
+  },
+  {
+    "device": "heyue-009",
+    "date": "2026-07-02",
+    "failure": "聚焦偏移",
+    "parts": [
+      "切割喷嘴"
+    ],
+    "tools": [
+      "聚焦镜片"
+    ],
+    "done": true
+  },
+  {
+    "device": "heyue-010",
+    "date": "2026-07-09",
+    "failure": "激光功率下降",
+    "parts": [
+      "聚焦镜片"
+    ],
+    "tools": [
+      "切割喷嘴"
+    ],
+    "done": true
+  },
+  {
+    "device": "heyue-011",
+    "date": "2026-07-16",
+    "failure": "喷嘴堵塞",
+    "parts": [
+      "切割喷嘴"
+    ],
+    "tools": [
+      "聚焦镜片"
+    ],
+    "done": true
+  },
+  {
+    "device": "heyue-013",
+    "date": "2026-07-23",
+    "failure": "镜片污染",
+    "parts": [],
+    "tools": [
+      "保护镜片",
+      "聚焦镜片"
+    ],
+    "done": true
+  },
+  {
+    "device": "heyue-014",
+    "date": "2026-07-30",
+    "failure": "喷嘴堵塞",
+    "parts": [
+      "切割喷嘴"
+    ],
+    "tools": [
+      "聚焦镜片"
+    ],
+    "done": true
+  },
+  {
+    "device": "heyue-015",
+    "date": "2026-07-06",
+    "failure": "激光功率下降",
+    "parts": [],
+    "tools": [
+      "保护镜片",
+      "聚焦镜片"
+    ],
+    "done": true
+  },
+  {
+    "device": "heyue-016",
+    "date": "2026-07-13",
+    "failure": "镜片污染",
+    "parts": [
+      "切割喷嘴"
+    ],
+    "tools": [
+      "聚焦镜片"
+    ],
+    "done": true
+  },
+  {
+    "device": "huanmai-001",
+    "date": "2026-07-20",
+    "failure": "气路泄漏",
+    "parts": [],
+    "tools": [
+      "清渣锤",
+      "焊枪"
+    ],
+    "done": true
+  },
+  {
+    "device": "huanmai-002",
+    "date": "2026-07-27",
+    "failure": "送丝不畅",
+    "parts": [
+      "焊枪导电嘴"
+    ],
+    "tools": [
+      "焊枪"
+    ],
+    "done": true
+  },
+  {
+    "device": "huanmai-003",
+    "date": "2026-07-03",
+    "failure": "焊枪堵塞",
+    "parts": [],
+    "tools": [
+      "清渣锤",
+      "焊枪"
+    ],
+    "done": true
+  },
+  {
+    "device": "huanmai-004",
+    "date": "2026-07-10",
+    "failure": "气路泄漏",
+    "parts": [
+      "焊枪导电嘴"
+    ],
+    "tools": [
+      "焊枪"
+    ],
+    "done": true
+  },
+  {
+    "device": "huanmai-008",
+    "date": "2026-07-17",
+    "failure": "接地不良",
+    "parts": [
+      "气管"
+    ],
+    "tools": [
+      "焊钳"
+    ],
+    "done": true
+  },
+  {
+    "device": "huanmai-009",
+    "date": "2026-07-24",
+    "failure": "送丝不畅",
+    "parts": [
+      "气管"
+    ],
+    "tools": [
+      "焊钳"
+    ],
+    "done": true
+  },
+  {
+    "device": "huanmai-010",
+    "date": "2026-07-31",
+    "failure": "送丝不畅",
+    "parts": [
+      "气管"
+    ],
+    "tools": [
+      "焊钳"
+    ],
+    "done": true
+  },
+  {
+    "device": "huanmai-011",
+    "date": "2026-07-07",
+    "failure": "气路泄漏",
+    "parts": [],
+    "tools": [
+      "钢丝刷",
+      "焊钳"
+    ],
+    "done": true
+  },
+  {
+    "device": "huanmai-013",
+    "date": "2026-07-14",
+    "failure": "焊枪堵塞",
+    "parts": [],
+    "tools": [
+      "钢丝刷",
+      "焊钳"
+    ],
+    "done": true
+  },
+  {
+    "device": "huanmai-014",
+    "date": "2026-07-21",
+    "failure": "电弧不稳定",
+    "parts": [
+      "焊枪导电嘴"
+    ],
+    "tools": [
+      "焊枪"
+    ],
+    "done": true
+  },
+  {
+    "device": "huanmai-016",
+    "date": "2026-07-28",
+    "failure": "接地不良",
+    "parts": [
+      "焊枪导电嘴"
+    ],
+    "tools": [
+      "焊枪"
+    ],
+    "done": true
+  },
+  {
+    "device": "huanmai-017",
+    "date": "2026-07-04",
+    "failure": "接地不良",
+    "parts": [
+      "焊枪导电嘴"
+    ],
+    "tools": [
+      "焊枪"
+    ],
+    "done": true
+  },
+  {
+    "device": "tenlong-002",
+    "date": "2026-07-11",
+    "failure": "刀架卡滞",
+    "parts": [],
+    "tools": [
+      "游标卡尺",
+      "千分尺"
+    ],
+    "done": true
+  },
+  {
+    "device": "tenlong-004",
+    "date": "2026-07-18",
+    "failure": "轴承磨损",
+    "parts": [],
+    "tools": [
+      "丝锥",
+      "扳手"
+    ],
+    "done": true
+  },
+  {
+    "device": "tenlong-005",
+    "date": "2026-07-25",
+    "failure": "主轴异响",
+    "parts": [
+      "刀架总成"
+    ],
+    "tools": [
+      "扳手"
+    ],
+    "done": true
+  },
+  {
+    "device": "tenlong-008",
+    "date": "2026-07-01",
+    "failure": "进给系统故障",
+    "parts": [
+      "冷却液软管"
+    ],
+    "tools": [
+      "千分尺"
+    ],
+    "done": true
+  },
+  {
+    "device": "tenlong-009",
+    "date": "2026-07-08",
+    "failure": "进给系统故障",
+    "parts": [
+      "冷却液软管"
+    ],
+    "tools": [
+      "千分尺"
+    ],
+    "done": true
+  },
+  {
+    "device": "tenlong-010",
+    "date": "2026-07-15",
+    "failure": "主轴异响",
+    "parts": [
+      "丝杠螺母"
+    ],
+    "tools": [
+      "扳手"
+    ],
+    "done": true
+  },
+  {
+    "device": "tenlong-011",
+    "date": "2026-07-22",
+    "failure": "主轴异响",
+    "parts": [
+      "丝杠螺母"
+    ],
+    "tools": [
+      "扳手"
+    ],
+    "done": true
+  },
+  {
+    "device": "tenlong-012",
+    "date": "2026-07-29",
+    "failure": "轴承磨损",
+    "parts": [],
+    "tools": [
+      "丝锥",
+      "扳手"
+    ],
+    "done": true
+  },
+  {
+    "device": "yuelong-001",
+    "date": "2026-07-05",
+    "failure": "主轴轴承过热",
+    "parts": [],
+    "tools": [
+      "立铣刀",
+      "寻边器"
+    ],
+    "done": true
+  },
+  {
+    "device": "yuelong-002",
+    "date": "2026-07-12",
+    "failure": "刀具夹不紧",
+    "parts": [
+      "弹簧夹头（ER32）"
+    ],
+    "tools": [
+      "平口钳"
+    ],
+    "done": true
+  },
+  {
+    "device": "yuelong-004",
+    "date": "2026-07-19",
+    "failure": "伺服报警",
+    "parts": [
+      "弹簧夹头（ER32）"
+    ],
+    "tools": [
+      "压板组"
+    ],
+    "done": true
+  },
+  {
+    "device": "yuelong-005",
+    "date": "2026-07-26",
+    "failure": "伺服报警",
+    "parts": [
+      "弹簧夹头（ER32）"
+    ],
+    "tools": [
+      "压板组"
+    ],
+    "done": true
+  },
+  {
+    "device": "yuelong-007",
+    "date": "2026-07-02",
+    "failure": "换刀失败",
+    "parts": [
+      "弹簧夹头（ER32）"
+    ],
+    "tools": [
+      "千分表"
+    ],
+    "done": true
+  },
+  {
+    "device": "yuelong-008",
+    "date": "2026-07-09",
+    "failure": "主轴轴承过热",
+    "parts": [
+      "主轴轴承"
+    ],
+    "tools": [
+      "立铣刀"
+    ],
+    "done": true
+  },
+  {
+    "device": "yuelong-009",
+    "date": "2026-07-16",
+    "failure": "导轨磨损",
+    "parts": [],
+    "tools": [
+      "寻边器",
+      "千分表"
+    ],
+    "done": true
+  },
+  {
+    "device": "yuelong-010",
+    "date": "2026-07-23",
+    "failure": "刀具夹不紧",
+    "parts": [
+      "主轴轴承"
+    ],
+    "tools": [
+      "平口钳"
+    ],
+    "done": true
+  },
+  {
+    "device": "yuelong-011",
+    "date": "2026-07-30",
+    "failure": "主轴轴承过热",
+    "parts": [
+      "导轨滑块"
+    ],
+    "tools": [
+      "立铣刀",
+      "寻边器"
+    ],
+    "done": true
+  },
+  {
+    "device": "yuelong-011",
+    "date": "2026-07-06",
+    "failure": "刀具夹不紧",
+    "parts": [
+      "主轴轴承"
+    ],
+    "tools": [
+      "平口钳",
+      "立铣刀"
+    ],
+    "done": true
+  },
+  {
+    "device": "yuelong-011",
+    "date": "2026-07-13",
+    "failure": "伺服报警",
+    "parts": [
+      "伺服驱动器"
+    ],
+    "tools": [
+      "压板组",
+      "平口钳"
+    ],
+    "done": true
+  },
+  {
+    "device": "yuelong-011",
+    "date": "2026-07-20",
+    "failure": "导轨磨损",
+    "parts": [
+      "弹簧夹头（ER32）"
+    ],
+    "tools": [
+      "寻边器",
+      "千分表"
+    ],
+    "done": true
+  },
+  {
+    "device": "yuelong-014",
+    "date": "2026-07-27",
+    "failure": "导轨磨损",
+    "parts": [
+      "弹簧夹头（ER32）"
+    ],
+    "tools": [
+      "寻边器"
+    ],
+    "done": true
+  },
+  {
+    "device": "yuelong-015",
+    "date": "2026-07-03",
+    "failure": "伺服报警",
+    "parts": [
+      "主轴轴承"
+    ],
+    "tools": [
+      "压板组"
+    ],
+    "done": true
+  },
+  {
+    "device": "yuelong-016",
+    "date": "2026-07-10",
+    "failure": "主轴轴承过热",
+    "parts": [
+      "弹簧夹头（ER32）"
+    ],
+    "tools": [
+      "立铣刀"
+    ],
+    "done": true
+  },
+  {
+    "device": "yuelong-017",
+    "date": "2026-07-17",
+    "failure": "换刀失败",
+    "parts": [
+      "主轴轴承"
+    ],
+    "tools": [
+      "千分表"
+    ],
+    "done": true
+  },
+  {
+    "device": "yuelong-019",
+    "date": "2026-07-24",
+    "failure": "导轨磨损",
+    "parts": [],
+    "tools": [
+      "寻边器",
+      "千分表"
+    ],
+    "done": true
+  },
+  {
+    "device": "yuelong-020",
+    "date": "2026-07-31",
+    "failure": "换刀失败",
+    "parts": [
+      "主轴轴承"
+    ],
+    "tools": [
+      "千分表"
+    ],
+    "done": true
+  },
+  {
+    "device": "yuelong-021",
+    "date": "2026-07-07",
+    "failure": "主轴轴承过热",
+    "parts": [],
+    "tools": [
+      "立铣刀",
+      "寻边器"
+    ],
+    "done": true
+  },
+  {
+    "device": "yuelong-022",
+    "date": "2026-07-14",
+    "failure": "导轨磨损",
+    "parts": [
+      "主轴轴承"
+    ],
+    "tools": [
+      "寻边器"
+    ],
+    "done": true
+  },
+  {
+    "device": "yuelong-025",
+    "date": "2026-07-21",
+    "failure": "伺服报警",
+    "parts": [
+      "弹簧夹头（ER32）"
+    ],
+    "tools": [
+      "压板组"
+    ],
+    "done": true
+  },
+  {
+    "device": "yuelong-026",
+    "date": "2026-07-28",
+    "failure": "伺服报警",
+    "parts": [
+      "弹簧夹头（ER32）"
+    ],
+    "tools": [
+      "压板组"
+    ],
+    "done": true
+  },
+  {
+    "device": "chengxin-001",
+    "date": "2026-08-01",
+    "failure": "冷却系统堵塞",
+    "parts": [
+      "冷却泵"
+    ],
+    "tools": [
+      "千分表"
+    ],
+    "done": true
+  },
+  {
+    "device": "chengxin-003",
+    "date": "2026-08-08",
+    "failure": "主轴精度下降",
+    "parts": [
+      "冷却泵"
+    ],
+    "tools": [
+      "金刚石修整笔"
+    ],
+    "done": true
+  },
+  {
+    "device": "chengxin-004",
+    "date": "2026-08-15",
+    "failure": "砂轮不平衡",
+    "parts": [],
+    "tools": [
+      "砂轮",
+      "金刚石修整笔"
+    ],
+    "done": true
+  },
+  {
+    "device": "chengxin-005",
+    "date": "2026-08-22",
+    "failure": "砂轮不平衡",
+    "parts": [],
+    "tools": [
+      "砂轮",
+      "金刚石修整笔"
+    ],
+    "done": true
+  },
+  {
+    "device": "chengxin-006",
+    "date": "2026-08-29",
+    "failure": "磨头磨损",
+    "parts": [],
+    "tools": [
+      "平衡轴",
+      "砂轮"
+    ],
+    "done": true
+  },
+  {
+    "device": "chengxin-007",
+    "date": "2026-08-05",
+    "failure": "磨头磨损",
+    "parts": [],
+    "tools": [
+      "平衡轴",
+      "砂轮"
+    ],
+    "done": true
+  },
+  {
+    "device": "chengxin-009",
+    "date": "2026-08-12",
+    "failure": "电磁吸盘失效",
+    "parts": [],
+    "tools": [
+      "永磁吸盘",
+      "平衡轴"
+    ],
+    "done": true
+  },
+  {
+    "device": "chengxin-010",
+    "date": "2026-08-19",
+    "failure": "主轴精度下降",
+    "parts": [],
+    "tools": [
+      "金刚石修整笔",
+      "千分表"
+    ],
+    "done": true
+  },
+  {
+    "device": "chengxin-011",
+    "date": "2026-08-26",
+    "failure": "冷却系统堵塞",
+    "parts": [
+      "白刚玉砂轮（Φ400）"
+    ],
+    "tools": [
+      "千分表"
+    ],
+    "done": true
+  },
+  {
+    "device": "chengxin-012",
+    "date": "2026-08-02",
+    "failure": "砂轮不平衡",
+    "parts": [],
+    "tools": [
+      "砂轮",
+      "金刚石修整笔"
+    ],
+    "done": true
+  },
+  {
+    "device": "chengxin-013",
+    "date": "2026-08-09",
+    "failure": "主轴精度下降",
+    "parts": [
+      "白刚玉砂轮（Φ400）"
+    ],
+    "tools": [
+      "金刚石修整笔"
+    ],
+    "done": true
+  },
+  {
+    "device": "chengxin-015",
+    "date": "2026-08-16",
+    "failure": "砂轮不平衡",
+    "parts": [],
+    "tools": [
+      "砂轮",
+      "金刚石修整笔"
+    ],
+    "done": true
+  },
+  {
+    "device": "chengxin-016",
+    "date": "2026-08-23",
+    "failure": "冷却系统堵塞",
+    "parts": [],
+    "tools": [
+      "千分表",
+      "永磁吸盘"
+    ],
+    "done": true
+  },
+  {
+    "device": "chengxin-017",
+    "date": "2026-08-30",
+    "failure": "磨头磨损",
+    "parts": [],
+    "tools": [
+      "平衡轴",
+      "砂轮"
+    ],
+    "done": true
+  },
+  {
+    "device": "chengxin-018",
+    "date": "2026-08-06",
+    "failure": "主轴精度下降",
+    "parts": [],
+    "tools": [
+      "金刚石修整笔",
+      "千分表"
+    ],
+    "done": true
+  },
+  {
+    "device": "chengxin-019",
+    "date": "2026-08-13",
+    "failure": "电磁吸盘失效",
+    "parts": [],
+    "tools": [
+      "永磁吸盘",
+      "平衡轴"
+    ],
+    "done": true
+  },
+  {
+    "device": "chengxin-020",
+    "date": "2026-08-20",
+    "failure": "砂轮不平衡",
+    "parts": [
+      "白刚玉砂轮（Φ400）"
+    ],
+    "tools": [
+      "砂轮",
+      "金刚石修整笔"
+    ],
+    "done": true
+  },
+  {
+    "device": "chengxin-020",
+    "date": "2026-08-27",
+    "failure": "电磁吸盘失效",
+    "parts": [
+      "电磁吸盘"
+    ],
+    "tools": [
+      "永磁吸盘",
+      "平衡轴"
+    ],
+    "done": true
+  },
+  {
+    "device": "chengxin-020",
+    "date": "2026-08-03",
+    "failure": "主轴精度下降",
+    "parts": [
+      "主轴轴承"
+    ],
+    "tools": [
+      "金刚石修整笔",
+      "千分表"
+    ],
+    "done": true
+  },
+  {
+    "device": "chengxin-020",
+    "date": "2026-08-10",
+    "failure": "冷却系统堵塞",
+    "parts": [
+      "冷却泵"
+    ],
+    "tools": [
+      "千分表",
+      "永磁吸盘"
+    ],
+    "done": true
+  },
+  {
+    "device": "chengxin-021",
+    "date": "2026-08-17",
+    "failure": "冷却系统堵塞",
+    "parts": [
+      "冷却泵"
+    ],
+    "tools": [
+      "千分表"
+    ],
+    "done": true
+  },
+  {
+    "device": "chengxin-022",
+    "date": "2026-08-24",
+    "failure": "电磁吸盘失效",
+    "parts": [],
+    "tools": [
+      "永磁吸盘",
+      "平衡轴"
+    ],
+    "done": true
+  },
+  {
+    "device": "chengxin-023",
+    "date": "2026-08-31",
+    "failure": "主轴精度下降",
+    "parts": [
+      "冷却泵"
+    ],
+    "tools": [
+      "金刚石修整笔"
+    ],
+    "done": true
+  },
+  {
+    "device": "chengxin-024",
+    "date": "2026-08-07",
+    "failure": "冷却系统堵塞",
+    "parts": [],
+    "tools": [
+      "千分表",
+      "永磁吸盘"
+    ],
+    "done": true
+  },
+  {
+    "device": "chengxin-025",
+    "date": "2026-08-14",
+    "failure": "砂轮不平衡",
+    "parts": [],
+    "tools": [
+      "砂轮",
+      "金刚石修整笔"
+    ],
+    "done": true
+  },
+  {
+    "device": "chengxin-027",
+    "date": "2026-08-21",
+    "failure": "磨头磨损",
+    "parts": [],
+    "tools": [
+      "平衡轴",
+      "砂轮"
+    ],
+    "done": true
+  },
+  {
+    "device": "chengxin-028",
+    "date": "2026-08-28",
+    "failure": "磨头磨损",
+    "parts": [],
+    "tools": [
+      "平衡轴",
+      "砂轮"
+    ],
+    "done": true
+  },
+  {
+    "device": "chengxin-029",
+    "date": "2026-08-04",
+    "failure": "电磁吸盘失效",
+    "parts": [],
+    "tools": [
+      "永磁吸盘",
+      "平衡轴"
+    ],
+    "done": true
+  },
+  {
+    "device": "chengxin-030",
+    "date": "2026-08-11",
+    "failure": "电磁吸盘失效",
+    "parts": [],
+    "tools": [
+      "永磁吸盘",
+      "平衡轴"
+    ],
+    "done": true
+  },
+  {
+    "device": "chengxin-031",
+    "date": "2026-08-18",
+    "failure": "冷却系统堵塞",
+    "parts": [
+      "白刚玉砂轮（Φ400）"
+    ],
+    "tools": [
+      "千分表"
+    ],
+    "done": true
+  },
+  {
+    "device": "chengxin-033",
+    "date": "2026-08-25",
+    "failure": "主轴精度下降",
+    "parts": [
+      "白刚玉砂轮（Φ400）"
+    ],
+    "tools": [
+      "金刚石修整笔"
+    ],
+    "done": true
+  },
+  {
+    "device": "chengxin-034",
+    "date": "2026-08-01",
+    "failure": "砂轮不平衡",
+    "parts": [],
+    "tools": [
+      "砂轮",
+      "金刚石修整笔"
+    ],
+    "done": true
+  },
+  {
+    "device": "chengxin-035",
+    "date": "2026-08-08",
+    "failure": "砂轮不平衡",
+    "parts": [],
+    "tools": [
+      "砂轮",
+      "金刚石修整笔"
+    ],
+    "done": true
+  },
+  {
+    "device": "chengxin-036",
+    "date": "2026-08-15",
+    "failure": "磨头磨损",
+    "parts": [],
+    "tools": [
+      "平衡轴",
+      "砂轮"
+    ],
+    "done": true
+  },
+  {
+    "device": "chengxin-037",
+    "date": "2026-08-22",
+    "failure": "磨头磨损",
+    "parts": [],
+    "tools": [
+      "平衡轴",
+      "砂轮"
+    ],
+    "done": true
+  },
+  {
+    "device": "chengxin-039",
+    "date": "2026-08-29",
+    "failure": "电磁吸盘失效",
+    "parts": [],
+    "tools": [
+      "永磁吸盘",
+      "平衡轴"
+    ],
+    "done": true
+  },
+  {
+    "device": "chengxin-040",
+    "date": "2026-08-05",
+    "failure": "主轴精度下降",
+    "parts": [],
+    "tools": [
+      "金刚石修整笔",
+      "千分表"
+    ],
+    "done": true
+  },
+  {
+    "device": "chengxin-041",
+    "date": "2026-08-12",
+    "failure": "冷却系统堵塞",
+    "parts": [
+      "冷却泵"
+    ],
+    "tools": [
+      "千分表"
+    ],
+    "done": true
+  },
+  {
+    "device": "chengxin-042",
+    "date": "2026-08-19",
+    "failure": "砂轮不平衡",
+    "parts": [],
+    "tools": [
+      "砂轮",
+      "金刚石修整笔"
+    ],
+    "done": true
+  },
+  {
+    "device": "chengxin-043",
+    "date": "2026-08-26",
+    "failure": "主轴精度下降",
+    "parts": [
+      "冷却泵"
+    ],
+    "tools": [
+      "金刚石修整笔"
+    ],
+    "done": true
+  },
+  {
+    "device": "chengxin-045",
+    "date": "2026-08-02",
+    "failure": "砂轮不平衡",
+    "parts": [],
+    "tools": [
+      "砂轮",
+      "金刚石修整笔"
+    ],
+    "done": true
+  },
+  {
+    "device": "chengxin-046",
+    "date": "2026-08-09",
+    "failure": "冷却系统堵塞",
+    "parts": [],
+    "tools": [
+      "千分表",
+      "永磁吸盘"
+    ],
+    "done": true
+  },
+  {
+    "device": "chengxin-047",
+    "date": "2026-08-16",
+    "failure": "磨头磨损",
+    "parts": [],
+    "tools": [
+      "平衡轴",
+      "砂轮"
+    ],
+    "done": true
+  },
+  {
+    "device": "heyue-001",
+    "date": "2026-08-23",
+    "failure": "聚焦偏移",
+    "parts": [],
+    "tools": [
+      "保护镜片",
+      "聚焦镜片"
+    ],
+    "done": true
+  },
+  {
+    "device": "heyue-002",
+    "date": "2026-08-30",
+    "failure": "镜片污染",
+    "parts": [],
+    "tools": [
+      "喷嘴扳手",
+      "切割喷嘴"
+    ],
+    "done": true
+  },
+  {
+    "device": "heyue-003",
+    "date": "2026-08-06",
+    "failure": "喷嘴堵塞",
+    "parts": [
+      "聚焦镜片"
+    ],
+    "tools": [
+      "切割喷嘴"
+    ],
+    "done": true
+  },
+  {
+    "device": "heyue-004",
+    "date": "2026-08-13",
+    "failure": "激光功率下降",
+    "parts": [],
+    "tools": [
+      "喷嘴扳手",
+      "切割喷嘴"
+    ],
+    "done": true
+  },
+  {
+    "device": "heyue-005",
+    "date": "2026-08-20",
+    "failure": "镜片污染",
+    "parts": [
+      "聚焦镜片"
+    ],
+    "tools": [
+      "切割喷嘴"
+    ],
+    "done": true
+  },
+  {
+    "device": "heyue-007",
+    "date": "2026-08-27",
+    "failure": "激光功率下降",
+    "parts": [],
+    "tools": [
+      "喷嘴扳手",
+      "切割喷嘴"
+    ],
+    "done": true
+  },
+  {
+    "device": "heyue-008",
+    "date": "2026-08-03",
+    "failure": "喷嘴堵塞",
+    "parts": [],
+    "tools": [
+      "保护镜片",
+      "聚焦镜片"
+    ],
+    "done": true
+  },
+  {
+    "device": "heyue-009",
+    "date": "2026-08-10",
+    "failure": "冷却水流量不足",
+    "parts": [],
+    "tools": [
+      "喷嘴扳手",
+      "切割喷嘴"
+    ],
+    "done": true
+  },
+  {
+    "device": "heyue-010",
+    "date": "2026-08-17",
+    "failure": "镜片污染",
+    "parts": [],
+    "tools": [
+      "保护镜片",
+      "聚焦镜片"
+    ],
+    "done": true
+  },
+  {
+    "device": "heyue-011",
+    "date": "2026-08-24",
+    "failure": "聚焦偏移",
+    "parts": [],
+    "tools": [
+      "喷嘴扳手",
+      "切割喷嘴"
+    ],
+    "done": true
+  },
+  {
+    "device": "heyue-013",
+    "date": "2026-08-31",
+    "failure": "喷嘴堵塞",
+    "parts": [
+      "切割喷嘴"
+    ],
+    "tools": [
+      "聚焦镜片"
+    ],
+    "done": true
+  },
+  {
+    "device": "heyue-014",
+    "date": "2026-08-07",
+    "failure": "聚焦偏移",
+    "parts": [],
+    "tools": [
+      "喷嘴扳手",
+      "切割喷嘴"
+    ],
+    "done": true
+  },
+  {
+    "device": "heyue-015",
+    "date": "2026-08-14",
+    "failure": "镜片污染",
+    "parts": [
+      "切割喷嘴"
+    ],
+    "tools": [
+      "聚焦镜片"
+    ],
+    "done": true
+  },
+  {
+    "device": "heyue-016",
+    "date": "2026-08-21",
+    "failure": "喷嘴堵塞",
+    "parts": [],
+    "tools": [
+      "喷嘴扳手",
+      "切割喷嘴"
+    ],
+    "done": true
+  },
+  {
+    "device": "heyue-017",
+    "date": "2026-08-28",
+    "failure": "激光功率下降",
+    "parts": [],
+    "tools": [
+      "保护镜片",
+      "聚焦镜片"
+    ],
+    "done": true
+  },
+  {
+    "device": "huanmai-001",
+    "date": "2026-08-04",
+    "failure": "送丝不畅",
+    "parts": [
+      "焊枪导电嘴"
+    ],
+    "tools": [
+      "焊枪"
+    ],
+    "done": true
+  },
+  {
+    "device": "huanmai-002",
+    "date": "2026-08-11",
+    "failure": "接地不良",
+    "parts": [],
+    "tools": [
+      "钢丝刷",
+      "焊钳"
+    ],
+    "done": true
+  },
+  {
+    "device": "huanmai-003",
+    "date": "2026-08-18",
+    "failure": "气路泄漏",
+    "parts": [
+      "焊枪导电嘴"
+    ],
+    "tools": [
+      "焊枪"
+    ],
+    "done": true
+  },
+  {
+    "device": "huanmai-004",
+    "date": "2026-08-25",
+    "failure": "送丝不畅",
+    "parts": [],
+    "tools": [
+      "钢丝刷",
+      "焊钳"
+    ],
+    "done": true
+  },
+  {
+    "device": "huanmai-005",
+    "date": "2026-08-01",
+    "failure": "焊枪堵塞",
+    "parts": [],
+    "tools": [
+      "清渣锤",
+      "焊枪"
+    ],
+    "done": true
+  },
+  {
+    "device": "huanmai-008",
+    "date": "2026-08-08",
+    "failure": "电弧不稳定",
+    "parts": [],
+    "tools": [
+      "清渣锤",
+      "焊枪"
+    ],
+    "done": true
+  },
+  {
+    "device": "huanmai-009",
+    "date": "2026-08-15",
+    "failure": "接地不良",
+    "parts": [],
+    "tools": [
+      "清渣锤",
+      "焊枪"
+    ],
+    "done": true
+  },
+  {
+    "device": "huanmai-010",
+    "date": "2026-08-22",
+    "failure": "接地不良",
+    "parts": [],
+    "tools": [
+      "清渣锤",
+      "焊枪"
+    ],
+    "done": true
+  },
+  {
+    "device": "huanmai-011",
+    "date": "2026-08-29",
+    "failure": "送丝不畅",
+    "parts": [
+      "气管"
+    ],
+    "tools": [
+      "焊钳"
+    ],
+    "done": true
+  },
+  {
+    "device": "huanmai-013",
+    "date": "2026-08-05",
+    "failure": "气路泄漏",
+    "parts": [
+      "气管"
+    ],
+    "tools": [
+      "焊钳"
+    ],
+    "done": true
+  },
+  {
+    "device": "huanmai-014",
+    "date": "2026-08-12",
+    "failure": "焊枪堵塞",
+    "parts": [],
+    "tools": [
+      "钢丝刷",
+      "焊钳"
+    ],
+    "done": true
+  },
+  {
+    "device": "huanmai-015",
+    "date": "2026-08-19",
+    "failure": "焊枪堵塞",
+    "parts": [],
+    "tools": [
+      "钢丝刷",
+      "焊钳"
+    ],
+    "done": true
+  },
+  {
+    "device": "huanmai-016",
+    "date": "2026-08-26",
+    "failure": "电弧不稳定",
+    "parts": [],
+    "tools": [
+      "钢丝刷",
+      "焊钳"
+    ],
+    "done": true
+  },
+  {
+    "device": "huanmai-017",
+    "date": "2026-08-02",
+    "failure": "电弧不稳定",
+    "parts": [],
+    "tools": [
+      "钢丝刷",
+      "焊钳"
+    ],
+    "done": true
+  },
+  {
+    "device": "tenlong-002",
+    "date": "2026-08-09",
+    "failure": "进给系统故障",
+    "parts": [
+      "丝杠螺母"
+    ],
+    "tools": [
+      "千分尺"
+    ],
+    "done": true
+  },
+  {
+    "device": "tenlong-003",
+    "date": "2026-08-16",
+    "failure": "主轴异响",
+    "parts": [
+      "刀架总成"
+    ],
+    "tools": [
+      "扳手"
+    ],
+    "done": true
+  },
+  {
+    "device": "tenlong-004",
+    "date": "2026-08-23",
+    "failure": "主轴异响",
+    "parts": [
+      "刀架总成"
+    ],
+    "tools": [
+      "扳手"
+    ],
+    "done": true
+  },
+  {
+    "device": "tenlong-005",
+    "date": "2026-08-30",
+    "failure": "刀架卡滞",
+    "parts": [],
+    "tools": [
+      "游标卡尺",
+      "千分尺"
+    ],
+    "done": true
+  },
+  {
+    "device": "tenlong-006",
+    "date": "2026-08-06",
+    "failure": "轴承磨损",
+    "parts": [],
+    "tools": [
+      "丝锥",
+      "扳手"
+    ],
+    "done": true
+  },
+  {
+    "device": "tenlong-008",
+    "date": "2026-08-13",
+    "failure": "丝杠间隙过大",
+    "parts": [],
+    "tools": [
+      "内孔车刀",
+      "顶尖"
+    ],
+    "done": true
+  },
+  {
+    "device": "tenlong-009",
+    "date": "2026-08-20",
+    "failure": "丝杠间隙过大",
+    "parts": [],
+    "tools": [
+      "内孔车刀",
+      "顶尖"
+    ],
+    "done": true
+  },
+  {
+    "device": "tenlong-010",
+    "date": "2026-08-27",
+    "failure": "刀架卡滞",
+    "parts": [],
+    "tools": [
+      "游标卡尺",
+      "千分尺"
+    ],
+    "done": true
+  },
+  {
+    "device": "tenlong-011",
+    "date": "2026-08-03",
+    "failure": "刀架卡滞",
+    "parts": [],
+    "tools": [
+      "游标卡尺",
+      "千分尺"
+    ],
+    "done": true
+  },
+  {
+    "device": "tenlong-012",
+    "date": "2026-08-10",
+    "failure": "主轴异响",
+    "parts": [
+      "丝杠螺母"
+    ],
+    "tools": [
+      "扳手"
+    ],
+    "done": true
+  },
+  {
+    "device": "yuelong-001",
+    "date": "2026-08-17",
+    "failure": "导轨磨损",
+    "parts": [
+      "主轴轴承"
+    ],
+    "tools": [
+      "寻边器"
+    ],
+    "done": true
+  },
+  {
+    "device": "yuelong-002",
+    "date": "2026-08-24",
+    "failure": "主轴轴承过热",
+    "parts": [],
+    "tools": [
+      "立铣刀",
+      "寻边器"
+    ],
+    "done": true
+  },
+  {
+    "device": "yuelong-003",
+    "date": "2026-08-31",
+    "failure": "主轴轴承过热",
+    "parts": [],
+    "tools": [
+      "立铣刀",
+      "寻边器"
+    ],
+    "done": true
+  },
+  {
+    "device": "yuelong-004",
+    "date": "2026-08-07",
+    "failure": "刀具夹不紧",
+    "parts": [],
+    "tools": [
+      "平口钳",
+      "立铣刀"
+    ],
+    "done": true
+  },
+  {
+    "device": "yuelong-005",
+    "date": "2026-08-14",
+    "failure": "刀具夹不紧",
+    "parts": [],
+    "tools": [
+      "平口钳",
+      "立铣刀"
+    ],
+    "done": true
+  },
+  {
+    "device": "yuelong-007",
+    "date": "2026-08-21",
+    "failure": "伺服报警",
+    "parts": [],
+    "tools": [
+      "压板组",
+      "平口钳"
+    ],
+    "done": true
+  },
+  {
+    "device": "yuelong-008",
+    "date": "2026-08-28",
+    "failure": "导轨磨损",
+    "parts": [],
+    "tools": [
+      "寻边器",
+      "千分表"
+    ],
+    "done": true
+  },
+  {
+    "device": "yuelong-009",
+    "date": "2026-08-04",
+    "failure": "换刀失败",
+    "parts": [
+      "弹簧夹头（ER32）"
+    ],
+    "tools": [
+      "千分表"
+    ],
+    "done": true
+  },
+  {
+    "device": "yuelong-010",
+    "date": "2026-08-11",
+    "failure": "主轴轴承过热",
+    "parts": [],
+    "tools": [
+      "立铣刀",
+      "寻边器"
+    ],
+    "done": true
+  },
+  {
+    "device": "yuelong-013",
+    "date": "2026-08-18",
+    "failure": "主轴轴承过热",
+    "parts": [],
+    "tools": [
+      "立铣刀",
+      "寻边器"
+    ],
+    "done": true
+  },
+  {
+    "device": "yuelong-014",
+    "date": "2026-08-25",
+    "failure": "换刀失败",
+    "parts": [],
+    "tools": [
+      "千分表",
+      "压板组"
+    ],
+    "done": true
+  },
+  {
+    "device": "yuelong-015",
+    "date": "2026-08-01",
+    "failure": "刀具夹不紧",
+    "parts": [],
+    "tools": [
+      "平口钳",
+      "立铣刀"
+    ],
+    "done": true
+  },
+  {
+    "device": "yuelong-016",
+    "date": "2026-08-08",
+    "failure": "导轨磨损",
+    "parts": [],
+    "tools": [
+      "寻边器",
+      "千分表"
+    ],
+    "done": true
+  },
+  {
+    "device": "yuelong-017",
+    "date": "2026-08-15",
+    "failure": "伺服报警",
+    "parts": [],
+    "tools": [
+      "压板组",
+      "平口钳"
+    ],
+    "done": true
+  },
+  {
+    "device": "yuelong-019",
+    "date": "2026-08-22",
+    "failure": "换刀失败",
+    "parts": [
+      "主轴轴承"
+    ],
+    "tools": [
+      "千分表"
+    ],
+    "done": true
+  },
+  {
+    "device": "yuelong-020",
+    "date": "2026-08-29",
+    "failure": "伺服报警",
+    "parts": [],
+    "tools": [
+      "压板组",
+      "平口钳"
+    ],
+    "done": true
+  },
+  {
+    "device": "yuelong-021",
+    "date": "2026-08-05",
+    "failure": "导轨磨损",
+    "parts": [
+      "主轴轴承"
+    ],
+    "tools": [
+      "寻边器"
+    ],
+    "done": true
+  },
+  {
+    "device": "yuelong-022",
+    "date": "2026-08-12",
+    "failure": "换刀失败",
+    "parts": [],
+    "tools": [
+      "千分表",
+      "压板组"
+    ],
+    "done": true
+  },
+  {
+    "device": "yuelong-023",
+    "date": "2026-08-19",
+    "failure": "主轴轴承过热",
+    "parts": [],
+    "tools": [
+      "立铣刀",
+      "寻边器"
+    ],
+    "done": true
+  },
+  {
+    "device": "yuelong-025",
+    "date": "2026-08-26",
+    "failure": "刀具夹不紧",
+    "parts": [],
+    "tools": [
+      "平口钳",
+      "立铣刀"
+    ],
+    "done": true
+  },
+  {
+    "device": "yuelong-026",
+    "date": "2026-08-02",
+    "failure": "刀具夹不紧",
+    "parts": [],
+    "tools": [
+      "平口钳",
+      "立铣刀"
+    ],
+    "done": true
+  },
+  {
+    "device": "chengxin-002",
+    "date": "2026-09-01",
+    "failure": "冷却系统堵塞",
+    "parts": [
+      "冷却泵"
+    ],
+    "tools": [
+      "千分表"
+    ],
+    "done": true
+  },
+  {
+    "device": "chengxin-004",
+    "date": "2026-09-08",
+    "failure": "主轴精度下降",
+    "parts": [
+      "冷却泵"
+    ],
+    "tools": [
+      "金刚石修整笔"
+    ],
+    "done": true
+  },
+  {
+    "device": "chengxin-006",
+    "date": "2026-09-15",
+    "failure": "砂轮不平衡",
+    "parts": [
+      "冷却泵"
+    ],
+    "tools": [
+      "砂轮"
+    ],
+    "done": true
+  },
+  {
+    "device": "chengxin-008",
+    "date": "2026-09-07",
+    "failure": "电磁吸盘失效",
+    "parts": [
+      "白刚玉砂轮（Φ400）"
+    ],
+    "tools": [
+      "永磁吸盘"
+    ],
+    "done": true
+  },
+  {
+    "device": "chengxin-010",
+    "date": "2026-09-14",
+    "failure": "冷却系统堵塞",
+    "parts": [
+      "白刚玉砂轮（Φ400）"
+    ],
+    "tools": [
+      "千分表"
+    ],
+    "done": true
+  },
+  {
+    "device": "chengxin-012",
+    "date": "2026-09-06",
+    "failure": "主轴精度下降",
+    "parts": [
+      "白刚玉砂轮（Φ400）"
+    ],
+    "tools": [
+      "金刚石修整笔"
+    ],
+    "done": true
+  },
+  {
+    "device": "chengxin-014",
+    "date": "2026-09-13",
+    "failure": "磨头磨损",
+    "parts": [
+      "冷却泵"
+    ],
+    "tools": [
+      "平衡轴"
+    ],
+    "done": true
+  },
+  {
+    "device": "chengxin-016",
+    "date": "2026-09-05",
+    "failure": "电磁吸盘失效",
+    "parts": [
+      "冷却泵"
+    ],
+    "tools": [
+      "永磁吸盘"
+    ],
+    "done": true
+  },
+  {
+    "device": "chengxin-018",
+    "date": "2026-09-12",
+    "failure": "冷却系统堵塞",
+    "parts": [
+      "冷却泵"
+    ],
+    "tools": [
+      "千分表"
+    ],
+    "done": true
+  },
+  {
+    "device": "chengxin-020",
+    "date": "2026-09-04",
+    "failure": "磨头磨损",
+    "parts": [
+      "白刚玉砂轮（Φ400）"
+    ],
+    "tools": [
+      "平衡轴"
+    ],
+    "done": true
+  },
+  {
+    "device": "chengxin-022",
+    "date": "2026-09-11",
+    "failure": "磨头磨损",
+    "parts": [
+      "白刚玉砂轮（Φ400）"
+    ],
+    "tools": [
+      "平衡轴"
+    ],
+    "done": true
+  },
+  {
+    "device": "chengxin-024",
+    "date": "2026-09-03",
+    "failure": "电磁吸盘失效",
+    "parts": [
+      "白刚玉砂轮（Φ400）"
+    ],
+    "tools": [
+      "永磁吸盘"
+    ],
+    "done": true
+  },
+  {
+    "device": "chengxin-026",
+    "date": "2026-09-10",
+    "failure": "主轴精度下降",
+    "parts": [
+      "冷却泵"
+    ],
+    "tools": [
+      "金刚石修整笔"
+    ],
+    "done": true
+  },
+  {
+    "device": "chengxin-028",
+    "date": "2026-09-02",
+    "failure": "砂轮不平衡",
+    "parts": [
+      "冷却泵"
+    ],
+    "tools": [
+      "砂轮"
+    ],
+    "done": true
+  },
+  {
+    "device": "chengxin-030",
+    "date": "2026-09-09",
+    "failure": "磨头磨损",
+    "parts": [
+      "冷却泵"
+    ],
+    "tools": [
+      "平衡轴"
+    ],
+    "done": true
+  },
+  {
+    "device": "chengxin-032",
+    "date": "2026-09-01",
+    "failure": "冷却系统堵塞",
+    "parts": [
+      "白刚玉砂轮（Φ400）"
+    ],
+    "tools": [
+      "千分表"
+    ],
+    "done": true
+  },
+  {
+    "device": "chengxin-034",
+    "date": "2026-09-08",
+    "failure": "主轴精度下降",
+    "parts": [
+      "白刚玉砂轮（Φ400）"
+    ],
+    "tools": [
+      "金刚石修整笔"
+    ],
+    "done": true
+  },
+  {
+    "device": "chengxin-036",
+    "date": "2026-09-15",
+    "failure": "砂轮不平衡",
+    "parts": [
+      "白刚玉砂轮（Φ400）"
+    ],
+    "tools": [
+      "砂轮"
+    ],
+    "done": true
+  },
+  {
+    "device": "chengxin-038",
+    "date": "2026-09-07",
+    "failure": "电磁吸盘失效",
+    "parts": [
+      "冷却泵"
+    ],
+    "tools": [
+      "永磁吸盘"
+    ],
+    "done": true
+  },
+  {
+    "device": "chengxin-040",
+    "date": "2026-09-14",
+    "failure": "冷却系统堵塞",
+    "parts": [
+      "冷却泵"
+    ],
+    "tools": [
+      "千分表"
+    ],
+    "done": true
+  },
+  {
+    "device": "chengxin-042",
+    "date": "2026-09-06",
+    "failure": "主轴精度下降",
+    "parts": [
+      "冷却泵"
+    ],
+    "tools": [
+      "金刚石修整笔"
+    ],
+    "done": true
+  },
+  {
+    "device": "chengxin-044",
+    "date": "2026-09-13",
+    "failure": "磨头磨损",
+    "parts": [
+      "白刚玉砂轮（Φ400）"
+    ],
+    "tools": [
+      "平衡轴"
+    ],
+    "done": true
+  },
+  {
+    "device": "chengxin-046",
+    "date": "2026-09-05",
+    "failure": "电磁吸盘失效",
+    "parts": [
+      "白刚玉砂轮（Φ400）"
+    ],
+    "tools": [
+      "永磁吸盘"
+    ],
+    "done": true
+  },
+  {
+    "device": "chengxin-048",
+    "date": "2026-09-16",
+    "failure": "电磁吸盘失效",
+    "parts": [],
+    "tools": [],
+    "done": false
+  },
+  {
+    "device": "chengxin-049",
+    "date": "2026-09-17",
+    "failure": "磨头磨损",
+    "parts": [],
+    "tools": [],
+    "done": false
+  },
+  {
+    "device": "chengxin-050",
+    "date": "2026-09-18",
+    "failure": "砂轮不平衡",
+    "parts": [],
+    "tools": [],
+    "done": false
+  },
+  {
+    "device": "heyue-002",
+    "date": "2026-09-12",
+    "failure": "喷嘴堵塞",
+    "parts": [
+      "聚焦镜片"
+    ],
+    "tools": [
+      "切割喷嘴"
+    ],
+    "done": true
+  },
+  {
+    "device": "heyue-004",
+    "date": "2026-09-04",
+    "failure": "镜片污染",
+    "parts": [
+      "聚焦镜片"
+    ],
+    "tools": [
+      "切割喷嘴"
+    ],
+    "done": true
+  },
+  {
+    "device": "heyue-006",
+    "date": "2026-09-11",
+    "failure": "冷却水流量不足",
+    "parts": [
+      "切割喷嘴"
+    ],
+    "tools": [
+      "聚焦镜片"
+    ],
+    "done": true
+  },
+  {
+    "device": "heyue-008",
+    "date": "2026-09-03",
+    "failure": "聚焦偏移",
+    "parts": [
+      "切割喷嘴"
+    ],
+    "tools": [
+      "聚焦镜片"
+    ],
+    "done": true
+  },
+  {
+    "device": "heyue-010",
+    "date": "2026-09-10",
+    "failure": "喷嘴堵塞",
+    "parts": [
+      "切割喷嘴"
+    ],
+    "tools": [
+      "聚焦镜片"
+    ],
+    "done": true
+  },
+  {
+    "device": "heyue-012",
+    "date": "2026-09-02",
+    "failure": "激光功率下降",
+    "parts": [
+      "聚焦镜片"
+    ],
+    "tools": [
+      "切割喷嘴"
+    ],
+    "done": true
+  },
+  {
+    "device": "heyue-014",
+    "date": "2026-09-09",
+    "failure": "冷却水流量不足",
+    "parts": [
+      "聚焦镜片"
+    ],
+    "tools": [
+      "切割喷嘴"
+    ],
+    "done": true
+  },
+  {
+    "device": "heyue-016",
+    "date": "2026-09-01",
+    "failure": "聚焦偏移",
+    "parts": [
+      "聚焦镜片"
+    ],
+    "tools": [
+      "切割喷嘴"
+    ],
+    "done": true
+  },
+  {
+    "device": "heyue-018",
+    "date": "2026-09-19",
+    "failure": "镜片污染",
+    "parts": [],
+    "tools": [],
+    "done": false
+  },
+  {
+    "device": "huanmai-002",
+    "date": "2026-09-08",
+    "failure": "电弧不稳定",
+    "parts": [
+      "气管"
+    ],
+    "tools": [
+      "焊钳"
+    ],
+    "done": true
+  },
+  {
+    "device": "huanmai-004",
+    "date": "2026-09-15",
+    "failure": "接地不良",
+    "parts": [
+      "气管"
+    ],
+    "tools": [
+      "焊钳"
+    ],
+    "done": true
+  },
+  {
+    "device": "huanmai-006",
+    "date": "2026-09-07",
+    "failure": "气路泄漏",
+    "parts": [
+      "焊枪导电嘴"
+    ],
+    "tools": [
+      "焊枪"
+    ],
+    "done": true
+  },
+  {
+    "device": "huanmai-007",
+    "date": "2026-09-14",
+    "failure": "气路泄漏",
+    "parts": [
+      "送丝轮"
+    ],
+    "tools": [
+      "钢丝刷"
+    ],
+    "done": true
+  },
+  {
+    "device": "huanmai-008",
+    "date": "2026-09-06",
+    "failure": "焊枪堵塞",
+    "parts": [
+      "焊枪导电嘴"
+    ],
+    "tools": [
+      "焊枪"
+    ],
+    "done": true
+  },
+  {
+    "device": "huanmai-010",
+    "date": "2026-09-13",
+    "failure": "电弧不稳定",
+    "parts": [
+      "焊枪导电嘴"
+    ],
+    "tools": [
+      "焊枪"
+    ],
+    "done": true
+  },
+  {
+    "device": "huanmai-012",
+    "date": "2026-09-05",
+    "failure": "送丝不畅",
+    "parts": [
+      "气管"
+    ],
+    "tools": [
+      "焊钳"
+    ],
+    "done": true
+  },
+  {
+    "device": "huanmai-014",
+    "date": "2026-09-12",
+    "failure": "气路泄漏",
+    "parts": [
+      "气管"
+    ],
+    "tools": [
+      "焊钳"
+    ],
+    "done": true
+  },
+  {
+    "device": "huanmai-016",
+    "date": "2026-09-04",
+    "failure": "焊枪堵塞",
+    "parts": [
+      "气管"
+    ],
+    "tools": [
+      "焊钳"
+    ],
+    "done": true
+  },
+  {
+    "device": "huanmai-018",
+    "date": "2026-09-20",
+    "failure": "接地不良",
+    "parts": [],
+    "tools": [],
+    "done": false
+  },
+  {
+    "device": "tenlong-001",
+    "date": "2026-09-11",
+    "failure": "主轴异响",
+    "parts": [
+      "主轴轴承"
+    ],
+    "tools": [
+      "扳手"
+    ],
+    "done": true
+  },
+  {
+    "device": "tenlong-005",
+    "date": "2026-09-03",
+    "failure": "进给系统故障",
+    "parts": [
+      "冷却液软管"
+    ],
+    "tools": [
+      "千分尺"
+    ],
+    "done": true
+  },
+  {
+    "device": "tenlong-007",
+    "date": "2026-09-10",
+    "failure": "主轴异响",
+    "parts": [
+      "刀架总成"
+    ],
+    "tools": [
+      "扳手"
+    ],
+    "done": true
+  },
+  {
+    "device": "tenlong-009",
+    "date": "2026-09-02",
+    "failure": "冷却液泄漏",
+    "parts": [
+      "主轴轴承"
+    ],
+    "tools": [
+      "顶尖"
+    ],
+    "done": true
+  },
+  {
+    "device": "tenlong-011",
+    "date": "2026-09-09",
+    "failure": "进给系统故障",
+    "parts": [
+      "回转顶尖"
+    ],
+    "tools": [
+      "千分尺"
+    ],
+    "done": true
+  },
+  {
+    "device": "tenlong-013",
+    "date": "2026-09-21",
+    "failure": "主轴异响",
+    "parts": [],
+    "tools": [],
+    "done": false
+  },
+  {
+    "device": "yuelong-002",
+    "date": "2026-09-01",
+    "failure": "导轨磨损",
+    "parts": [
+      "主轴轴承"
+    ],
+    "tools": [
+      "寻边器"
+    ],
+    "done": true
+  },
+  {
+    "device": "yuelong-004",
+    "date": "2026-09-08",
+    "failure": "主轴轴承过热",
+    "parts": [
+      "主轴轴承"
+    ],
+    "tools": [
+      "立铣刀"
+    ],
+    "done": true
+  },
+  {
+    "device": "yuelong-006",
+    "date": "2026-09-15",
+    "failure": "伺服报警",
+    "parts": [
+      "弹簧夹头（ER32）"
+    ],
+    "tools": [
+      "压板组"
+    ],
+    "done": true
+  },
+  {
+    "device": "yuelong-008",
+    "date": "2026-09-07",
+    "failure": "换刀失败",
+    "parts": [
+      "弹簧夹头（ER32）"
+    ],
+    "tools": [
+      "千分表"
+    ],
+    "done": true
+  },
+  {
+    "device": "yuelong-010",
+    "date": "2026-09-14",
+    "failure": "导轨磨损",
+    "parts": [
+      "弹簧夹头（ER32）"
+    ],
+    "tools": [
+      "寻边器"
+    ],
+    "done": true
+  },
+  {
+    "device": "yuelong-011",
+    "date": "2026-09-06",
+    "failure": "换刀失败",
+    "parts": [
+      "伺服驱动器"
+    ],
+    "tools": [
+      "千分表"
+    ],
+    "done": true
+  },
+  {
+    "device": "yuelong-012",
+    "date": "2026-09-13",
+    "failure": "刀具夹不紧",
+    "parts": [
+      "主轴轴承"
+    ],
+    "tools": [
+      "平口钳"
+    ],
+    "done": true
+  },
+  {
+    "device": "yuelong-014",
+    "date": "2026-09-05",
+    "failure": "伺服报警",
+    "parts": [
+      "主轴轴承"
+    ],
+    "tools": [
+      "压板组"
+    ],
+    "done": true
+  },
+  {
+    "device": "yuelong-016",
+    "date": "2026-09-12",
+    "failure": "换刀失败",
+    "parts": [
+      "主轴轴承"
+    ],
+    "tools": [
+      "千分表"
+    ],
+    "done": true
+  },
+  {
+    "device": "yuelong-018",
+    "date": "2026-09-04",
+    "failure": "主轴轴承过热",
+    "parts": [
+      "弹簧夹头（ER32）"
+    ],
+    "tools": [
+      "立铣刀"
+    ],
+    "done": true
+  },
+  {
+    "device": "yuelong-020",
+    "date": "2026-09-11",
+    "failure": "刀具夹不紧",
+    "parts": [
+      "弹簧夹头（ER32）"
+    ],
+    "tools": [
+      "平口钳"
+    ],
+    "done": true
+  },
+  {
+    "device": "yuelong-022",
+    "date": "2026-09-03",
+    "failure": "伺服报警",
+    "parts": [
+      "弹簧夹头（ER32）"
+    ],
+    "tools": [
+      "压板组"
+    ],
+    "done": true
+  },
+  {
+    "device": "yuelong-024",
+    "date": "2026-09-10",
+    "failure": "导轨磨损",
+    "parts": [
+      "主轴轴承"
+    ],
+    "tools": [
+      "寻边器"
+    ],
+    "done": true
+  },
+  {
+    "device": "yuelong-026",
+    "date": "2026-09-02",
+    "failure": "主轴轴承过热",
+    "parts": [
+      "主轴轴承"
+    ],
+    "tools": [
+      "立铣刀"
+    ],
+    "done": true
+  },
+  {
+    "device": "yuelong-027",
+    "date": "2026-09-22",
+    "failure": "刀具夹不紧",
+    "parts": [],
+    "tools": [],
+    "done": false
+  },
+  {
+    "device": "yuelong-028",
+    "date": "2026-09-23",
+    "failure": "主轴轴承过热",
+    "parts": [],
+    "tools": [],
+    "done": false
+  }
+]

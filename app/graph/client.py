@@ -172,7 +172,7 @@ def explain(cypher: str) -> tuple[bool, str]:
 
 def run_readonly(cypher: str, params: dict | None = None,
                  limit: int = 5000) -> QueryResult:
-    """以只读身份执行。写操作会被数据库直接拒绝。"""
+    """以只读模式执行。写操作会被服务端直接拒绝。"""
     import time
     t0 = time.time()
     with get_driver() as d, d.session(default_access_mode=READ_ACCESS) as s:
@@ -184,3 +184,39 @@ def run_readonly(cypher: str, params: dict | None = None,
         rows=rows[:limit],
         elapsed_ms=int((time.time() - t0) * 1000),
     )
+
+
+# ---------------- 写入 ----------------
+#
+# 整个项目只有建图脚本会调这里。查询链路一律走 run_readonly，
+# 那条路径上服务端强制只读，是纵深防御的最后一道。
+#
+# 这里刻意不用 READ_ACCESS，因为建图本来就要写。边界靠调用方约束：
+# 除了 scripts/build_graph.py，别的地方都不该 import 这个函数。
+# 测试 test_client.py 会验证 run_readonly 拒绝写入，确保两条路径没有混。
+
+def run_write(cypher: str, params: dict | None = None) -> QueryResult:
+    """写入。仅供建图脚本使用。"""
+    import time
+    t0 = time.time()
+    with get_driver() as d, d.session() as s:
+        result = s.run(cypher, params or {})
+        summary = result.consume()
+        counters = summary.counters
+    return QueryResult(
+        columns=[],
+        rows=[],
+        counters=(f"节点 +{counters.nodes_created} ~{counters.nodes_created or 0}  "
+                  f"关系 +{counters.relationships_created}"),
+        elapsed_ms=int((time.time() - t0) * 1000),
+    )
+
+
+def wipe() -> None:
+    """清空数据库。仅供建图脚本的 --reset 使用。"""
+    with get_driver() as d, d.session() as s:
+        s.run("MATCH (n) DETACH DELETE n").consume()
+        try:
+            s.run("CALL apoc.schema.assert({}, {}, true)").consume()
+        except Exception:                             # noqa: BLE001
+            pass

@@ -473,7 +473,31 @@ Cypher：MATCH (e:Equipment {name:'5号风机'})-[:HAS_OPERATION]->(o:Operation)
 
 ### 5.2 每一步的设计考量
 
-**① schema 从库实时读，不硬编码。** 用 `db.labels()` / `db.relationshipTypes()` / `db.schema.nodeTypeProperties()` 动态获取，渲染成紧凑文本注入 prompt。改了图不用改代码，也就不会出现「代码里的 schema 和库里的对不上」这种问题。
+**① schema 从库实时读，不硬编码。** 用 `db.labels()` / `db.relationshipTypes()` 和采样属性动态获取，渲染成紧凑文本注入 prompt。改了图不用改代码，也就不会出现「代码里的 schema 和库里的对不上」这种问题。
+
+> **这条起初没做，后来被迫补上，值得记。** 实现时为了省事，prompt 和校验都用了一份硬编码的 `schema_def.py`。
+> 设计阶段没暴露问题——因为那时图是空的，没有任何东西跟它对账。
+>
+> 等真实数据建完图，问题一次爆出来，而且是**双向**的：
+>
+> | 标签 | 代码里声明的 | 库里实际的 |
+> |---|---|---|
+> | `Equipment` | name, model, criticality | **id**, model, **function, shop, inspected, priority** |
+> | `WorkOrder` | id, date, **downtime_h** | id, date, **done** |
+> | `Role` / `Supplier` / `Hazard` | 有 | **根本不存在** |
+>
+> - 模型生成 `avg(wo.downtime_h)`，静态校验**放行**（代码里有），执行返回 `None`
+> - 反过来，`e.priority` 在库里合法，静态校验却**拒绝**它
+>
+> 更麻烦的是：**测试也是拿假 schema 在验证**。`test_legit_queries_pass` 里的用例
+> 用了 `HAS_OPERATION`、`HAS_HAZARD`、`e.name` 这些不存在的元素，全部通过——
+> 它们在自己的假设里自洽，跟真实图谱无关。
+>
+> 补上之后：`app/graph/schema.py` 从库读一次并缓存，`schema_def.py` 降级为
+> Neo4j 不可用时的 fallback，而且会明确告警。校验和 prompt 都改走实时 schema。
+>
+> **教训**：硬编码的结构定义在「设计阶段」和「真实数据」之间有一道看不见的裂缝。
+> 图是空的时候它不显形，因为它没有对照物。
 
 **② 生成时 temperature 压低。** 这个任务要的是精确复现，不是多样性。
 

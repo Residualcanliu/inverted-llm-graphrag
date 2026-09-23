@@ -22,16 +22,24 @@ def test_few_shot_examples_all_pass():
 
 
 def test_legit_queries_pass():
+    """合法查询不能被误伤。用例全部取自真实图谱。
+
+    这些用例之前写的是虚构 schema（HAS_OPERATION / HAS_HAZARD / e.name /
+    wo.downtime_h），接上实时 schema 后全部失败 —— 说明它们本来就没在
+    验证真实的东西，只是在自己的假设里自洽。
+    """
     cases = [
-        "MATCH (e:Equipment)-[:HAS_OPERATION]->(o:Operation) RETURN o.name",
-        "MATCH (e:Equipment)-[:HAS_OPERATION]->(o:Operation) RETURN e.name, o.name",
-        "MATCH (e:Equipment)-[:EXPERIENCED]->(wo:WorkOrder) "
-        "RETURN count(wo) AS n, avg(wo.downtime_h) AS d",
-        "MATCH (o:Operation) WHERE NOT (o)-[:HAS_HAZARD]->(:Hazard) RETURN o.name",
-        "MATCH (e:Equipment)-[:DEPENDS_ON*1..5]->(x:Equipment) RETURN x.name",
+        "MATCH (e:Equipment)-[:EXPERIENCED]->(w:WorkOrder) RETURN w.date",
+        "MATCH (e:Equipment)-[:EXPERIENCED]->(w:WorkOrder) "
+        "RETURN count(w) AS n ORDER BY n DESC",
+        "MATCH (e:Equipment) WHERE NOT (e)-[:EXPERIENCED]->(:WorkOrder) RETURN e.id",
+        "MATCH (e:Equipment)-[:DEPENDS_ON*1..5]->(x:Equipment) RETURN x.id",
         "MATCH (e:Equipment)<-[:DEPENDS_ON]-(d:Equipment) "
-        "RETURN e.name, count(d) AS c ORDER BY c DESC LIMIT 5",
-        "MATCH (l:Location {name:'A区泵房'})-[:CONTAINS]->(e:Equipment) RETURN e.name",
+        "RETURN e.id, count(d) AS c ORDER BY c DESC LIMIT 5",
+        "MATCH (e:Equipment {id:'tenlong-001'})-[:IN_SHOP]->(l:Location) RETURN l.name",
+        "MATCH (p:SparePart) WHERE p.stock < p.safety_stock RETURN p.name",
+        "MATCH (f:FailureMode)-[:TRIGGERS*1..3]->(x:FailureMode) RETURN x.name",
+        "MATCH (f:FailureMode)-[:MITIGATED_BY]->(s:SafetyMeasure) RETURN s.name",
     ]
     for c in cases:
         r = validate(c)
@@ -40,7 +48,7 @@ def test_legit_queries_pass():
 
 def test_undirected_relation_skips_direction_check():
     """无向关系不判方向，应放行。"""
-    r = validate("MATCH (e:Equipment)-[:HAS_OPERATION]-(o:Operation) RETURN o.name")
+    r = validate("MATCH (e:Equipment)-[:EXPERIENCED]-(w:WorkOrder) RETURN w.date")
     assert r.ok
 
 
@@ -48,11 +56,11 @@ def test_undirected_relation_skips_direction_check():
 
 def test_blocks_write_operations():
     for c in [
-        "MATCH (e:Equipment {name:'3号泵'}) SET e.model = 'X' RETURN e",
+        "MATCH (e:Equipment {id:'tenlong-001'}) SET e.model = 'X' RETURN e",
         "MATCH (e:Equipment) DETACH DELETE e",
-        "CREATE (e:Equipment {name:'新设备'}) RETURN e",
+        "CREATE (e:Equipment {id:'new'}) RETURN e",
         "MATCH (e:Equipment) REMOVE e.model RETURN e",
-        "MERGE (e:Equipment {name:'X'}) RETURN e",
+        "MERGE (e:Equipment {id:'X'}) RETURN e",
     ]:
         r = validate(c)
         assert not r.ok, f"写操作没拦住：{c}"
@@ -61,10 +69,10 @@ def test_blocks_write_operations():
 
 def test_blocks_unknown_schema_elements():
     cases = [
-        ("MATCH (x:Machine) RETURN x.name", "unknown_label"),
-        ("MATCH (a:Equipment)-[:FEEDS]->(b:Equipment) RETURN a", "unknown_rel"),
+        ("MATCH (x:Machine) RETURN x.id", "unknown_label"),
+        ("MATCH (a:Equipment)-[:FEEDS]->(b:Equipment) RETURN a.id", "unknown_rel"),
         ("MATCH (e:Equipment) RETURN e.temperature", "unknown_property"),
-        ("MATCH (e:Equipment {pressure: 5}) RETURN e.name", "unknown_property"),
+        ("MATCH (e:Equipment {pressure: 5}) RETURN e.id", "unknown_property"),
     ]
     for c, kind in cases:
         r = validate(c)
@@ -80,10 +88,10 @@ def test_blocks_reversed_direction():
     任何方向都合法 —— 那种关系判不出方向，只能靠语义检查。
     """
     cases = [
-        "MATCH (o:Operation)-[:HAS_OPERATION]->(e:Equipment) RETURN e.name",
-        "MATCH (wo:WorkOrder)-[:EXPERIENCED]->(e:Equipment) RETURN e.name",
-        "MATCH (f:FailureMode)-[:CAUSED_BY]->(wo:WorkOrder) RETURN wo.id",
-        "MATCH (s:SafetyMeasure)-[:MITIGATED_BY]->(h:Hazard) RETURN h.name",
+        "MATCH (w:WorkOrder)-[:EXPERIENCED]->(e:Equipment) RETURN e.id",
+        "MATCH (f:FailureMode)-[:CAUSED_BY]->(w:WorkOrder) RETURN w.id",
+        "MATCH (s:SafetyMeasure)-[:MITIGATED_BY]->(f:FailureMode) RETURN f.name",
+        "MATCH (s:SparePart)-[:FITS]->(e:Equipment) RETURN e.id",
     ]
     for c in cases:
         r = validate(c)
@@ -94,7 +102,7 @@ def test_blocks_reversed_direction():
 
 def test_correct_reverse_arrow_passes():
     """用 <- 反着写但方向语义正确，应放行。"""
-    r = validate("MATCH (o:Operation)<-[:HAS_OPERATION]-(e:Equipment) RETURN o.name")
+    r = validate("MATCH (w:WorkOrder)<-[:EXPERIENCED]-(e:Equipment) RETURN w.date")
     assert r.ok, [i.detail for i in r.errors]
 
 
@@ -109,7 +117,7 @@ def test_blocks_empty():
 
 
 def test_comment_is_warning_not_error():
-    r = validate("MATCH (e:Equipment) // 取所有设备\nRETURN e.name")
+    r = validate("MATCH (e:Equipment) // 取所有设备\nRETURN e.id")
     assert r.ok
     assert any(i.kind == "comment" for i in r.warnings)
 

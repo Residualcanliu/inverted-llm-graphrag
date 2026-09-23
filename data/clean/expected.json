@@ -1,0 +1,23 @@
+{
+  "Location": 17,
+  "Equipment": 127,
+  "Equipment-IN_SHOP->Location": 127,
+  "SparePart": 84,
+  "SparePart-STORED_AT->Location": 45,
+  "Equipment-FITS->SparePart": 2580,
+  "WorkOrder": 370,
+  "Equipment-EXPERIENCED->WorkOrder": 370,
+  "FailureMode": 27,
+  "WorkOrder-CAUSED_BY->FailureMode": 370,
+  "WorkOrder-USED_PART->SparePart": 897,
+  "Process": 6,
+  "Operation": 16,
+  "Process-HAS_STEP->Operation": 16,
+  "Operation-PRECEDES->Operation": 10,
+  "Operation-USES->Equipment": 130,
+  "Equipment-DEPENDS_ON->Equipment": 650,
+  "SafetyMeasure": 26,
+  "FailureMode-MITIGATED_BY->SafetyMeasure": 26,
+  "FailureMode(成因)": 63,
+  "FailureMode-TRIGGERS->FailureMode": 44
+}

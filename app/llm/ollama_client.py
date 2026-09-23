@@ -26,7 +26,8 @@ FENCE = re.compile(r"```(?:cypher|sql)?\s*(.*?)\s*```", re.DOTALL | re.IGNORECAS
 
 @dataclass
 class GenResult:
-    text: str               # 抽取后的 Cypher
+    text: str               # 抽取后的 Cypher（找不到查询结构就是空串）
+    plain: str              # 剥掉 think 块、但**不做 Cypher 抽取**的文本
     raw: str                # 模型原始输出，排查问题用
     model: str
     elapsed_s: float        # 墙钟总耗时 = 加载 + prefill + 生成 + 网络
@@ -36,6 +37,14 @@ class GenResult:
     prompt_eval_duration_s: float
     load_duration_s: float  # 把模型搬进显存的时间
     truncated: bool         # 是否撞到 num_predict 上限
+
+    # text 和 plain 的分工：
+    #   text  —— 给 Text2Cypher 用。抽不出 Cypher 结构就返回空串，
+    #            让上游按「生成失败」处理，而不是把垃圾往下传。
+    #   plain —— 给文档模式用。那边要的是自然语言答案，本来就不含 Cypher 关键字，
+    #            用 text 会把答案清空。
+    #
+    # 踩过的坑：文档模式接了 text，所有答案都是空的，看起来像「模型什么都没说」。
 
     @property
     def tok_per_s(self) -> float:
@@ -145,6 +154,7 @@ def generate(prompt: str, *, model: str | None = None,
     num_pred = payload["options"]["num_predict"]
     return GenResult(
         text=cypher,
+        plain=body.strip(),
         raw=raw,
         model=model,
         elapsed_s=elapsed,

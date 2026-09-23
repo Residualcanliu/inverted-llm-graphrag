@@ -1,0 +1,1442 @@
+[
+  {
+    "id": "A-001",
+    "name": "硬质合金车刀片",
+    "spec": "CNMG120408",
+    "category": "备件",
+    "warehouse": "A",
+    "location": "A区1号货架1层",
+    "stock": 80,
+    "safety_stock": 20,
+    "fits_models": [
+      "tenlong"
+    ],
+    "note": "一次性消耗件，非高危，不可循环使用"
+  },
+  {
+    "id": "A-002",
+    "name": "外圆车刀杆",
+    "spec": "90°",
+    "category": "备件",
+    "warehouse": "A",
+    "location": "A区1号货架2层",
+    "stock": 12,
+    "safety_stock": 3,
+    "fits_models": [
+      "tenlong"
+    ],
+    "note": "可循环使用，非高危"
+  },
+  {
+    "id": "A-003",
+    "name": "切断刀片",
+    "spec": "",
+    "category": "备件",
+    "warehouse": "A",
+    "location": "A区1号货架2层",
+    "stock": 60,
+    "safety_stock": 15,
+    "fits_models": [
+      "tenlong"
+    ],
+    "note": "一次性消耗件，非高危"
+  },
+  {
+    "id": "A-004",
+    "name": "三爪卡盘",
+    "spec": "",
+    "category": "备件",
+    "warehouse": "A",
+    "location": "A区2号货架1层",
+    "stock": 6,
+    "safety_stock": 2,
+    "fits_models": [
+      "tenlong"
+    ],
+    "note": "可循环使用，非高危"
+  },
+  {
+    "id": "A-005",
+    "name": "回转顶尖",
+    "spec": "",
+    "category": "备件",
+    "warehouse": "A",
+    "location": "A区2号货架1层",
+    "stock": 8,
+    "safety_stock": 2,
+    "fits_models": [
+      "tenlong"
+    ],
+    "note": "可循环使用，非高危"
+  },
+  {
+    "id": "A-006",
+    "name": "冷却液喷嘴",
+    "spec": "",
+    "category": "备件",
+    "warehouse": "A",
+    "location": "A区2号货架3层",
+    "stock": 20,
+    "safety_stock": 5,
+    "fits_models": [
+      "tenlong"
+    ],
+    "note": "可循环使用，非高危"
+  },
+  {
+    "id": "A-007",
+    "name": "立铣刀",
+    "spec": "Φ10",
+    "category": "备件",
+    "warehouse": "A",
+    "location": "B区1号货架1层",
+    "stock": 30,
+    "safety_stock": 8,
+    "fits_models": [
+      "yuelong"
+    ],
+    "note": "可循环使用（可刃磨），非高危"
+  },
+  {
+    "id": "A-008",
+    "name": "硬质合金铣刀片",
+    "spec": "",
+    "category": "备件",
+    "warehouse": "A",
+    "location": "B区1号货架2层",
+    "stock": 70,
+    "safety_stock": 18,
+    "fits_models": [
+      "yuelong"
+    ],
+    "note": "一次性消耗件，非高危"
+  },
+  {
+    "id": "A-009",
+    "name": "弹簧夹头",
+    "spec": "ER32",
+    "category": "备件",
+    "warehouse": "A",
+    "location": "B区2号货架1层",
+    "stock": 15,
+    "safety_stock": 4,
+    "fits_models": [
+      "yuelong"
+    ],
+    "note": "可循环使用，非高危"
+  },
+  {
+    "id": "A-010",
+    "name": "刀柄",
+    "spec": "BT40",
+    "category": "备件",
+    "warehouse": "A",
+    "location": "B区2号货架2层",
+    "stock": 10,
+    "safety_stock": 3,
+    "fits_models": [
+      "yuelong"
+    ],
+    "note": "可循环使用，非高危"
+  },
+  {
+    "id": "A-011",
+    "name": "拉钉",
+    "spec": "",
+    "category": "备件",
+    "warehouse": "A",
+    "location": "B区2号货架3层",
+    "stock": 40,
+    "safety_stock": 10,
+    "fits_models": [
+      "yuelong"
+    ],
+    "note": "可循环使用，非高危"
+  },
+  {
+    "id": "A-012",
+    "name": "水溶性切削液",
+    "spec": "",
+    "category": "备件",
+    "warehouse": "A",
+    "location": "C区危险品柜",
+    "stock": 20,
+    "safety_stock": 5,
+    "fits_models": [
+      "tenlong",
+      "yuelong"
+    ],
+    "note": "高危（化学品），需按规存放，不可循环使用"
+  },
+  {
+    "id": "A-013",
+    "name": "主轴轴承",
+    "spec": "",
+    "category": "备件",
+    "warehouse": "A",
+    "location": "A区2号货架2层",
+    "stock": 4,
+    "safety_stock": 2,
+    "fits_models": [
+      "tenlong",
+      "yuelong"
+    ],
+    "note": "高危零件（高速旋转件），可循环使用"
+  },
+  {
+    "id": "A-014",
+    "name": "刀架总成",
+    "spec": "",
+    "category": "备件",
+    "warehouse": "A",
+    "location": "A区1号货架3层",
+    "stock": 4,
+    "safety_stock": 1,
+    "fits_models": [
+      "tenlong"
+    ],
+    "note": "可循环使用，非高危"
+  },
+  {
+    "id": "A-015",
+    "name": "丝杠螺母",
+    "spec": "",
+    "category": "备件",
+    "warehouse": "A",
+    "location": "A区1号货架3层",
+    "stock": 6,
+    "safety_stock": 2,
+    "fits_models": [
+      "tenlong"
+    ],
+    "note": "可循环使用，非高危"
+  },
+  {
+    "id": "A-016",
+    "name": "冷却液软管",
+    "spec": "",
+    "category": "备件",
+    "warehouse": "A",
+    "location": "A区2号货架3层",
+    "stock": 25,
+    "safety_stock": 6,
+    "fits_models": [
+      "tenlong"
+    ],
+    "note": "消耗件，非高危"
+  },
+  {
+    "id": "A-017",
+    "name": "导轨滑块",
+    "spec": "",
+    "category": "备件",
+    "warehouse": "A",
+    "location": "B区1号货架3层",
+    "stock": 8,
+    "safety_stock": 2,
+    "fits_models": [
+      "yuelong"
+    ],
+    "note": "可循环使用，非高危"
+  },
+  {
+    "id": "A-018",
+    "name": "伺服驱动器",
+    "spec": "",
+    "category": "备件",
+    "warehouse": "A",
+    "location": "B区2号货架3层",
+    "stock": 3,
+    "safety_stock": 1,
+    "fits_models": [
+      "yuelong"
+    ],
+    "note": "可循环使用，非高危"
+  },
+  {
+    "id": "B-001",
+    "name": "白刚玉砂轮",
+    "spec": "Φ400",
+    "category": "备件",
+    "warehouse": "B",
+    "location": "A区1号货架1层",
+    "stock": 10,
+    "safety_stock": 3,
+    "fits_models": [
+      "chengxin"
+    ],
+    "note": "高危零件（高速旋转件），定期检查裂纹，可循环使用"
+  },
+  {
+    "id": "B-002",
+    "name": "金刚石修整笔",
+    "spec": "",
+    "category": "备件",
+    "warehouse": "B",
+    "location": "A区1号货架2层",
+    "stock": 25,
+    "safety_stock": 6,
+    "fits_models": [
+      "chengxin"
+    ],
+    "note": "一次性消耗件，非高危"
+  },
+  {
+    "id": "B-003",
+    "name": "磨床顶尖",
+    "spec": "",
+    "category": "备件",
+    "warehouse": "B",
+    "location": "A区2号货架1层",
+    "stock": 6,
+    "safety_stock": 2,
+    "fits_models": [
+      "chengxin"
+    ],
+    "note": "可循环使用，非高危"
+  },
+  {
+    "id": "B-004",
+    "name": "冷却液过滤芯",
+    "spec": "",
+    "category": "备件",
+    "warehouse": "B",
+    "location": "A区2号货架3层",
+    "stock": 30,
+    "safety_stock": 8,
+    "fits_models": [
+      "chengxin"
+    ],
+    "note": "消耗件，清洗后可循环使用"
+  },
+  {
+    "id": "B-005",
+    "name": "砂轮平衡块",
+    "spec": "",
+    "category": "备件",
+    "warehouse": "B",
+    "location": "A区2号货架2层",
+    "stock": 12,
+    "safety_stock": 3,
+    "fits_models": [
+      "chengxin"
+    ],
+    "note": "可循环使用，非高危"
+  },
+  {
+    "id": "B-006",
+    "name": "焊条",
+    "spec": "E4303 Φ3.2",
+    "category": "备件",
+    "warehouse": "B",
+    "location": "B区1号货架1层",
+    "stock": 150,
+    "safety_stock": 40,
+    "fits_models": [
+      "huanmai"
+    ],
+    "note": "消耗件，非高危，需防潮存放"
+  },
+  {
+    "id": "B-007",
+    "name": "实芯焊丝",
+    "spec": "",
+    "category": "备件",
+    "warehouse": "B",
+    "location": "B区1号货架2层",
+    "stock": 100,
+    "safety_stock": 25,
+    "fits_models": [
+      "huanmai"
+    ],
+    "note": "消耗件，非高危，需防潮存放"
+  },
+  {
+    "id": "B-008",
+    "name": "焊枪导电嘴",
+    "spec": "",
+    "category": "备件",
+    "warehouse": "B",
+    "location": "B区2号货架1层",
+    "stock": 60,
+    "safety_stock": 15,
+    "fits_models": [
+      "huanmai"
+    ],
+    "note": "消耗件，非高危"
+  },
+  {
+    "id": "B-009",
+    "name": "焊枪喷嘴",
+    "spec": "",
+    "category": "备件",
+    "warehouse": "B",
+    "location": "B区2号货架2层",
+    "stock": 30,
+    "safety_stock": 8,
+    "fits_models": [
+      "huanmai"
+    ],
+    "note": "可循环使用（清理后），非高危"
+  },
+  {
+    "id": "B-010",
+    "name": "焊接保护气体",
+    "spec": "氩气瓶",
+    "category": "备件",
+    "warehouse": "B",
+    "location": "C区气瓶存放区",
+    "stock": 8,
+    "safety_stock": 3,
+    "fits_models": [
+      "huanmai"
+    ],
+    "note": "高危（高压气瓶），固定存放，可循环充装"
+  },
+  {
+    "id": "B-011",
+    "name": "焊接面罩镜片",
+    "spec": "",
+    "category": "备件",
+    "warehouse": "B",
+    "location": "B区2号货架3层",
+    "stock": 40,
+    "safety_stock": 10,
+    "fits_models": [
+      "huanmai"
+    ],
+    "note": "消耗件，非高危"
+  },
+  {
+    "id": "B-012",
+    "name": "焊钳",
+    "spec": "",
+    "category": "备件",
+    "warehouse": "B",
+    "location": "B区2号货架2层",
+    "stock": 8,
+    "safety_stock": 2,
+    "fits_models": [
+      "huanmai"
+    ],
+    "note": "可循环使用，非高危"
+  },
+  {
+    "id": "B-013",
+    "name": "主轴轴承",
+    "spec": "",
+    "category": "备件",
+    "warehouse": "B",
+    "location": "A区2号货架2层",
+    "stock": 4,
+    "safety_stock": 2,
+    "fits_models": [
+      "chengxin"
+    ],
+    "note": "高危零件（高速旋转件），可循环使用"
+  },
+  {
+    "id": "B-014",
+    "name": "冷却泵",
+    "spec": "",
+    "category": "备件",
+    "warehouse": "B",
+    "location": "A区2号货架3层",
+    "stock": 5,
+    "safety_stock": 2,
+    "fits_models": [
+      "chengxin"
+    ],
+    "note": "可循环使用，非高危"
+  },
+  {
+    "id": "B-015",
+    "name": "电磁吸盘",
+    "spec": "",
+    "category": "备件",
+    "warehouse": "B",
+    "location": "A区2号货架1层",
+    "stock": 3,
+    "safety_stock": 1,
+    "fits_models": [
+      "chengxin"
+    ],
+    "note": "可循环使用，非高危"
+  },
+  {
+    "id": "B-016",
+    "name": "送丝轮",
+    "spec": "",
+    "category": "备件",
+    "warehouse": "B",
+    "location": "B区1号货架3层",
+    "stock": 35,
+    "safety_stock": 8,
+    "fits_models": [
+      "huanmai"
+    ],
+    "note": "消耗件，非高危"
+  },
+  {
+    "id": "B-017",
+    "name": "气管",
+    "spec": "",
+    "category": "备件",
+    "warehouse": "B",
+    "location": "B区2号货架3层",
+    "stock": 50,
+    "safety_stock": 12,
+    "fits_models": [
+      "huanmai"
+    ],
+    "note": "消耗件，非高危"
+  },
+  {
+    "id": "B-018",
+    "name": "地线夹",
+    "spec": "",
+    "category": "备件",
+    "warehouse": "B",
+    "location": "B区2号货架2层",
+    "stock": 15,
+    "safety_stock": 4,
+    "fits_models": [
+      "huanmai"
+    ],
+    "note": "可循环使用，非高危"
+  },
+  {
+    "id": "C-001",
+    "name": "激光切割头总成",
+    "spec": "",
+    "category": "备件",
+    "warehouse": "C",
+    "location": "A区1号货架1层",
+    "stock": 2,
+    "safety_stock": 1,
+    "fits_models": [
+      "heyue"
+    ],
+    "note": "高危零件（精密光学件），可循环使用，需防尘"
+  },
+  {
+    "id": "C-002",
+    "name": "聚焦镜片",
+    "spec": "",
+    "category": "备件",
+    "warehouse": "C",
+    "location": "A区1号货架2层",
+    "stock": 15,
+    "safety_stock": 5,
+    "fits_models": [
+      "heyue"
+    ],
+    "note": "高危零件（光学件），一次性，不可循环使用"
+  },
+  {
+    "id": "C-003",
+    "name": "保护镜片",
+    "spec": "",
+    "category": "备件",
+    "warehouse": "C",
+    "location": "A区1号货架2层",
+    "stock": 50,
+    "safety_stock": 15,
+    "fits_models": [
+      "heyue"
+    ],
+    "note": "消耗件，一次性，非高危"
+  },
+  {
+    "id": "C-004",
+    "name": "切割喷嘴",
+    "spec": "",
+    "category": "备件",
+    "warehouse": "C",
+    "location": "A区2号货架1层",
+    "stock": 80,
+    "safety_stock": 20,
+    "fits_models": [
+      "heyue"
+    ],
+    "note": "消耗件，非高危"
+  },
+  {
+    "id": "C-005",
+    "name": "辅助气体",
+    "spec": "氮气瓶",
+    "category": "备件",
+    "warehouse": "C",
+    "location": "C区气瓶存放区",
+    "stock": 6,
+    "safety_stock": 2,
+    "fits_models": [
+      "heyue"
+    ],
+    "note": "高危（高压气瓶），固定存放，可循环充装"
+  },
+  {
+    "id": "C-006",
+    "name": "陶瓷环",
+    "spec": "",
+    "category": "备件",
+    "warehouse": "C",
+    "location": "A区2号货架2层",
+    "stock": 40,
+    "safety_stock": 10,
+    "fits_models": [
+      "heyue"
+    ],
+    "note": "消耗件，非高危"
+  },
+  {
+    "id": "C-007",
+    "name": "光纤跳线",
+    "spec": "",
+    "category": "备件",
+    "warehouse": "C",
+    "location": "A区2号货架3层",
+    "stock": 4,
+    "safety_stock": 2,
+    "fits_models": [
+      "heyue"
+    ],
+    "note": "高危零件（光学件），可循环使用，需防尘"
+  },
+  {
+    "id": "C-008",
+    "name": "冷水机滤芯",
+    "spec": "",
+    "category": "备件",
+    "warehouse": "C",
+    "location": "B区1号货架1层",
+    "stock": 20,
+    "safety_stock": 5,
+    "fits_models": [
+      "heyue"
+    ],
+    "note": "消耗件，清洗后可循环使用"
+  },
+  {
+    "id": "C-009",
+    "name": "冷却水管",
+    "spec": "",
+    "category": "备件",
+    "warehouse": "C",
+    "location": "B区1号货架1层",
+    "stock": 30,
+    "safety_stock": 8,
+    "fits_models": [
+      "heyue"
+    ],
+    "note": "消耗件，非高危"
+  },
+  {
+    "id": "C-010",
+    "name": "反射镜片",
+    "spec": "",
+    "category": "备件",
+    "warehouse": "C",
+    "location": "A区1号货架2层",
+    "stock": 12,
+    "safety_stock": 4,
+    "fits_models": [
+      "heyue"
+    ],
+    "note": "高危零件（光学件），一次性，不可循环使用"
+  },
+  {
+    "id": "切-001",
+    "name": "激光切割头",
+    "spec": "自动对焦",
+    "category": "工具",
+    "group": "切割工具组",
+    "location": "",
+    "stock": 1,
+    "safety_stock": null,
+    "fits_models": [
+      "heyue"
+    ],
+    "note": "高危",
+    "hazard": true,
+    "consumable": false
+  },
+  {
+    "id": "切-002",
+    "name": "切割喷嘴",
+    "spec": "铜质Φ1.0",
+    "category": "工具",
+    "group": "切割工具组",
+    "location": "",
+    "stock": 8,
+    "safety_stock": null,
+    "fits_models": [
+      "heyue"
+    ],
+    "note": "一次性消耗",
+    "hazard": false,
+    "consumable": true
+  },
+  {
+    "id": "切-003",
+    "name": "聚焦镜片",
+    "spec": "ZnSe",
+    "category": "工具",
+    "group": "切割工具组",
+    "location": "",
+    "stock": 2,
+    "safety_stock": null,
+    "fits_models": [
+      "heyue"
+    ],
+    "note": "高危",
+    "hazard": true,
+    "consumable": false
+  },
+  {
+    "id": "切-004",
+    "name": "保护镜片",
+    "spec": "Φ30",
+    "category": "工具",
+    "group": "切割工具组",
+    "location": "",
+    "stock": 6,
+    "safety_stock": null,
+    "fits_models": [
+      "heyue"
+    ],
+    "note": "一次性消耗",
+    "hazard": false,
+    "consumable": true
+  },
+  {
+    "id": "切-005",
+    "name": "辅助气体喷嘴",
+    "spec": "同轴",
+    "category": "工具",
+    "group": "切割工具组",
+    "location": "",
+    "stock": 4,
+    "safety_stock": null,
+    "fits_models": [
+      "heyue"
+    ],
+    "note": "可循环",
+    "hazard": false,
+    "consumable": false
+  },
+  {
+    "id": "切-006",
+    "name": "反射镜片",
+    "spec": "铜反射",
+    "category": "工具",
+    "group": "切割工具组",
+    "location": "",
+    "stock": 1,
+    "safety_stock": null,
+    "fits_models": [
+      "heyue"
+    ],
+    "note": "高危",
+    "hazard": true,
+    "consumable": false
+  },
+  {
+    "id": "切-007",
+    "name": "冷却水管",
+    "spec": "耐压",
+    "category": "工具",
+    "group": "切割工具组",
+    "location": "",
+    "stock": 2,
+    "safety_stock": null,
+    "fits_models": [
+      "heyue"
+    ],
+    "note": "通用",
+    "hazard": false,
+    "consumable": false
+  },
+  {
+    "id": "切-008",
+    "name": "气压表",
+    "spec": "0-2.5MPa",
+    "category": "工具",
+    "group": "切割工具组",
+    "location": "",
+    "stock": 1,
+    "safety_stock": null,
+    "fits_models": [
+      "heyue"
+    ],
+    "note": "通用",
+    "hazard": false,
+    "consumable": false
+  },
+  {
+    "id": "切-009",
+    "name": "喷嘴扳手",
+    "spec": "专用",
+    "category": "工具",
+    "group": "切割工具组",
+    "location": "",
+    "stock": 1,
+    "safety_stock": null,
+    "fits_models": [
+      "heyue"
+    ],
+    "note": "通用",
+    "hazard": false,
+    "consumable": false
+  },
+  {
+    "id": "焊-001",
+    "name": "焊枪",
+    "spec": "氩弧焊",
+    "category": "工具",
+    "group": "焊接工具组",
+    "location": "",
+    "stock": 2,
+    "safety_stock": null,
+    "fits_models": [
+      "huanmai"
+    ],
+    "note": "通用",
+    "hazard": false,
+    "consumable": false
+  },
+  {
+    "id": "焊-002",
+    "name": "焊条",
+    "spec": "E4303",
+    "category": "工具",
+    "group": "焊接工具组",
+    "location": "",
+    "stock": 30,
+    "safety_stock": null,
+    "fits_models": [
+      "huanmai"
+    ],
+    "note": "一次性消耗",
+    "hazard": false,
+    "consumable": true
+  },
+  {
+    "id": "焊-003",
+    "name": "焊丝",
+    "spec": "ER50-6",
+    "category": "工具",
+    "group": "焊接工具组",
+    "location": "",
+    "stock": 15,
+    "safety_stock": null,
+    "fits_models": [
+      "huanmai"
+    ],
+    "note": "一次性消耗",
+    "hazard": false,
+    "consumable": true
+  },
+  {
+    "id": "焊-004",
+    "name": "焊接面罩",
+    "spec": "自动变光",
+    "category": "工具",
+    "group": "焊接工具组",
+    "location": "",
+    "stock": 2,
+    "safety_stock": null,
+    "fits_models": [
+      "huanmai"
+    ],
+    "note": "通用",
+    "hazard": false,
+    "consumable": false
+  },
+  {
+    "id": "焊-005",
+    "name": "氩气瓶",
+    "spec": "40L",
+    "category": "工具",
+    "group": "焊接工具组",
+    "location": "",
+    "stock": 2,
+    "safety_stock": null,
+    "fits_models": [
+      "huanmai"
+    ],
+    "note": "高危",
+    "hazard": true,
+    "consumable": false
+  },
+  {
+    "id": "焊-006",
+    "name": "焊钳",
+    "spec": "地线夹",
+    "category": "工具",
+    "group": "焊接工具组",
+    "location": "",
+    "stock": 2,
+    "safety_stock": null,
+    "fits_models": [
+      "huanmai"
+    ],
+    "note": "通用",
+    "hazard": false,
+    "consumable": false
+  },
+  {
+    "id": "焊-007",
+    "name": "清渣锤",
+    "spec": "尖头",
+    "category": "工具",
+    "group": "焊接工具组",
+    "location": "",
+    "stock": 2,
+    "safety_stock": null,
+    "fits_models": [
+      "huanmai"
+    ],
+    "note": "通用",
+    "hazard": false,
+    "consumable": false
+  },
+  {
+    "id": "焊-008",
+    "name": "防飞溅剂",
+    "spec": "喷罐",
+    "category": "工具",
+    "group": "焊接工具组",
+    "location": "",
+    "stock": 4,
+    "safety_stock": null,
+    "fits_models": [
+      "huanmai"
+    ],
+    "note": "一次性消耗",
+    "hazard": false,
+    "consumable": true
+  },
+  {
+    "id": "焊-009",
+    "name": "焊工手套",
+    "spec": "牛皮",
+    "category": "工具",
+    "group": "焊接工具组",
+    "location": "",
+    "stock": 4,
+    "safety_stock": null,
+    "fits_models": [
+      "huanmai"
+    ],
+    "note": "可循环",
+    "hazard": false,
+    "consumable": false
+  },
+  {
+    "id": "磨-001",
+    "name": "砂轮",
+    "spec": "白刚玉Φ400",
+    "category": "工具",
+    "group": "磨削工具组",
+    "location": "",
+    "stock": 4,
+    "safety_stock": null,
+    "fits_models": [
+      "chengxin"
+    ],
+    "note": "高危",
+    "hazard": true,
+    "consumable": false
+  },
+  {
+    "id": "磨-002",
+    "name": "金刚石修整笔",
+    "spec": "单点式",
+    "category": "工具",
+    "group": "磨削工具组",
+    "location": "",
+    "stock": 2,
+    "safety_stock": null,
+    "fits_models": [
+      "chengxin"
+    ],
+    "note": "可循环",
+    "hazard": false,
+    "consumable": false
+  },
+  {
+    "id": "磨-003",
+    "name": "磨头",
+    "spec": "电镀",
+    "category": "工具",
+    "group": "磨削工具组",
+    "location": "",
+    "stock": 5,
+    "safety_stock": null,
+    "fits_models": [
+      "chengxin"
+    ],
+    "note": "一次性消耗",
+    "hazard": false,
+    "consumable": true
+  },
+  {
+    "id": "磨-004",
+    "name": "永磁吸盘",
+    "spec": "永磁",
+    "category": "工具",
+    "group": "磨削工具组",
+    "location": "",
+    "stock": 1,
+    "safety_stock": null,
+    "fits_models": [
+      "chengxin"
+    ],
+    "note": "通用",
+    "hazard": false,
+    "consumable": false
+  },
+  {
+    "id": "磨-005",
+    "name": "砂轮法兰",
+    "spec": "标准",
+    "category": "工具",
+    "group": "磨削工具组",
+    "location": "",
+    "stock": 2,
+    "safety_stock": null,
+    "fits_models": [
+      "chengxin"
+    ],
+    "note": "通用",
+    "hazard": false,
+    "consumable": false
+  },
+  {
+    "id": "磨-006",
+    "name": "平衡轴",
+    "spec": "砂轮静平衡",
+    "category": "工具",
+    "group": "磨削工具组",
+    "location": "",
+    "stock": 1,
+    "safety_stock": null,
+    "fits_models": [
+      "chengxin"
+    ],
+    "note": "通用",
+    "hazard": false,
+    "consumable": false
+  },
+  {
+    "id": "车-001",
+    "name": "外圆车刀",
+    "spec": "90°外圆",
+    "category": "工具",
+    "group": "车削工具组",
+    "location": "",
+    "stock": 3,
+    "safety_stock": null,
+    "fits_models": [
+      "tenlong"
+    ],
+    "note": "可循环",
+    "hazard": false,
+    "consumable": false
+  },
+  {
+    "id": "车-002",
+    "name": "内孔车刀",
+    "spec": "内孔加工",
+    "category": "工具",
+    "group": "车削工具组",
+    "location": "",
+    "stock": 2,
+    "safety_stock": null,
+    "fits_models": [
+      "tenlong"
+    ],
+    "note": "可循环",
+    "hazard": false,
+    "consumable": false
+  },
+  {
+    "id": "车-003",
+    "name": "切断刀",
+    "spec": "切断",
+    "category": "工具",
+    "group": "车削工具组",
+    "location": "",
+    "stock": 2,
+    "safety_stock": null,
+    "fits_models": [
+      "tenlong"
+    ],
+    "note": "可循环",
+    "hazard": false,
+    "consumable": false
+  },
+  {
+    "id": "车-004",
+    "name": "螺纹车刀",
+    "spec": "三角螺纹",
+    "category": "工具",
+    "group": "车削工具组",
+    "location": "",
+    "stock": 2,
+    "safety_stock": null,
+    "fits_models": [
+      "tenlong"
+    ],
+    "note": "可循环",
+    "hazard": false,
+    "consumable": false
+  },
+  {
+    "id": "车-005",
+    "name": "刀架",
+    "spec": "四方刀架",
+    "category": "工具",
+    "group": "车削工具组",
+    "location": "",
+    "stock": 1,
+    "safety_stock": null,
+    "fits_models": [
+      "tenlong"
+    ],
+    "note": "通用",
+    "hazard": false,
+    "consumable": false
+  },
+  {
+    "id": "车-006",
+    "name": "三爪卡盘",
+    "spec": "自定心",
+    "category": "工具",
+    "group": "车削工具组",
+    "location": "",
+    "stock": 1,
+    "safety_stock": null,
+    "fits_models": [
+      "tenlong"
+    ],
+    "note": "通用",
+    "hazard": false,
+    "consumable": false
+  },
+  {
+    "id": "车-007",
+    "name": "顶尖",
+    "spec": "活顶尖",
+    "category": "工具",
+    "group": "车削工具组",
+    "location": "",
+    "stock": 2,
+    "safety_stock": null,
+    "fits_models": [
+      "tenlong"
+    ],
+    "note": "可循环",
+    "hazard": false,
+    "consumable": false
+  },
+  {
+    "id": "车-008",
+    "name": "中心钻",
+    "spec": "定心用",
+    "category": "工具",
+    "group": "车削工具组",
+    "location": "",
+    "stock": 3,
+    "safety_stock": null,
+    "fits_models": [
+      "tenlong"
+    ],
+    "note": "一次性消耗",
+    "hazard": false,
+    "consumable": true
+  },
+  {
+    "id": "车-009",
+    "name": "丝锥",
+    "spec": "M6-M12",
+    "category": "工具",
+    "group": "车削工具组",
+    "location": "",
+    "stock": 4,
+    "safety_stock": null,
+    "fits_models": [
+      "tenlong"
+    ],
+    "note": "可循环",
+    "hazard": false,
+    "consumable": false
+  },
+  {
+    "id": "通-001",
+    "name": "游标卡尺",
+    "spec": "0-150mm",
+    "category": "工具",
+    "group": "通用工具表",
+    "location": "",
+    "stock": 2,
+    "safety_stock": null,
+    "fits_models": [
+      "tenlong",
+      "yuelong",
+      "chengxin"
+    ],
+    "note": "可循环",
+    "hazard": false,
+    "consumable": false
+  },
+  {
+    "id": "通-002",
+    "name": "千分尺",
+    "spec": "0-25mm",
+    "category": "工具",
+    "group": "通用工具表",
+    "location": "",
+    "stock": 1,
+    "safety_stock": null,
+    "fits_models": [
+      "tenlong",
+      "yuelong",
+      "chengxin"
+    ],
+    "note": "可循环",
+    "hazard": false,
+    "consumable": false
+  },
+  {
+    "id": "通-003",
+    "name": "千分表",
+    "spec": "0.001mm",
+    "category": "工具",
+    "group": "通用工具表",
+    "location": "",
+    "stock": 1,
+    "safety_stock": null,
+    "fits_models": [
+      "tenlong",
+      "yuelong",
+      "chengxin"
+    ],
+    "note": "可循环",
+    "hazard": false,
+    "consumable": false
+  },
+  {
+    "id": "通-004",
+    "name": "冷却液喷嘴",
+    "spec": "可调式",
+    "category": "工具",
+    "group": "通用工具表",
+    "location": "",
+    "stock": 4,
+    "safety_stock": null,
+    "fits_models": [
+      "tenlong",
+      "yuelong",
+      "chengxin"
+    ],
+    "note": "可循环",
+    "hazard": false,
+    "consumable": false
+  },
+  {
+    "id": "通-005",
+    "name": "寻边器",
+    "spec": "光电式",
+    "category": "工具",
+    "group": "通用工具表",
+    "location": "",
+    "stock": 1,
+    "safety_stock": null,
+    "fits_models": [
+      "tenlong",
+      "yuelong"
+    ],
+    "note": "可循环",
+    "hazard": false,
+    "consumable": false
+  },
+  {
+    "id": "通-006",
+    "name": "防护挡板",
+    "spec": "透明",
+    "category": "工具",
+    "group": "通用工具表",
+    "location": "",
+    "stock": 2,
+    "safety_stock": null,
+    "fits_models": [
+      "chengxin",
+      "huanmai"
+    ],
+    "note": "可循环",
+    "hazard": false,
+    "consumable": false
+  },
+  {
+    "id": "通-007",
+    "name": "钢丝刷",
+    "spec": "清洁用",
+    "category": "工具",
+    "group": "通用工具表",
+    "location": "",
+    "stock": 3,
+    "safety_stock": null,
+    "fits_models": [
+      "*"
+    ],
+    "note": "一次性消耗",
+    "hazard": false,
+    "consumable": true
+  },
+  {
+    "id": "通-008",
+    "name": "扳手",
+    "spec": "通用扳手",
+    "category": "工具",
+    "group": "通用工具表",
+    "location": "",
+    "stock": 4,
+    "safety_stock": null,
+    "fits_models": [
+      "*"
+    ],
+    "note": "可循环",
+    "hazard": false,
+    "consumable": false
+  },
+  {
+    "id": "铣-001",
+    "name": "立铣刀",
+    "spec": "Φ10",
+    "category": "工具",
+    "group": "铣削工具组",
+    "location": "",
+    "stock": 4,
+    "safety_stock": null,
+    "fits_models": [
+      "yuelong"
+    ],
+    "note": "可循环",
+    "hazard": false,
+    "consumable": false
+  },
+  {
+    "id": "铣-002",
+    "name": "面铣刀",
+    "spec": "Φ63",
+    "category": "工具",
+    "group": "铣削工具组",
+    "location": "",
+    "stock": 2,
+    "safety_stock": null,
+    "fits_models": [
+      "yuelong"
+    ],
+    "note": "可循环",
+    "hazard": false,
+    "consumable": false
+  },
+  {
+    "id": "铣-003",
+    "name": "球头铣刀",
+    "spec": "R5",
+    "category": "工具",
+    "group": "铣削工具组",
+    "location": "",
+    "stock": 3,
+    "safety_stock": null,
+    "fits_models": [
+      "yuelong"
+    ],
+    "note": "可循环",
+    "hazard": false,
+    "consumable": false
+  },
+  {
+    "id": "铣-004",
+    "name": "键槽铣刀",
+    "spec": "Φ8",
+    "category": "工具",
+    "group": "铣削工具组",
+    "location": "",
+    "stock": 2,
+    "safety_stock": null,
+    "fits_models": [
+      "yuelong"
+    ],
+    "note": "可循环",
+    "hazard": false,
+    "consumable": false
+  },
+  {
+    "id": "铣-005",
+    "name": "刀柄/弹簧夹头",
+    "spec": "BT40/ER32",
+    "category": "工具",
+    "group": "铣削工具组",
+    "location": "",
+    "stock": 6,
+    "safety_stock": null,
+    "fits_models": [
+      "yuelong"
+    ],
+    "note": "通用",
+    "hazard": false,
+    "consumable": false
+  },
+  {
+    "id": "铣-006",
+    "name": "平口钳",
+    "spec": "精密型",
+    "category": "工具",
+    "group": "铣削工具组",
+    "location": "",
+    "stock": 1,
+    "safety_stock": null,
+    "fits_models": [
+      "yuelong"
+    ],
+    "note": "通用",
+    "hazard": false,
+    "consumable": false
+  },
+  {
+    "id": "铣-007",
+    "name": "分度头",
+    "spec": "万能型",
+    "category": "工具",
+    "group": "铣削工具组",
+    "location": "",
+    "stock": 1,
+    "safety_stock": null,
+    "fits_models": [
+      "yuelong"
+    ],
+    "note": "通用",
+    "hazard": false,
+    "consumable": false
+  },
+  {
+    "id": "铣-008",
+    "name": "压板组",
+    "spec": "组合式",
+    "category": "工具",
+    "group": "铣削工具组",
+    "location": "",
+    "stock": 2,
+    "safety_stock": null,
+    "fits_models": [
+      "yuelong"
+    ],
+    "note": "可循环",
+    "hazard": false,
+    "consumable": false
+  }
+]

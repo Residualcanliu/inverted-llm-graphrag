@@ -1,37 +1,45 @@
-# 图数据库
-neo4j>=5.20
+# 版本全部锁死，都是本机实测跑通的版本。
+#
+# 为什么锁死：装 neo4j-graphrag 时 pip 把 numpy 从 1.26.4 升到了 2.2.6，
+# 连带把 pyarrow 从 14.0.2 升到 24.0.0。结果是 pandas 和 streamlit 全崩 ——
+# 它们的二进制是为 numpy 1.x 编译的，而 numpy 2.x 把 `numpy.core` 改名成了
+# `numpy._core`，导入直接失败。
+#
+# 症状很有迷惑性：`import pandas` 报 `numpy.core.multiarray failed to import`，
+# 看起来像 numpy 的问题，实际是版本组合的问题。用 `>=` 写的话，
+# 同一份文件在不同时间会装出不同的环境。
 
-# 官方 GraphRAG 包（用作 naive Text2Cypher 对照组）
-neo4j-graphrag>=1.0
+# ---------- 数值与表格 ----------
+# numpy 必须 <2：pandas / streamlit / pyarrow 这三个都是为 numpy 1.x 编译的
+numpy==1.26.4
+pandas==2.2.2
+pyarrow==14.0.2
+scipy==1.13.1
+scikit-learn==1.4.2
 
-# 后端
-fastapi>=0.115
-uvicorn[standard]>=0.30
-pydantic>=2.7
-python-dotenv>=1.0
+# ---------- 图数据库 ----------
+neo4j==6.3.1
 
-# 前端
-streamlit>=1.36
+# 不用 neo4j-graphrag（官方 GraphRAG 包）。它要求 numpy>=2，会把上面整条链带崩。
+# 对照实验里的「朴素实现」改为自己写：同一个模型，不加 few-shot、
+# 不加校验、不加自修复。差异因此纯粹来自工程化，比用官方包更干净。
 
-# 模型调用
-ollama>=0.3
-requests>=2.32
+# ---------- 后端 ----------
+fastapi==0.141.1
+uvicorn==0.52.4
+pydantic==2.11.2
+python-dotenv==0.21.0
 
-# 数据处理
-pandas>=2.2
-numpy>=1.26
-scipy>=1.13
+# ---------- 前端 ----------
+streamlit==1.32.0
+altair==5.0.1
 
-# 向量检索（传统 RAG 基线）
-# 用 numpy 手写余弦相似度，不引入重型向量库 —— 语料只有几百个 chunk
-# 若后续要换，候选：chromadb / faiss-cpu
+# ---------- 模型调用 ----------
+requests==2.32.3
 
-# PDF 抽取（一次性建图用）
-pdfplumber>=0.11
+# ---------- 文档读取 ----------
+python-docx==1.2.0
+openpyxl==3.1.2
 
-# 可视化
-altair>=5.3
-pyvis>=0.3.2
-
-# 报告
-jinja2>=3.1
+# ---------- 测试 ----------
+pytest==7.4.4

@@ -1,0 +1,9 @@
+{
+  "Equipment": 127,
+  "SparePart": 95,
+  "WorkOrder": 370,
+  "Process": 6,
+  "Operation": 16,
+  "Location": 17,
+  "DEPENDS_ON": 650
+}
