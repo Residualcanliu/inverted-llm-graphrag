@@ -36,11 +36,11 @@ B 类有五种：
 
 | 类型 | 问法示例 | 传统 RAG 卡在哪 | 图怎么做 |
 |---|---|---|---|
-| 多跳依赖 | 3号泵停机影响哪些设备？ | 信息分散在不同页，要做传递闭包，跳数一多必漏 | 变长路径 `-[:DEPENDS_ON*1..5]->` |
-| 聚合统计 | 6号机组的 MTBF 是多少？ | 要遍历工单算时间间隔求均值 | 聚合函数，精确可复现 |
-| 否定与补集 | 哪些设备没配安全措施？ | 「没有」在文档里不作为句子存在 | `WHERE NOT (e)-[:X]->()` |
-| 排序与关键性 | 按重要度给设备排序 | 「重要度」是从拓扑算出来的，文本里没有这个字段 | PageRank 等图算法 |
-| 根因追溯 | 追溯工单的事件链 | 要沿故障链完整走一条路径，断一环也不知道 | 路径查询 |
+| 多跳依赖 | huanmai-002 停机影响哪些设备？ | 信息分散在不同页，要做传递闭包，跳数一多必漏 | 变长路径 `-[:DEPENDS_ON*1..5]->` |
+| 聚合统计 | chengxin-006 的平均检修间隔是多少？ | 要遍历工单算时间间隔求均值 | 聚合函数，精确可复现 |
+| 否定与补集 | 哪些故障模式没有处理措施？ | 「没有」在文档里不作为句子存在 | `WHERE NOT (e)-[:X]->()` |
+| 排序与关键性 | 按被依赖程度给设备排序 | 「重要度」是从拓扑算出来的，文本里没有这个字段 | PageRank 等图算法 |
+| 根因追溯 | 追溯某个故障会引发什么 | 要沿故障链完整走一条路径，断一环也不知道 | 路径查询 |
 
 相对来说，第四种最能说明问题。**「重要度」这个信息在文档里压根不存在**，这就涉及到了图算法
 
@@ -48,105 +48,111 @@ B 类有五种：
 
 ## 二、查询流程
 
-例：
-> 更换3号泵的机械密封需要什么资质？
+拿一道真实跑过的题走一遍：
+
+> chengxin-006 一共检修过几次？
 
 ### 1. 组装 prompt
 
 prompt 分四块：
+
 - 角色与规则
-- 图谱 schema（Neo4j 实时读取）
+- 图谱 schema（从 Neo4j 实时读，不硬编码）
 - 输出要求
 - few-shot 示例
 
 ### 2. 模型生成 Cypher
 
-本次模型采用`qwen2.5-coder:14b`，设定`Temperature=0.1` ，要求只续写 `Cypher：` 后段。返回如下：
+模型用 `qwen2.5-coder:14b`，温度 0.1，只续写 `Cypher：` 后面的部分。返回：
 
 ```cypher
-MATCH (e:Equipment {name:'3号泵'})-[:HAS_OPERATION]->(o:Operation)
-      -[:REQUIRES_ROLE]->(r:Role)
-RETURN DISTINCT r.cert AS 资质
+MATCH (e:Equipment {id:'chengxin-006'})-[:EXPERIENCED]->(w:WorkOrder)
+RETURN count(w) AS 检修次数
 ```
 
-由于不同模型之间存在差异，输出容易出现如下三种情况：  
-加解释、套 Markdown 围栏、输出 ` thinking` 块。  
-所以这一步后会先做**三步清理**：剥 think 块、剥md、裁掉查询前面的说明文字。
+不同模型的输出习惯不一样，常见三种夹带：加解释、套 Markdown 围栏、输出 `think` 块。
+所以拿回来先做三步清理：剥 think 块、剥围栏、裁掉查询前面的说明文字。
 
-### 3. 四道静态校验（本地）
+### 3. 四道静态校验（本地，不连数据库）
 
 | 检查 | 这道题的情况 |
 |---|---|
-| 结构 | 以 `MATCH` 开头 ✓ |
-| 只读 | 没有 `CREATE`/`DELETE`/`SET` ✓ |
-| schema 一致性 | `Equipment`/`Operation`/`Role` 都在，`name`/`cert` 属性都在 ✓ |
-| 关系方向 | `REQUIRES_ROLE` 规定是 `Operation → Role`，查询里就是这么写的 ✓ |
+| 结构 | 以 `MATCH` 开头 |
+| 只读 | 没有 `CREATE`/`DELETE`/`SET` |
+| schema 一致性 | `Equipment`/`WorkOrder` 都在，`id`/`date` 属性都在 |
+| 关系方向 | `EXPERIENCED` 规定是 `Equipment → WorkOrder`，查询里就是这么写的 |
 
-这一步为正则匹配，**不理解查询语句，只确认语句是否正确**
+这一步是正则匹配，不理解查询要干什么，只确认语句本身是否合法。
 
-### 4. EXPLAIN 预检（连接数据库，但不执行）
+### 4. EXPLAIN 预检（连数据库，不执行）
 
-把查询交给 Neo4j 编译成执行计划，然后丢掉计划，确保无数据接触  
+把查询交给 Neo4j 编译成执行计划，然后丢掉计划，不接触数据。
 跟 SQL 的 `EXPLAIN` 是同一个机制。
 
 ### 5. 执行
 
-用 `READ_ACCESS` 模式发过去，Neo4j 去图里找节点、沿关系遍历、做计算，
-返回结果集。  
-`READ_ACCESS` 模式下**服务端拒绝一切写操作**。也杜绝了相关风险
+用 `READ_ACCESS` 模式发过去，Neo4j 去图里找节点、沿关系遍历、做聚合，返回结果。
+这个模式下服务端拒绝一切写操作。
 
-### 错误执行
+### 出错时会怎样
 
-例如，模型有时候会把「机械密封」当成查询目标——它在 schema 里是个 `SparePart`。
-于是写出这种查询：
+实测遇到过一个方向写反的例子。问「哪些设备不在任何工艺流程里」，模型生成了：
 
 ```cypher
-MATCH (e:Equipment)-[:HAS_OPERATION]->(o:Operation)
-      -[:USES_PART]->(p:SparePart {name:'机械密封'})-[:SUPPLIED_BY]->(s:Supplier)
-RETURN DISTINCT s.name AS 供应商
+MATCH (e:Equipment)
+OPTIONAL MATCH (e)-[:USES]->(o:Operation)
+WHERE NOT EXISTS { (o)-[:HAS_STEP]->(:Process) }
+RETURN DISTINCT e.id AS 设备
 ```
 
-语法全对也能执行，返回非空结果，但是**答非所问**
+`USES` 的真实方向是 `Operation → Equipment`，查询里写反了。结果是匹配不到任何东西，
+条件恒真，返回全部 127 台设备，而正确答案是 18 台。
 
-静态校验会拦住（`REQUIRES_ROLE` 挂错了位置）。拦截后把**完整的错误信息**
-回喂给模型重写，最多两轮。实测：
+静态校验拦下了这一条。拦截后把**完整的错误信息**回喂给模型重写，最多两轮。实测：
 
 ```
 第一轮  RETURN EXISTS(f2) AS 影响
 报错    Argument to EXISTS(...) is not a pattern (line 2, column 15)
 第二轮  RETURN count(f2) > 0 AS 影响     ← 通过
 ```
+
+**回喂的必须是错误原文，不能只给错误代号。** 早期版本只回喂
+`Neo.ClientError.Statement.SyntaxError`，模型看到「语法错」三个字不知道该改什么，
+原样重写了两遍，两轮修复全白费。
+
 ---
 
 ## 三、图谱设计
 
-共有10 类节点、15 类关系。
+8 类节点、12 类关系，共 711 个节点。
 
-**节点**：`Location` `Equipment` `Operation` `Role` `SparePart` `Supplier`
-`Hazard` `SafetyMeasure` `WorkOrder` `FailureMode`
+**节点**：`Location` `Equipment` `SparePart` `WorkOrder` `FailureMode`
+`Process` `Operation` `SafetyMeasure`
 
-**关系**：
+**关系**（括号里是实际条数）：
 
 ```
-(Location)-[:CONTAINS]->(Equipment)
-(Equipment)-[:DEPENDS_ON]->(Equipment)             设备依赖设备
-(Equipment)-[:HAS_OPERATION]->(Operation)          设备有作业
-(Operation)-[:REQUIRES_ROLE]->(Role)               作业需要岗位
-(Operation)-[:USES_PART]->(SparePart)              作业使用备件
-(Operation)-[:HAS_HAZARD]->(Hazard)                作业有风险
-(Operation)-[:PRECEDES]->(Operation)               工序先后
-(Hazard)-[:MITIGATED_BY]->(SafetyMeasure)          风险由措施缓解
-(SparePart)-[:SUPPLIED_BY]->(Supplier)             备件供应商
-(Equipment)-[:EXPERIENCED]->(WorkOrder)            设备经历过工单
-(WorkOrder)-[:CAUSED_BY]->(FailureMode)            工单由故障引起
-(WorkOrder)-[:USED_PART]->(SparePart)              工单用了备件
-(WorkOrder)-[:PERFORMED_BY]->(Role)                工单由岗位执行
-(FailureMode)-[:OCCURS_ON]->(Equipment)            故障发生于设备
-(FailureMode)-[:TRIGGERS]->(FailureMode)           故障连锁引发故障
+(Equipment)-[:DEPENDS_ON]->(Equipment)        设备依赖设备      650
+(Equipment)-[:EXPERIENCED]->(WorkOrder)       设备经历过工单    370
+(Equipment)-[:IN_SHOP]->(Location)            设备位于车间      127
+(Equipment)-[:FITS]->(SparePart)              设备适配备件     2580
+(WorkOrder)-[:CAUSED_BY]->(FailureMode)       工单由故障引起    370
+(WorkOrder)-[:USED_PART]->(SparePart)         工单用了备件      682
+(SparePart)-[:STORED_AT]->(Location)          备件存放位置       45
+(Process)-[:HAS_STEP]->(Operation)            流程包含工序       16
+(Operation)-[:PRECEDES]->(Operation)          工序先后           10
+(Operation)-[:USES]->(Equipment)              工序使用设备      130
+(FailureMode)-[:TRIGGERS]->(FailureMode)      故障连锁引发故障    44
+(FailureMode)-[:MITIGATED_BY]->(SafetyMeasure) 故障处理措施       26
 ```
 
-注：对于故障连锁，根因追溯才是真正的多跳路径（密封失效 → 流量不足 → 机组过热 → 停机）
-完整清单和每条关系支撑哪类问题，见 [DESIGN.md 第四节](DESIGN.md)。
+`DEPENDS_ON` 的方向按「谁依赖谁」：下游工序消耗上游的来料，所以边从**下游指向上游**。
+问「X 停机影响谁」就是 `(X)<-[:DEPENDS_ON*1..5]-(受影响设备)`。
+
+`TRIGGERS` 支持根因追溯的多跳路径（磨损 → 精度下降 → 尺寸超差）。它的两端都是故障模式，
+所以校验器判不了方向 —— 自反关系任何方向在 schema 上都合法，这类只能靠示例教。
+
+关系的推导过程、schema 相比最初设计的调整，见 [docs/数据管线.md](docs/数据管线.md)。
 
 ---
 
@@ -173,33 +179,41 @@ RETURN DISTINCT s.name AS 供应商
 
 ## 五、对照实验设计
 
-三条链路喂同一份原始文档，区别只在数据怎么组织、怎么取：
+四条链路喂同一份源数据，区别只在数据怎么组织、怎么取：
 
-| | 方案 | 说明 |
+| | 链路 | 做法 |
 |---|---|---|
-| ① | 传统 RAG | 切块 → 向量检索 top-k → 大模型读片段回答 |
-| ② | 官方 naive Text2Cypher | 采用 Neo4j 官方 `neo4j-graphrag` 包 |
+| ① | 文档模式 | 源数据渲染成文本 → 分块 → bge-m3 嵌入 → 向量检索 5 块 → 大模型读片段回答 |
+| ①' | 文档模式（全语料） | 不做检索，把全部语料塞进上下文 |
+| ② | 朴素实现 | 同一个模型，不加 few-shot、不加校验、不加自修复 |
 | ③ | 倒置LLM 增强版 | 本项目的实现：few-shot + 校验层 + 自修复 |
 
-②和③的差距度量的是**工程化本身值多少钱**——同样的图、同样的模型，
-把 prompt 工程和校验层加上去能提升多少。
+两组对比回答两个不同的问题：
 
-还有一条补充基线：**把全部语料塞进上下文的「作弊版」传统 RAG**。
-它能把两个失败原因分开：
+```
+① vs ③   同样的信息，扁平文本 vs 图结构，差多少
+② vs ③   同样的图和模型，加不加工程化，差多少
+```
 
-- A 类问题上，作弊版会明显赢过 top-k 版 → 瓶颈是**检索**
-- B 类问题上，连作弊版也答不对 → 瓶颈是**计算能力**，上下文再多也没用
+①' 单独列出来，是因为它把「信息完整性」这个变量消掉了。我们的语料约 19,800 token，
+装得进上下文，所以 ①' 拿到的是全部信息，一份不少。它在图计算类问题上依然答不出，
+说明瓶颈是算不出来，不是看不到。
 
-**问题集分两层**，A 类 40–60 条、B 类 40–60 条：
+**问题集 153 道，按题型分七层：**
 
-| 层级 | 假设预期 | 作用 |
+| 层 | 题量 | 例题 |
 |---|---|---|
-| A 类 | 传统 RAG 赢或打平 | 证明没作弊 |
-| B 类 | 倒置LLM 显著赢 | 证明架构价值 |
+| A 类 事实查找 | 34 | tenlong-001 属于哪个车间？ |
+| B1 多跳依赖 | 25 | huanmai-002 停机会影响哪些设备？ |
+| B2 聚合统计 | 25 | chengxin-006 一共检修过几次？ |
+| B3 否定与补集 | 19 | 哪些设备还有未完成的检修？ |
+| B4 排序与阈值 | 20 | 哪些备件库存最紧张？ |
+| B5 根因追溯 | 20 | 主轴轴承磨损会导致哪些故障？ |
+| 拒答 | 10 | 3 号泵的检修周期是多久？ |
 
-
-
-评测的细节（指标怎么定、judge 怎么防偏、样本量怎么算）见 DESIGN.md 第六节。
+标准答案由手写的参考查询从图上算出，跟四条链路都无关。判定优先用确定性比对
+（集合、数值、排序），只有开放描述才上 LLM judge。样本量、显著性检验、已知陷阱
+见 [docs/评测框架.md](docs/评测框架.md)。
 
 ---
 
@@ -230,7 +244,7 @@ ollama pull qwen2.5-coder:14b
 然后问一句：
 
 ```bash
-python scripts/ask.py "3号泵停机会影响哪些设备？"
+python scripts/ask.py "huanmai-002 停机会影响哪些设备？"
 ```
 
 不加问题会进交互模式。主要参数：
@@ -255,29 +269,34 @@ python scripts/ask.py "3号泵停机会影响哪些设备？"
 
 ### 能跑的
 
-- Neo4j 5.26 社区版跑在 Docker 里，三层防线经实测有效
-- 倒置LLM 主链路完整：生成 → 四道校验 → EXPLAIN → 只读执行 → 自修复
-- 模型选型完成。`qwen2.5-coder:14b` 单条 0.6 秒，比初选的 27B 快 17 倍
-- 32 个测试通过
+- **数据管线四步齐备**：规范化 → 归一 → 建图 → 对账。711 个节点、12 类关系、孤儿 0
+- **四条对照链路**：① 文档模式、①' 全语料塞进上下文、② 朴素实现、③ 倒置LLM 增强版
+- **Web 界面**：查询页展示倒置LLM 的完整链路，数据管线页展示四步状态和待确认队列
+- **评测框架已定，问题集 153 道已生成**，标准答案由手写的参考查询从图上算出
+- 58 个测试通过
 
 ### 还没做的
 
-- **图数据库是空的。** `scripts/seed_graph.py` 还没写，现在问什么都返回 0 行。
-  所以「答案对不对」暂时测不了，上面那些测的都是「结构对不对」
-- 传统 RAG 基线和官方 naive 对照
-- Web 界面
-- 评测框架（问题集、judge、统计）
-- 数据源等合作方提供
+- **评测还没跑。** 问题集要人工审一遍，重点是那 65 道依赖语义理解的题。
+  审完才能跑四条链路、出对比报告
+- 判定与统计的代码：字段比对、LLM judge、配对检验
 
 ### 已知局限
 
-**规模.** 图谱写的是 150–250 节点、30–50 页文档。调研显示约 56K token 以下的语料，
-vanilla RAG 会打败所有图方法。我们用问题分层和「作弊版基线」把这个前提变成了
-受控变量，但结论的适用范围仍然局限在这个量级，不能外推到几千篇文档的场景。
+**语料规模.** 渲染成文本后约 19,800 token，装得进上下文。调研显示约 56K token
+以下的语料，vanilla RAG 会打败所有图方法。这一点我们做成了受控变量：①' 那条链路
+不做检索，把全部语料塞进上下文。它在图计算类问题上依然答不出，说明瓶颈是
+「算不出来」而不是「看不到」。但结论的适用范围局限在这个量级，
+不能外推到几千篇文档的场景。
 
-**校验层保证的是「能跑」.** 上面那三层能挡住不存在的标签、写反的方向、语法错误。
-**挡不住语义错误。** 实测遇到过查询语法全对、能执行、返回非空结果，
-但答非所问的情况。这类错误只能靠 few-shot 示例挡，见 DESIGN.md 第 3.11 节。
+**标准答案的中间人是 AI.** 答案的生成链是「源文件 → 规范化 → 归一 → 建图 →
+手写参考查询」，每一环都由 AI 完成，不是领域专家。不同题型的可信度差别很大：
+直读台账的 44 道几乎不可能错，而「某故障会导致哪些故障」那 20 道是从一段自由文本
+里解释出来的，离原始数据最远。审阅清单按这个距离排序，65 道需要重点核。
+
+**校验层保证的是「能跑」.** 三层防线能挡住不存在的标签、写反的方向、语法错误。
+**挡不住语义错误。** 实测遇到过查询语法全对、能执行、返回非空结果，但答非所问的情况。
+这类错误只能靠 few-shot 示例挡，见 DESIGN.md 第 3.11 节。
 
 **「能执行率」是个陷阱指标.** 公开基准上 GPT-4o 的 Cypher 语法可执行率是 94.93%，
 真实执行准确率 60.18%，相差约 35 个百分点。只报执行成功率的评测没有意义。

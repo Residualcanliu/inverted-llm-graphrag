@@ -1,0 +1,53 @@
+{
+  "mismatch": [
+    {
+      "id": "B4-106",
+      "question": "检修次数最多的 3 台设备是哪些？",
+      "why": "两条路径答案不一致",
+      "图算的": "[\"tenlong-005\", \"tenlong-003\", \"tenlong-010\"]",
+      "独立重算": "[\"chengxin-006\", \"chengxin-009\", \"chengxin-012\"]"
+    },
+    {
+      "id": "B4-110",
+      "question": "被最多设备依赖的 5 台设备是哪些？",
+      "why": "两条路径答案不一致",
+      "图算的": "[\"huanmai-003\", \"huanmai-002\", \"huanmai-001\", \"yuelong-002\", \"yuelong-003\"]",
+      "独立重算": "[\"huanmai-001\", \"huanmai-002\", \"huanmai-003\", \"yuelong-001\", \"yuelong-002\"]"
+    },
+    {
+      "id": "B4-111",
+      "question": "检修次数最多的 5 台设备是哪些？",
+      "why": "两条路径答案不一致",
+      "图算的": "[\"tenlong-011\", \"tenlong-003\", \"tenlong-010\", \"tenlong-005\", \"yuelong-004\"]",
+      "独立重算": "[\"chengxin-006\", \"chengxin-009\", \"chengxin-012\", \"chengxin-018\", \"chengxin-019\"]"
+    },
+    {
+      "id": "B4-115",
+      "question": "被最多设备依赖的 10 台设备是哪些？",
+      "why": "两条路径答案不一致",
+      "图算的": "[\"huanmai-003\", \"huanmai-002\", \"huanmai-001\", \"yuelong-001\", \"yuelong-003\", \"yuelong-004\", …",
+      "独立重算": "[\"huanmai-001\", \"huanmai-002\", \"huanmai-003\", \"tenlong-001\", \"tenlong-002\", \"yuelong-001\", …"
+    },
+    {
+      "id": "B4-116",
+      "question": "检修次数最多的 10 台设备是哪些？",
+      "why": "两条路径答案不一致",
+      "图算的": "[\"yuelong-016\", \"yuelong-010\", \"yuelong-011\", \"tenlong-005\", \"tenlong-003\", \"tenlong-011\", …",
+      "独立重算": "[\"chengxin-006\", \"chengxin-009\", \"chengxin-012\", \"chengxin-018\", \"chengxin-019\", \"chengxin …"
+    },
+    {
+      "id": "B4-120",
+      "question": "被最多设备依赖的 20 台设备是哪些？",
+      "why": "两条路径答案不一致",
+      "图算的": "[\"huanmai-002\", \"huanmai-001\", \"huanmai-003\", \"yuelong-001\", \"yuelong-004\", \"yuelong-003\", …",
+      "独立重算": "[\"huanmai-001\", \"huanmai-002\", \"huanmai-003\", \"huanmai-004\", \"huanmai-005\", \"huanmai-006\", …"
+    },
+    {
+      "id": "B4-121",
+      "question": "检修次数最多的 20 台设备是哪些？",
+      "why": "两条路径答案不一致",
+      "图算的": "[\"chengxin-020\", \"chengxin-029\", \"chengxin-019\", \"tenlong-005\", \"yuelong-017\", \"chengxin-0 …",
+      "独立重算": "[\"chengxin-006\", \"chengxin-009\", \"chengxin-012\", \"chengxin-018\", \"chengxin-019\", \"chengxin …"
+    }
+  ]
+}
