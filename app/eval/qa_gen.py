@@ -255,10 +255,13 @@ class QABuilder:
         （答案不同，模型也得看懂 N），但它们同模板，信息量低于换维度。
         报告里会按维度也统计一遍。
         """
+        # 每条都必须返回分值列 `n`。判定并列区要用它算阈值 ——
+        # 只返回 id 的话，第 k 名的分值取不到，并列区就算不出来。
         dims = [
             ("库存余量最少的{top}个备件是哪些？",
              "MATCH (p:SparePart) WHERE p.safety_stock IS NOT NULL "
-             "RETURN p.id AS v ORDER BY p.stock - p.safety_stock ASC LIMIT {k}", "备件"),
+             "RETURN p.id AS v, p.stock - p.safety_stock AS n "
+             "ORDER BY n ASC LIMIT {k}", "备件"),
             ("被最多设备依赖的{top}台设备是哪些？",
              "MATCH (e:Equipment)<-[:DEPENDS_ON]-(d:Equipment) "
              "RETURN e.id AS v, count(d) AS n ORDER BY n DESC LIMIT {k}", "设备"),
@@ -281,10 +284,43 @@ class QABuilder:
                 if not ans:
                     continue
                 q = tmpl.format(top=f" {k} ")
+                # 把「并列区」一起存下来。排序题的第 k 名常常有多个并列，
+                # 实测撞到过 33 台设备并列同一分值 —— 那种情况下「前 3 台」
+                # 没有唯一答案，判分只能看「模型给的项落没落在并列区里」。
+                tied = self._tied_set(c.replace("{k}", str(k)), ans)
                 self.add("B4", q.replace("  ", " "), "list",
-                         c.replace("{k}", str(k)), {key: ans},
-                         note="排序题答案可能并列，判分按集合算")
+                         c.replace("{k}", str(k)),
+                         {key: ans, "_tied": tied},
+                         note=f"并列区共 {len(tied)} 项，判分看是否落在区内")
                 built += 1
+
+    @staticmethod
+    def _tied_set(cypher: str, top: list[str]) -> list[str]:
+        """所有分值与「第 k 名」相同的项，即并列区。
+
+        把 LIMIT 去掉重跑一次，取分值等于第 k 名分值的全部。
+        实测撞到过 33 台设备并列同一分值 —— 那种情况下「前 3 台」没有唯一答案，
+        判分只能看模型给的项落没落在这个区里。
+        """
+        import re
+        base = re.sub(r"\s*LIMIT\s+\d+\s*$", "", cypher.strip(), flags=re.IGNORECASE)
+        m = re.search(r"ORDER BY\s+\S+\s+(ASC|DESC)", base, re.IGNORECASE)
+        if not m:
+            return top
+        direction = m.group(1).upper()
+        try:
+            full = _rows(base)
+        except Exception:                             # noqa: BLE001
+            return top
+        if not full or len(full) <= len(top):
+            return top
+        thr = full[len(top) - 1].get("n")
+        if thr is None:
+            return top
+        keep = [r["v"] for r in full
+                if (r.get("n", 0) >= thr if direction == "DESC"
+                    else r.get("n", 0) <= thr)]
+        return keep or top
 
     # ---------------- B5 根因追溯 ----------------
 

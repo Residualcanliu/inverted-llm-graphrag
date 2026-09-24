@@ -1906,6 +1906,7 @@
           "卡盘松动",
           "参数不当",
           "参数异常",
+          "吸力不足",
           "地线夹松动",
           "定位销卡死",
           "导管堵塞",
@@ -1922,6 +1923,7 @@
           "熔渣堵塞",
           "砂轮破损",
           "磨粒钝化",
+          "管路",
           "管路堵塞",
           "管路破裂",
           "粉尘油污附着",
@@ -1938,7 +1940,7 @@
           "驱动器过载"
         ]
       },
-      "note": "补集大小 39",
+      "note": "补集大小 41",
       "derivation": "negation",
       "derivation_desc": "补集：集合相减，「没有」的定义是明确的"
     },
@@ -1972,11 +1974,10 @@
           "聚焦偏移",
           "轴承磨损",
           "进给系统故障",
-          "送丝不畅",
-          "镜片污染"
+          "送丝不畅"
         ]
       },
-      "note": "补集大小 24",
+      "note": "补集大小 23",
       "derivation": "negation",
       "derivation_desc": "补集：集合相减，「没有」的定义是明确的"
     },
@@ -2317,15 +2318,22 @@
       "layer": "B4",
       "question": "库存余量最少的 3 个备件是哪些？",
       "answer_type": "list",
-      "ref_cypher": "MATCH (p:SparePart) WHERE p.safety_stock IS NOT NULL RETURN p.id AS v ORDER BY p.stock - p.safety_stock ASC LIMIT 3",
+      "ref_cypher": "MATCH (p:SparePart) WHERE p.safety_stock IS NOT NULL RETURN p.id AS v, p.stock - p.safety_stock AS n ORDER BY n ASC LIMIT 3",
       "answer": {
         "备件": [
           "C-001",
           "A-018",
           "A-013"
+        ],
+        "_tied": [
+          "C-001",
+          "A-013",
+          "A-018",
+          "B-015",
+          "C-007"
         ]
       },
-      "note": "排序题答案可能并列，判分按集合算",
+      "note": "并列区共 5 项，判分看是否落在区内",
       "derivation": "relational",
       "derivation_desc": "关系路径：依赖我定义的路径语义（比如「影响」是上游还是下游）"
     },
@@ -2340,9 +2348,14 @@
           "huanmai-001",
           "huanmai-002",
           "huanmai-003"
+        ],
+        "_tied": [
+          "huanmai-001",
+          "huanmai-002",
+          "huanmai-003"
         ]
       },
-      "note": "排序题答案可能并列，判分按集合算",
+      "note": "并列区共 3 项，判分看是否落在区内",
       "derivation": "relational",
       "derivation_desc": "关系路径：依赖我定义的路径语义（比如「影响」是上游还是下游）"
     },
@@ -2357,9 +2370,44 @@
           "tenlong-005",
           "tenlong-003",
           "tenlong-010"
+        ],
+        "_tied": [
+          "tenlong-003",
+          "tenlong-005",
+          "tenlong-010",
+          "tenlong-011",
+          "yuelong-004",
+          "yuelong-007",
+          "yuelong-010",
+          "yuelong-011",
+          "yuelong-016",
+          "yuelong-017",
+          "yuelong-022",
+          "chengxin-006",
+          "chengxin-009",
+          "chengxin-012",
+          "chengxin-018",
+          "chengxin-019",
+          "chengxin-020",
+          "chengxin-024",
+          "chengxin-029",
+          "chengxin-030",
+          "chengxin-036",
+          "chengxin-039",
+          "chengxin-042",
+          "huanmai-004",
+          "huanmai-007",
+          "huanmai-009",
+          "huanmai-010",
+          "huanmai-016",
+          "heyue-001",
+          "heyue-004",
+          "heyue-010",
+          "heyue-011",
+          "heyue-016"
         ]
       },
-      "note": "排序题答案可能并列，判分按集合算",
+      "note": "并列区共 33 项，判分看是否落在区内",
       "derivation": "relational",
       "derivation_desc": "关系路径：依赖我定义的路径语义（比如「影响」是上游还是下游）"
     },
@@ -2374,9 +2422,15 @@
           "冷却系统堵塞",
           "主轴精度下降",
           "电磁吸盘失效"
+        ],
+        "_tied": [
+          "主轴精度下降",
+          "冷却系统堵塞",
+          "电磁吸盘失效",
+          "磨头磨损"
         ]
       },
-      "note": "排序题答案可能并列，判分按集合算",
+      "note": "并列区共 4 项，判分看是否落在区内",
       "derivation": "relational",
       "derivation_desc": "关系路径：依赖我定义的路径语义（比如「影响」是上游还是下游）"
     },
@@ -2391,9 +2445,17 @@
           "通-007",
           "通-008",
           "通-002"
+        ],
+        "_tied": [
+          "通-007",
+          "通-008",
+          "通-001",
+          "通-002",
+          "通-003",
+          "通-004"
         ]
       },
-      "note": "排序题答案可能并列，判分按集合算",
+      "note": "并列区共 6 项，判分看是否落在区内",
       "derivation": "relational",
       "derivation_desc": "关系路径：依赖我定义的路径语义（比如「影响」是上游还是下游）"
     },
@@ -2402,7 +2464,7 @@
       "layer": "B4",
       "question": "库存余量最少的 5 个备件是哪些？",
       "answer_type": "list",
-      "ref_cypher": "MATCH (p:SparePart) WHERE p.safety_stock IS NOT NULL RETURN p.id AS v ORDER BY p.stock - p.safety_stock ASC LIMIT 5",
+      "ref_cypher": "MATCH (p:SparePart) WHERE p.safety_stock IS NOT NULL RETURN p.id AS v, p.stock - p.safety_stock AS n ORDER BY n ASC LIMIT 5",
       "answer": {
         "备件": [
           "C-001",
@@ -2410,9 +2472,16 @@
           "A-018",
           "A-013",
           "C-007"
+        ],
+        "_tied": [
+          "C-001",
+          "A-013",
+          "A-018",
+          "B-015",
+          "C-007"
         ]
       },
-      "note": "排序题答案可能并列，判分按集合算",
+      "note": "并列区共 5 项，判分看是否落在区内",
       "derivation": "relational",
       "derivation_desc": "关系路径：依赖我定义的路径语义（比如「影响」是上游还是下游）"
     },
@@ -2429,9 +2498,18 @@
           "huanmai-001",
           "yuelong-002",
           "yuelong-003"
+        ],
+        "_tied": [
+          "huanmai-001",
+          "huanmai-002",
+          "huanmai-003",
+          "yuelong-001",
+          "yuelong-002",
+          "yuelong-003",
+          "yuelong-004"
         ]
       },
-      "note": "排序题答案可能并列，判分按集合算",
+      "note": "并列区共 7 项，判分看是否落在区内",
       "derivation": "relational",
       "derivation_desc": "关系路径：依赖我定义的路径语义（比如「影响」是上游还是下游）"
     },
@@ -2448,9 +2526,44 @@
           "tenlong-010",
           "tenlong-005",
           "yuelong-004"
+        ],
+        "_tied": [
+          "tenlong-003",
+          "tenlong-005",
+          "tenlong-010",
+          "tenlong-011",
+          "yuelong-004",
+          "yuelong-007",
+          "yuelong-010",
+          "yuelong-011",
+          "yuelong-016",
+          "yuelong-017",
+          "yuelong-022",
+          "chengxin-006",
+          "chengxin-009",
+          "chengxin-012",
+          "chengxin-018",
+          "chengxin-019",
+          "chengxin-020",
+          "chengxin-024",
+          "chengxin-029",
+          "chengxin-030",
+          "chengxin-036",
+          "chengxin-039",
+          "chengxin-042",
+          "huanmai-004",
+          "huanmai-007",
+          "huanmai-009",
+          "huanmai-010",
+          "huanmai-016",
+          "heyue-001",
+          "heyue-004",
+          "heyue-010",
+          "heyue-011",
+          "heyue-016"
         ]
       },
-      "note": "排序题答案可能并列，判分按集合算",
+      "note": "并列区共 33 项，判分看是否落在区内",
       "derivation": "relational",
       "derivation_desc": "关系路径：依赖我定义的路径语义（比如「影响」是上游还是下游）"
     },
@@ -2467,9 +2580,16 @@
           "电磁吸盘失效",
           "冷却系统堵塞",
           "砂轮不平衡"
+        ],
+        "_tied": [
+          "主轴精度下降",
+          "冷却系统堵塞",
+          "电磁吸盘失效",
+          "磨头磨损",
+          "砂轮不平衡"
         ]
       },
-      "note": "排序题答案可能并列，判分按集合算",
+      "note": "并列区共 5 项，判分看是否落在区内",
       "derivation": "relational",
       "derivation_desc": "关系路径：依赖我定义的路径语义（比如「影响」是上游还是下游）"
     },
@@ -2486,9 +2606,17 @@
           "通-004",
           "通-002",
           "通-001"
+        ],
+        "_tied": [
+          "通-007",
+          "通-008",
+          "通-001",
+          "通-002",
+          "通-003",
+          "通-004"
         ]
       },
-      "note": "排序题答案可能并列，判分按集合算",
+      "note": "并列区共 6 项，判分看是否落在区内",
       "derivation": "relational",
       "derivation_desc": "关系路径：依赖我定义的路径语义（比如「影响」是上游还是下游）"
     },
@@ -2497,7 +2625,7 @@
       "layer": "B4",
       "question": "库存余量最少的 10 个备件是哪些？",
       "answer_type": "list",
-      "ref_cypher": "MATCH (p:SparePart) WHERE p.safety_stock IS NOT NULL RETURN p.id AS v ORDER BY p.stock - p.safety_stock ASC LIMIT 10",
+      "ref_cypher": "MATCH (p:SparePart) WHERE p.safety_stock IS NOT NULL RETURN p.id AS v, p.stock - p.safety_stock AS n ORDER BY n ASC LIMIT 10",
       "answer": {
         "备件": [
           "C-001",
@@ -2510,9 +2638,22 @@
           "A-015",
           "B-003",
           "A-004"
+        ],
+        "_tied": [
+          "C-001",
+          "A-013",
+          "A-018",
+          "B-015",
+          "C-007",
+          "A-014",
+          "B-014",
+          "A-004",
+          "A-015",
+          "B-003",
+          "C-005"
         ]
       },
-      "note": "排序题答案可能并列，判分按集合算",
+      "note": "并列区共 11 项，判分看是否落在区内",
       "derivation": "relational",
       "derivation_desc": "关系路径：依赖我定义的路径语义（比如「影响」是上游还是下游）"
     },
@@ -2534,9 +2675,28 @@
           "tenlong-002",
           "tenlong-001",
           "yuelong-022"
+        ],
+        "_tied": [
+          "huanmai-001",
+          "huanmai-002",
+          "huanmai-003",
+          "yuelong-001",
+          "yuelong-002",
+          "yuelong-003",
+          "yuelong-004",
+          "tenlong-001",
+          "tenlong-002",
+          "yuelong-021",
+          "yuelong-022",
+          "yuelong-023",
+          "yuelong-024",
+          "yuelong-025",
+          "yuelong-026",
+          "yuelong-027",
+          "yuelong-028"
         ]
       },
-      "note": "排序题答案可能并列，判分按集合算",
+      "note": "并列区共 17 项，判分看是否落在区内",
       "derivation": "relational",
       "derivation_desc": "关系路径：依赖我定义的路径语义（比如「影响」是上游还是下游）"
     },
@@ -2558,9 +2718,44 @@
           "yuelong-007",
           "tenlong-010",
           "yuelong-017"
+        ],
+        "_tied": [
+          "tenlong-003",
+          "tenlong-005",
+          "tenlong-010",
+          "tenlong-011",
+          "yuelong-004",
+          "yuelong-007",
+          "yuelong-010",
+          "yuelong-011",
+          "yuelong-016",
+          "yuelong-017",
+          "yuelong-022",
+          "chengxin-006",
+          "chengxin-009",
+          "chengxin-012",
+          "chengxin-018",
+          "chengxin-019",
+          "chengxin-020",
+          "chengxin-024",
+          "chengxin-029",
+          "chengxin-030",
+          "chengxin-036",
+          "chengxin-039",
+          "chengxin-042",
+          "huanmai-004",
+          "huanmai-007",
+          "huanmai-009",
+          "huanmai-010",
+          "huanmai-016",
+          "heyue-001",
+          "heyue-004",
+          "heyue-010",
+          "heyue-011",
+          "heyue-016"
         ]
       },
-      "note": "排序题答案可能并列，判分按集合算",
+      "note": "并列区共 33 项，判分看是否落在区内",
       "derivation": "relational",
       "derivation_desc": "关系路径：依赖我定义的路径语义（比如「影响」是上游还是下游）"
     },
@@ -2582,9 +2777,21 @@
           "伺服报警",
           "导轨磨损",
           "换刀失败"
+        ],
+        "_tied": [
+          "主轴精度下降",
+          "冷却系统堵塞",
+          "电磁吸盘失效",
+          "磨头磨损",
+          "砂轮不平衡",
+          "主轴轴承过热",
+          "刀具夹不紧",
+          "伺服报警",
+          "导轨磨损",
+          "换刀失败"
         ]
       },
-      "note": "排序题答案可能并列，判分按集合算",
+      "note": "并列区共 10 项，判分看是否落在区内",
       "derivation": "relational",
       "derivation_desc": "关系路径：依赖我定义的路径语义（比如「影响」是上游还是下游）"
     },
@@ -2606,9 +2813,30 @@
           "B-014",
           "B-005",
           "B-015"
+        ],
+        "_tied": [
+          "通-007",
+          "通-008",
+          "通-001",
+          "通-002",
+          "通-003",
+          "通-004",
+          "通-006",
+          "B-001",
+          "B-002",
+          "B-003",
+          "B-004",
+          "B-005",
+          "B-014",
+          "B-015",
+          "磨-001",
+          "磨-003",
+          "磨-004",
+          "磨-005",
+          "磨-006"
         ]
       },
-      "note": "排序题答案可能并列，判分按集合算",
+      "note": "并列区共 19 项，判分看是否落在区内",
       "derivation": "relational",
       "derivation_desc": "关系路径：依赖我定义的路径语义（比如「影响」是上游还是下游）"
     },
@@ -2617,7 +2845,7 @@
       "layer": "B4",
       "question": "库存余量最少的 20 个备件是哪些？",
       "answer_type": "list",
-      "ref_cypher": "MATCH (p:SparePart) WHERE p.safety_stock IS NOT NULL RETURN p.id AS v ORDER BY p.stock - p.safety_stock ASC LIMIT 20",
+      "ref_cypher": "MATCH (p:SparePart) WHERE p.safety_stock IS NOT NULL RETURN p.id AS v, p.stock - p.safety_stock AS n ORDER BY n ASC LIMIT 20",
       "answer": {
         "备件": [
           "C-001",
@@ -2640,9 +2868,31 @@
           "C-010",
           "B-005",
           "A-002"
+        ],
+        "_tied": [
+          "C-001",
+          "A-013",
+          "A-018",
+          "B-015",
+          "C-007",
+          "A-014",
+          "B-014",
+          "A-004",
+          "A-015",
+          "B-003",
+          "C-005",
+          "B-010",
+          "A-005",
+          "A-017",
+          "B-012",
+          "A-010",
+          "B-001",
+          "C-010",
+          "A-002",
+          "B-005"
         ]
       },
-      "note": "排序题答案可能并列，判分按集合算",
+      "note": "并列区共 20 项，判分看是否落在区内",
       "derivation": "relational",
       "derivation_desc": "关系路径：依赖我定义的路径语义（比如「影响」是上游还是下游）"
     },
@@ -2674,9 +2924,37 @@
           "tenlong-003",
           "yuelong-007",
           "yuelong-008"
+        ],
+        "_tied": [
+          "huanmai-001",
+          "huanmai-002",
+          "huanmai-003",
+          "yuelong-001",
+          "yuelong-002",
+          "yuelong-003",
+          "yuelong-004",
+          "tenlong-001",
+          "tenlong-002",
+          "yuelong-021",
+          "yuelong-022",
+          "yuelong-023",
+          "yuelong-024",
+          "yuelong-025",
+          "yuelong-026",
+          "yuelong-027",
+          "yuelong-028",
+          "tenlong-003",
+          "tenlong-004",
+          "yuelong-005",
+          "yuelong-006",
+          "yuelong-007",
+          "yuelong-008",
+          "huanmai-004",
+          "huanmai-005",
+          "huanmai-006"
         ]
       },
-      "note": "排序题答案可能并列，判分按集合算",
+      "note": "并列区共 26 项，判分看是否落在区内",
       "derivation": "relational",
       "derivation_desc": "关系路径：依赖我定义的路径语义（比如「影响」是上游还是下游）"
     },
@@ -2708,9 +2986,44 @@
           "yuelong-022",
           "yuelong-007",
           "chengxin-030"
+        ],
+        "_tied": [
+          "tenlong-003",
+          "tenlong-005",
+          "tenlong-010",
+          "tenlong-011",
+          "yuelong-004",
+          "yuelong-007",
+          "yuelong-010",
+          "yuelong-011",
+          "yuelong-016",
+          "yuelong-017",
+          "yuelong-022",
+          "chengxin-006",
+          "chengxin-009",
+          "chengxin-012",
+          "chengxin-018",
+          "chengxin-019",
+          "chengxin-020",
+          "chengxin-024",
+          "chengxin-029",
+          "chengxin-030",
+          "chengxin-036",
+          "chengxin-039",
+          "chengxin-042",
+          "huanmai-004",
+          "huanmai-007",
+          "huanmai-009",
+          "huanmai-010",
+          "huanmai-016",
+          "heyue-001",
+          "heyue-004",
+          "heyue-010",
+          "heyue-011",
+          "heyue-016"
         ]
       },
-      "note": "排序题答案可能并列，判分按集合算",
+      "note": "并列区共 33 项，判分看是否落在区内",
       "derivation": "relational",
       "derivation_desc": "关系路径：依赖我定义的路径语义（比如「影响」是上游还是下游）"
     },
@@ -2742,9 +3055,31 @@
           "冷却水流量不足",
           "聚焦偏移",
           "送丝不畅"
+        ],
+        "_tied": [
+          "主轴精度下降",
+          "冷却系统堵塞",
+          "电磁吸盘失效",
+          "磨头磨损",
+          "砂轮不平衡",
+          "主轴轴承过热",
+          "刀具夹不紧",
+          "伺服报警",
+          "导轨磨损",
+          "换刀失败",
+          "镜片污染",
+          "喷嘴堵塞",
+          "接地不良",
+          "气路泄漏",
+          "激光功率下降",
+          "焊枪堵塞",
+          "电弧不稳定",
+          "冷却水流量不足",
+          "聚焦偏移",
+          "送丝不畅"
         ]
       },
-      "note": "排序题答案可能并列，判分按集合算",
+      "note": "并列区共 20 项，判分看是否落在区内",
       "derivation": "relational",
       "derivation_desc": "关系路径：依赖我定义的路径语义（比如「影响」是上游还是下游）"
     },
@@ -2776,9 +3111,33 @@
           "B-001",
           "B-014",
           "A-013"
+        ],
+        "_tied": [
+          "通-007",
+          "通-008",
+          "通-001",
+          "通-002",
+          "通-003",
+          "通-004",
+          "通-006",
+          "B-001",
+          "B-002",
+          "B-003",
+          "B-004",
+          "B-005",
+          "B-014",
+          "B-015",
+          "磨-001",
+          "磨-003",
+          "磨-004",
+          "磨-005",
+          "磨-006",
+          "A-012",
+          "A-013",
+          "通-005"
         ]
       },
-      "note": "排序题答案可能并列，判分按集合算",
+      "note": "并列区共 22 项，判分看是否落在区内",
       "derivation": "relational",
       "derivation_desc": "关系路径：依赖我定义的路径语义（比如「影响」是上游还是下游）"
     },
@@ -2790,7 +3149,7 @@
       "ref_cypher": "MATCH (a:FailureMode {name:'卡盘松动'})-[:TRIGGERS*1..3]->(b:FailureMode)\n                   RETURN DISTINCT b.name AS v ORDER BY v",
       "answer": {
         "引发的故障": [
-          "工件尺寸超差"
+          "主轴异响"
         ]
       },
       "note": "",
@@ -2800,13 +3159,12 @@
     {
       "id": "B5-125",
       "layer": "B5",
-      "question": "「管路堵塞」会导致哪些故障？",
+      "question": "「磨粒钝化」会导致哪些故障？",
       "answer_type": "set",
-      "ref_cypher": "MATCH (a:FailureMode {name:'管路堵塞'})-[:TRIGGERS*1..3]->(b:FailureMode)\n                   RETURN DISTINCT b.name AS v ORDER BY v",
+      "ref_cypher": "MATCH (a:FailureMode {name:'磨粒钝化'})-[:TRIGGERS*1..3]->(b:FailureMode)\n                   RETURN DISTINCT b.name AS v ORDER BY v",
       "answer": {
         "引发的故障": [
-          "冷却系统堵塞",
-          "喷嘴堵塞"
+          "磨头磨损"
         ]
       },
       "note": "",
@@ -2816,13 +3174,12 @@
     {
       "id": "B5-126",
       "layer": "B5",
-      "question": "「老化」会导致哪些故障？",
+      "question": "「水泵故障」会导致哪些故障？",
       "answer_type": "set",
-      "ref_cypher": "MATCH (a:FailureMode {name:'老化'})-[:TRIGGERS*1..3]->(b:FailureMode)\n                   RETURN DISTINCT b.name AS v ORDER BY v",
+      "ref_cypher": "MATCH (a:FailureMode {name:'水泵故障'})-[:TRIGGERS*1..3]->(b:FailureMode)\n                   RETURN DISTINCT b.name AS v ORDER BY v",
       "answer": {
         "引发的故障": [
-          "冷却系统堵塞",
-          "喷嘴堵塞"
+          "冷却水流量不足"
         ]
       },
       "note": "",
@@ -2831,6 +3188,51 @@
     },
     {
       "id": "B5-127",
+      "layer": "B5",
+      "question": "「老化」会导致哪些故障？",
+      "answer_type": "set",
+      "ref_cypher": "MATCH (a:FailureMode {name:'老化'})-[:TRIGGERS*1..3]->(b:FailureMode)\n                   RETURN DISTINCT b.name AS v ORDER BY v",
+      "answer": {
+        "引发的故障": [
+          "激光功率下降"
+        ]
+      },
+      "note": "",
+      "derivation": "interpreted",
+      "derivation_desc": "文本解释：依赖我把一段自由文本解释成了因果或措施"
+    },
+    {
+      "id": "B5-128",
+      "layer": "B5",
+      "question": "「防护失效」会导致哪些故障？",
+      "answer_type": "set",
+      "ref_cypher": "MATCH (a:FailureMode {name:'防护失效'})-[:TRIGGERS*1..3]->(b:FailureMode)\n                   RETURN DISTINCT b.name AS v ORDER BY v",
+      "answer": {
+        "引发的故障": [
+          "导轨磨损"
+        ]
+      },
+      "note": "",
+      "derivation": "interpreted",
+      "derivation_desc": "文本解释：依赖我把一段自由文本解释成了因果或措施"
+    },
+    {
+      "id": "B5-129",
+      "layer": "B5",
+      "question": "「长期超载」会导致哪些故障？",
+      "answer_type": "set",
+      "ref_cypher": "MATCH (a:FailureMode {name:'长期超载'})-[:TRIGGERS*1..3]->(b:FailureMode)\n                   RETURN DISTINCT b.name AS v ORDER BY v",
+      "answer": {
+        "引发的故障": [
+          "轴承磨损"
+        ]
+      },
+      "note": "",
+      "derivation": "interpreted",
+      "derivation_desc": "文本解释：依赖我把一段自由文本解释成了因果或措施"
+    },
+    {
+      "id": "B5-130",
       "layer": "B5",
       "question": "「送丝轮磨损」会导致哪些故障？",
       "answer_type": "set",
@@ -2845,61 +3247,14 @@
       "derivation_desc": "文本解释：依赖我把一段自由文本解释成了因果或措施"
     },
     {
-      "id": "B5-128",
-      "layer": "B5",
-      "question": "「管路破裂」会导致哪些故障？",
-      "answer_type": "set",
-      "ref_cypher": "MATCH (a:FailureMode {name:'管路破裂'})-[:TRIGGERS*1..3]->(b:FailureMode)\n                   RETURN DISTINCT b.name AS v ORDER BY v",
-      "answer": {
-        "引发的故障": [
-          "冷却液泄漏"
-        ]
-      },
-      "note": "",
-      "derivation": "interpreted",
-      "derivation_desc": "文本解释：依赖我把一段自由文本解释成了因果或措施"
-    },
-    {
-      "id": "B5-129",
-      "layer": "B5",
-      "question": "「接头松动」会导致哪些故障？",
-      "answer_type": "set",
-      "ref_cypher": "MATCH (a:FailureMode {name:'接头松动'})-[:TRIGGERS*1..3]->(b:FailureMode)\n                   RETURN DISTINCT b.name AS v ORDER BY v",
-      "answer": {
-        "引发的故障": [
-          "刀架卡滞",
-          "接地不良"
-        ]
-      },
-      "note": "",
-      "derivation": "interpreted",
-      "derivation_desc": "文本解释：依赖我把一段自由文本解释成了因果或措施"
-    },
-    {
-      "id": "B5-130",
-      "layer": "B5",
-      "question": "「驱动器过载」会导致哪些故障？",
-      "answer_type": "set",
-      "ref_cypher": "MATCH (a:FailureMode {name:'驱动器过载'})-[:TRIGGERS*1..3]->(b:FailureMode)\n                   RETURN DISTINCT b.name AS v ORDER BY v",
-      "answer": {
-        "引发的故障": [
-          "伺服报警",
-          "工件尺寸超差"
-        ]
-      },
-      "note": "",
-      "derivation": "interpreted",
-      "derivation_desc": "文本解释：依赖我把一段自由文本解释成了因果或措施"
-    },
-    {
       "id": "B5-131",
       "layer": "B5",
-      "question": "「伺服报警」会导致哪些故障？",
+      "question": "「保护气不足」会导致哪些故障？",
       "answer_type": "set",
-      "ref_cypher": "MATCH (a:FailureMode {name:'伺服报警'})-[:TRIGGERS*1..3]->(b:FailureMode)\n                   RETURN DISTINCT b.name AS v ORDER BY v",
+      "ref_cypher": "MATCH (a:FailureMode {name:'保护气不足'})-[:TRIGGERS*1..3]->(b:FailureMode)\n                   RETURN DISTINCT b.name AS v ORDER BY v",
       "answer": {
         "引发的故障": [
-          "工件尺寸超差"
+          "电弧不稳定"
         ]
       },
       "note": "",
@@ -2909,9 +3264,9 @@
     {
       "id": "B5-132",
       "layer": "B5",
-      "question": "「丝杠间隙过大」会导致哪些故障？",
+      "question": "「伺服报警」会导致哪些故障？",
       "answer_type": "set",
-      "ref_cypher": "MATCH (a:FailureMode {name:'丝杠间隙过大'})-[:TRIGGERS*1..3]->(b:FailureMode)\n                   RETURN DISTINCT b.name AS v ORDER BY v",
+      "ref_cypher": "MATCH (a:FailureMode {name:'伺服报警'})-[:TRIGGERS*1..3]->(b:FailureMode)\n                   RETURN DISTINCT b.name AS v ORDER BY v",
       "answer": {
         "引发的故障": [
           "进给系统故障"
@@ -2924,12 +3279,12 @@
     {
       "id": "B5-133",
       "layer": "B5",
-      "question": "「长期超载」会导致哪些故障？",
+      "question": "「丝杠间隙过大」会导致哪些故障？",
       "answer_type": "set",
-      "ref_cypher": "MATCH (a:FailureMode {name:'长期超载'})-[:TRIGGERS*1..3]->(b:FailureMode)\n                   RETURN DISTINCT b.name AS v ORDER BY v",
+      "ref_cypher": "MATCH (a:FailureMode {name:'丝杠间隙过大'})-[:TRIGGERS*1..3]->(b:FailureMode)\n                   RETURN DISTINCT b.name AS v ORDER BY v",
       "answer": {
         "引发的故障": [
-          "轴承磨损"
+          "进给系统故障"
         ]
       },
       "note": "",
@@ -2954,6 +3309,21 @@
     {
       "id": "B5-135",
       "layer": "B5",
+      "question": "「聚焦偏移」这个故障应该怎么处理？",
+      "answer_type": "set",
+      "ref_cypher": "MATCH (f:FailureMode {name:'聚焦偏移'})-[:MITIGATED_BY]->(s:SafetyMeasure)\n                   RETURN s.name AS v ORDER BY v",
+      "answer": {
+        "处理措施": [
+          "重新标定焦点位置"
+        ]
+      },
+      "note": "",
+      "derivation": "interpreted",
+      "derivation_desc": "文本解释：依赖我把一段自由文本解释成了因果或措施"
+    },
+    {
+      "id": "B5-136",
+      "layer": "B5",
       "question": "「焊枪堵塞」这个故障应该怎么处理？",
       "answer_type": "set",
       "ref_cypher": "MATCH (f:FailureMode {name:'焊枪堵塞'})-[:MITIGATED_BY]->(s:SafetyMeasure)\n                   RETURN s.name AS v ORDER BY v",
@@ -2967,29 +3337,14 @@
       "derivation_desc": "文本解释：依赖我把一段自由文本解释成了因果或措施"
     },
     {
-      "id": "B5-136",
-      "layer": "B5",
-      "question": "「工件尺寸超差」这个故障应该怎么处理？",
-      "answer_type": "set",
-      "ref_cypher": "MATCH (f:FailureMode {name:'工件尺寸超差'})-[:MITIGATED_BY]->(s:SafetyMeasure)\n                   RETURN s.name AS v ORDER BY v",
-      "answer": {
-        "处理措施": [
-          "停机换刀或重新校准反向间隙"
-        ]
-      },
-      "note": "",
-      "derivation": "interpreted",
-      "derivation_desc": "文本解释：依赖我把一段自由文本解释成了因果或措施"
-    },
-    {
       "id": "B5-137",
       "layer": "B5",
-      "question": "「送丝不畅」这个故障应该怎么处理？",
+      "question": "「刀具夹不紧」这个故障应该怎么处理？",
       "answer_type": "set",
-      "ref_cypher": "MATCH (f:FailureMode {name:'送丝不畅'})-[:MITIGATED_BY]->(s:SafetyMeasure)\n                   RETURN s.name AS v ORDER BY v",
+      "ref_cypher": "MATCH (f:FailureMode {name:'刀具夹不紧'})-[:MITIGATED_BY]->(s:SafetyMeasure)\n                   RETURN s.name AS v ORDER BY v",
       "answer": {
         "处理措施": [
-          "更换送丝轮、清理导管"
+          "更换弹簧夹头或重新锁紧拉钉"
         ]
       },
       "note": "",
@@ -3059,12 +3414,12 @@
     {
       "id": "B5-142",
       "layer": "B5",
-      "question": "「磨头磨损」这个故障应该怎么处理？",
+      "question": "「送丝不畅」这个故障应该怎么处理？",
       "answer_type": "set",
-      "ref_cypher": "MATCH (f:FailureMode {name:'磨头磨损'})-[:MITIGATED_BY]->(s:SafetyMeasure)\n                   RETURN s.name AS v ORDER BY v",
+      "ref_cypher": "MATCH (f:FailureMode {name:'送丝不畅'})-[:MITIGATED_BY]->(s:SafetyMeasure)\n                   RETURN s.name AS v ORDER BY v",
       "answer": {
         "处理措施": [
-          "更换磨头或修整"
+          "更换送丝轮、清理导管"
         ]
       },
       "note": "",
@@ -3074,12 +3429,12 @@
     {
       "id": "B5-143",
       "layer": "B5",
-      "question": "「镜片污染」这个故障应该怎么处理？",
+      "question": "「主轴精度下降」这个故障应该怎么处理？",
       "answer_type": "set",
-      "ref_cypher": "MATCH (f:FailureMode {name:'镜片污染'})-[:MITIGATED_BY]->(s:SafetyMeasure)\n                   RETURN s.name AS v ORDER BY v",
+      "ref_cypher": "MATCH (f:FailureMode {name:'主轴精度下降'})-[:MITIGATED_BY]->(s:SafetyMeasure)\n                   RETURN s.name AS v ORDER BY v",
       "answer": {
         "处理措施": [
-          "按规程清洁或更换保护/聚焦镜片"
+          "停机检测跳动，超差更换轴承"
         ]
       },
       "note": "",
