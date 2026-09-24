@@ -22,6 +22,7 @@ except Exception:                                    # noqa: BLE001
     pass
 
 from app import config
+from app.ingest import decisions as D
 from app.ingest import resolve as R
 from app.ingest import spare_resolve as SR
 from app.llm import ollama_client as oc
@@ -90,6 +91,8 @@ def main() -> int:
 
     repairs = load("repairs.json")
     manuals = load("manuals.json")
+    pend_prev = (json.loads(PENDING.read_text(encoding="utf-8"))
+                 if PENDING.exists() else {})
     from_repairs, from_symptoms, from_causes = collect_names(repairs, manuals)
 
     print(f"  检修表故障名   {len(from_repairs)} 个")
@@ -148,48 +151,25 @@ def main() -> int:
     print()
     print("─" * 70)
     print("第二问：因果判定（成因 → 故障现象）")
-    print("  因果关系不合并节点，只建边。合并会把因果链抹掉，而 B5 根因追溯用的正是它。")
-    # 按型号分组。因果只在同型号内部成立 —— 切割设备的故障不可能由焊接设备的成因引起。
-    #
-    # 踩过的坑：最初把全部 44 个成因混在一起问，模型跨设备类型乱配，
-    # 产出了「保护气不足 → 激光功率下降」「平衡块脱落 → 电弧不稳定」这类
-    # 一眼假的边，193 条里大部分是错的。手册本来就是按型号分的，因果也该按型号问。
-    all_links: list[R.CausalLink] = []
-    for m in manuals:
-        model = m.get("model", "")
-        effects = sorted({f["symptom"] for f in m["failures"] if f["symptom"]})
-        causes = sorted({c for f in m["failures"] for c in f.get("causes", []) if c})
-        if not effects or not causes:
-            continue
-        try:
-            g2 = oc.generate(R.build_cause_prompt(effects, causes), model=model, num_predict=2048)
-        except Exception as e:                        # noqa: BLE001
-            print(f"  {model} 判定失败：{e}")
-            continue
-        links = R.parse_causal_links(g2.raw)
-        ok, _ = R.validate_links(links, set(causes), set(effects))
-        all_links += ok
-        flag = " [截断]" if g2.truncated else ""
-        print(f"  {model:<9} 现象 {len(effects):>2} / 成因 {len(causes):>2}"
-              f"  ->  {len(ok):>2} 条  {g2.elapsed_s:.1f}s{flag}")
+    print("  从手册直接抽，不让模型判。手册每行是「现象 | 成因 | 处理」配好的，")
+    print("  这层对应关系文档已经写死，模型插一脚只会引入错误。")
+    print()
+    print("  实测反例：手册里「卡盘松动」是「主轴异响」那一行的成因，")
+    print("  模型却判定它导致「工件尺寸超差」—— 文档里没有这个依据。")
+    print("  而这类错误看起来合理，特别隐蔽。评测的 ground truth 必须来自文档，")
+    print("  尤其不能来自跟被测系统同一个模型的推理，那是循环论证。")
 
-    seen = set()
-    uniq = []
-    for l in all_links:
-        k = (l.cause, l.effect)
-        if k not in seen:
-            seen.add(k)
-            uniq.append(l)
-    uniq.sort(key=lambda x: -x.confidence)
-
-    print(f"  合计有效因果 {len(uniq)} 条")
-    for l in uniq[:12]:
-        print(f"    {l.cause}  →  {l.effect}   {l.confidence:.2f}")
-    _write(CAUSES, {
-        "_note": "故障成因 → 故障现象，同型号内部。建 TRIGGERS 边用，不合并节点。",
-        "links": [l.to_dict() for l in uniq],
-    }, suffix, args.dry_run)
-    ok_links = uniq
+    ok_links = R.causes_from_manuals(manuals)
+    print(f"  从手册抽出 {len(ok_links)} 条，每条都是文档明说")
+    for l in ok_links[:8]:
+        print(f"    {l.cause}  →  {l.effect}")
+    if len(ok_links) > 8:
+        print(f"    …… 另有 {len(ok_links) - 8} 条")
+    CAUSES.write_text(json.dumps({
+        "_note": "故障成因 → 故障现象，直接从手册的「快速判断」列抽，"
+                 "成因连到它所在那一行的现象。不经过模型判断。",
+        "links": [l.to_dict() for l in ok_links],
+    }, ensure_ascii=False, indent=2), encoding="utf-8")
 
     # ---- 第三问：备件与工具的归一 ----
     print()
@@ -198,6 +178,13 @@ def main() -> int:
     print("  规则能判一大半：同名同规格的疑似重复记录，直接进待确认。")
     parts = load("spare_parts.json")
     same, diff = SR.rule_based_candidates(parts)
+
+    # 排除已处理项。合并过的在归一表里，保留/跳过的在 decisions 文件里。
+    # 不排除的话，重跑一次队列里会冒出早就处理完的对，看起来像没生效。
+    # （踩过：重跑一次冒出 11 组旧项，连带把 decided 的记录冲掉了。）
+    done = set((existing or {}).get("备件工具", {})) | D.decided_pairs()
+    same = [c for c in same if c.a not in done and c.b not in done]
+    diff = [c for c in diff if c.a not in done and c.b not in done]
     groups = SR.find_duplicates(parts)
     print(f"  名称重复 {len(groups)} 组 -> 同规格 {len(same)} 对，不同规格 {len(diff)} 对")
 
@@ -229,6 +216,8 @@ def main() -> int:
         "_note": "待人工确认的同义候选。前端读取此队列，决策结果写回 synonyms.json。",
         "pending": [c.to_dict() for c in res.pending + spare_pending],
         "dropped": [c.to_dict() for c in res.dropped],
+        # 决策记录在 data/resolve_decisions.json，不放这里。
+        # 这个队列每次重跑都会重置，混在一起会把人工决定冲掉。
     }, suffix, args.dry_run)
 
     print()

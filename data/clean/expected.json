@@ -18,6 +18,6 @@
   "Equipment-DEPENDS_ON->Equipment": 650,
   "SafetyMeasure": 26,
   "FailureMode-MITIGATED_BY->SafetyMeasure": 26,
-  "FailureMode(成因)": 63,
-  "FailureMode-TRIGGERS->FailureMode": 44
+  "FailureMode(成因)": 67,
+  "FailureMode-TRIGGERS->FailureMode": 47
 }

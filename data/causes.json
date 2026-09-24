@@ -1,225 +1,240 @@
 {
-  "_note": "故障成因 → 故障现象，同型号内部。建 TRIGGERS 边用，不合并节点。",
+  "_note": "故障成因 → 故障现象，直接从手册的「快速判断」列抽，成因连到它所在那一行的现象。不经过模型判断。",
   "links": [
     {
-      "cause": "水泵故障",
-      "effect": "冷却水流量不足",
-      "confidence": 0.9
+      "cause": "镜片污染",
+      "effect": "激光功率下降",
+      "confidence": 1.0
     },
     {
-      "cause": "聚焦镜移位",
-      "effect": "聚焦偏移",
-      "confidence": 0.9
+      "cause": "老化",
+      "effect": "激光功率下降",
+      "confidence": 1.0
     },
     {
-      "cause": "保护气不足",
-      "effect": "气路泄漏",
-      "confidence": 0.9
-    },
-    {
-      "cause": "地线夹松动",
-      "effect": "接地不良",
-      "confidence": 0.9
-    },
-    {
-      "cause": "气管破损",
-      "effect": "气路泄漏",
-      "confidence": 0.9
-    },
-    {
-      "cause": "送丝轮磨损",
-      "effect": "送丝不畅",
-      "confidence": 0.9
-    },
-    {
-      "cause": "主轴轴承磨损",
-      "effect": "主轴精度下降",
-      "confidence": 0.9
-    },
-    {
-      "cause": "砂轮破损",
-      "effect": "磨头磨损",
-      "confidence": 0.9
-    },
-    {
-      "cause": "刀库定位偏差",
-      "effect": "换刀失败",
-      "confidence": 0.9
+      "cause": "粉尘油污附着",
+      "effect": "镜片污染",
+      "confidence": 1.0
     },
     {
       "cause": "熔渣堵塞",
       "effect": "喷嘴堵塞",
-      "confidence": 0.85
+      "confidence": 1.0
+    },
+    {
+      "cause": "聚焦镜移位",
+      "effect": "聚焦偏移",
+      "confidence": 1.0
     },
     {
       "cause": "管路堵塞",
-      "effect": "喷嘴堵塞",
-      "confidence": 0.85
+      "effect": "冷却水流量不足",
+      "confidence": 1.0
     },
     {
-      "cause": "粉尘油污附着",
-      "effect": "喷嘴堵塞",
-      "confidence": 0.85
-    },
-    {
-      "cause": "老化",
-      "effect": "喷嘴堵塞",
-      "confidence": 0.85
-    },
-    {
-      "cause": "参数不当",
-      "effect": "电弧不稳定",
-      "confidence": 0.85
-    },
-    {
-      "cause": "导管堵塞",
-      "effect": "气路泄漏",
-      "confidence": 0.85
-    },
-    {
-      "cause": "接头松动",
-      "effect": "接地不良",
-      "confidence": 0.85
-    },
-    {
-      "cause": "氧化",
-      "effect": "焊枪堵塞",
-      "confidence": 0.85
+      "cause": "水泵故障",
+      "effect": "冷却水流量不足",
+      "confidence": 1.0
     },
     {
       "cause": "飞溅物堵塞喷嘴",
       "effect": "焊枪堵塞",
-      "confidence": 0.85
+      "confidence": 1.0
     },
     {
-      "cause": "喷嘴堵塞",
-      "effect": "冷却系统堵塞",
-      "confidence": 0.85
+      "cause": "气管破损",
+      "effect": "气路泄漏",
+      "confidence": 1.0
     },
     {
-      "cause": "主轴轴承磨损",
-      "effect": "主轴异响",
-      "confidence": 0.85
+      "cause": "接头松动",
+      "effect": "气路泄漏",
+      "confidence": 1.0
     },
     {
-      "cause": "管路破裂",
-      "effect": "冷却液泄漏",
-      "confidence": 0.85
+      "cause": "送丝轮磨损",
+      "effect": "送丝不畅",
+      "confidence": 1.0
     },
     {
-      "cause": "参数异常",
-      "effect": "伺服报警",
-      "confidence": 0.85
+      "cause": "导管堵塞",
+      "effect": "送丝不畅",
+      "confidence": 1.0
+    },
+    {
+      "cause": "地线夹松动",
+      "effect": "接地不良",
+      "confidence": 1.0
+    },
+    {
+      "cause": "氧化",
+      "effect": "接地不良",
+      "confidence": 1.0
+    },
+    {
+      "cause": "参数不当",
+      "effect": "电弧不稳定",
+      "confidence": 1.0
+    },
+    {
+      "cause": "保护气不足",
+      "effect": "电弧不稳定",
+      "confidence": 1.0
+    },
+    {
+      "cause": "砂轮破损",
+      "effect": "砂轮不平衡",
+      "confidence": 1.0
     },
     {
       "cause": "平衡块脱落",
       "effect": "砂轮不平衡",
-      "confidence": 0.8
+      "confidence": 1.0
     },
     {
-      "cause": "磨粒钝化",
-      "effect": "磨头磨损",
-      "confidence": 0.8
+      "cause": "主轴轴承磨损",
+      "effect": "主轴精度下降",
+      "confidence": 1.0
     },
     {
-      "cause": "丝杠反向间隙过大",
-      "effect": "进给系统故障",
-      "confidence": 0.8
+      "cause": "管路",
+      "effect": "冷却系统堵塞",
+      "confidence": 1.0
     },
     {
-      "cause": "丝杠间隙过大",
-      "effect": "进给系统故障",
-      "confidence": 0.8
-    },
-    {
-      "cause": "刀具磨损",
-      "effect": "工件尺寸超差",
-      "confidence": 0.8
-    },
-    {
-      "cause": "定位销卡死",
-      "effect": "刀架卡滞",
-      "confidence": 0.8
-    },
-    {
-      "cause": "接头松动",
-      "effect": "刀架卡滞",
-      "confidence": 0.8
-    },
-    {
-      "cause": "长期超载",
-      "effect": "轴承磨损",
-      "confidence": 0.8
-    },
-    {
-      "cause": "弹簧夹头磨损",
-      "effect": "刀具夹不紧",
-      "confidence": 0.8
+      "cause": "喷嘴堵塞",
+      "effect": "冷却系统堵塞",
+      "confidence": 1.0
     },
     {
       "cause": "线圈断路",
       "effect": "磁力吸盘失效",
-      "confidence": 0.75
+      "confidence": 1.0
     },
     {
-      "cause": "伺服报警",
-      "effect": "工件尺寸超差",
-      "confidence": 0.75
+      "cause": "吸力不足",
+      "effect": "磁力吸盘失效",
+      "confidence": 1.0
     },
     {
-      "cause": "润滑不良",
-      "effect": "轴承磨损",
-      "confidence": 0.75
+      "cause": "磨粒钝化",
+      "effect": "磨头磨损",
+      "confidence": 1.0
     },
     {
-      "cause": "拉钉松动",
-      "effect": "刀具夹不紧",
-      "confidence": 0.75
-    },
-    {
-      "cause": "卡盘松动",
-      "effect": "工件尺寸超差",
-      "confidence": 0.7
-    },
-    {
-      "cause": "液压/气动压力不足",
-      "effect": "冷却液泄漏",
-      "confidence": 0.7
+      "cause": "主轴轴承磨损",
+      "effect": "主轴异响",
+      "confidence": 1.0
     },
     {
       "cause": "缺油",
-      "effect": "轴承磨损",
-      "confidence": 0.7
+      "effect": "主轴异响",
+      "confidence": 1.0
     },
     {
-      "cause": "气压不足",
-      "effect": "换刀失败",
-      "confidence": 0.7
+      "cause": "卡盘松动",
+      "effect": "主轴异响",
+      "confidence": 1.0
+    },
+    {
+      "cause": "定位销卡死",
+      "effect": "刀架卡滞",
+      "confidence": 1.0
+    },
+    {
+      "cause": "液压/气动压力不足",
+      "effect": "刀架卡滞",
+      "confidence": 1.0
+    },
+    {
+      "cause": "丝杠间隙过大",
+      "effect": "进给系统故障",
+      "confidence": 1.0
+    },
+    {
+      "cause": "伺服报警",
+      "effect": "进给系统故障",
+      "confidence": 1.0
+    },
+    {
+      "cause": "管路破裂",
+      "effect": "冷却液泄漏",
+      "confidence": 1.0
+    },
+    {
+      "cause": "接头松动",
+      "effect": "冷却液泄漏",
+      "confidence": 1.0
+    },
+    {
+      "cause": "长期超载",
+      "effect": "轴承磨损",
+      "confidence": 1.0
     },
     {
       "cause": "润滑不良",
-      "effect": "导轨磨损",
-      "confidence": 0.65
+      "effect": "轴承磨损",
+      "confidence": 1.0
     },
     {
-      "cause": "超载",
-      "effect": "主轴轴承过热",
-      "confidence": 0.6
+      "cause": "刀具磨损",
+      "effect": "工件尺寸超差",
+      "confidence": 1.0
+    },
+    {
+      "cause": "丝杠反向间隙过大",
+      "effect": "工件尺寸超差",
+      "confidence": 1.0
     },
     {
       "cause": "轴承缺油",
       "effect": "主轴轴承过热",
-      "confidence": 0.55
+      "confidence": 1.0
+    },
+    {
+      "cause": "超载",
+      "effect": "主轴轴承过热",
+      "confidence": 1.0
+    },
+    {
+      "cause": "润滑不良",
+      "effect": "导轨磨损",
+      "confidence": 1.0
     },
     {
       "cause": "防护失效",
-      "effect": "伺服报警",
-      "confidence": 0.5
+      "effect": "导轨磨损",
+      "confidence": 1.0
+    },
+    {
+      "cause": "刀库定位偏差",
+      "effect": "换刀失败",
+      "confidence": 1.0
+    },
+    {
+      "cause": "气压不足",
+      "effect": "换刀失败",
+      "confidence": 1.0
     },
     {
       "cause": "驱动器过载",
       "effect": "伺服报警",
-      "confidence": 0.45
+      "confidence": 1.0
+    },
+    {
+      "cause": "参数异常",
+      "effect": "伺服报警",
+      "confidence": 1.0
+    },
+    {
+      "cause": "弹簧夹头磨损",
+      "effect": "刀具夹不紧",
+      "confidence": 1.0
+    },
+    {
+      "cause": "拉钉松动",
+      "effect": "刀具夹不紧",
+      "confidence": 1.0
     }
   ]
 }

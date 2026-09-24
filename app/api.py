@@ -23,6 +23,7 @@ from pydantic import BaseModel, Field
 
 from app import config
 from app.graph import client, schema as schema_mod
+from app.ingest import decisions as _decisions
 from app.llm import text2cypher
 
 # 控制台日志。trace（logs/query_trace.jsonl）记的是完整链路，供事后追溯；
@@ -294,6 +295,8 @@ def _apply_decisions(decisions: list[tuple[str, str, str]]) -> dict:
             merged += 1
         else:
             decided.append({**src, "action": action})
+            _decisions.record([(a, b)], action,
+                              reason=f"人工确认：{src.get('kind', '')}")
 
     p.write_text(json.dumps(syn, ensure_ascii=False, indent=2), encoding="utf-8")
     pend["pending"] = [c for c in items

@@ -185,6 +185,40 @@ def validate_links(links: list[CausalLink], causes: set[str],
     return ok, bad
 
 
+def causes_from_manuals(manuals: list[dict]) -> list[CausalLink]:
+    """从故障手册直接抽因果，不让模型判。
+
+    **为什么不让模型判**：手册每行的结构是「故障现象 | 快速判断（成因） | 应急处理」，
+    成因和现象是**同一行**里配好的。这层对应关系文档已经写死了，模型插一脚只会引入错误。
+
+    实测抓到的反例：手册里「卡盘松动」是**主轴异响**那一行的成因，
+    而模型判定它会导致**工件尺寸超差**（那是另一行，成因写的是「刀具磨损或丝杠反向间隙过大」）。
+    那条边文档里根本没有依据，是模型自己推的。
+
+    这类错误特别隐蔽，因为它看起来合理 —— 卡盘松动确实可能影响尺寸精度。
+    但评测的 ground truth 必须来自文档，不能来自模型的推理，尤其不能来自
+    跟被测系统同一个模型的推理，那是循环论证。
+
+    所以这里退回规则：每个成因连到它所在那一行的现象，置信度记 1.0（文档明说）。
+    """
+    out, seen = [], set()
+    for m in manuals:
+        for f in m["failures"]:
+            effect = (f.get("symptom") or "").strip()
+            if not effect:
+                continue
+            for cause in f.get("causes", []):
+                cause = (cause or "").strip()
+                if not cause or cause == effect:
+                    continue
+                key = (cause, effect)
+                if key in seen:
+                    continue
+                seen.add(key)
+                out.append(CausalLink(cause=cause, effect=effect, confidence=1.0))
+    return out
+
+
 def validate_candidates(cands: list[Candidate], known_names: set[str]) -> list[Candidate]:
     """过滤掉名字对不上的候选。
 
