@@ -109,8 +109,39 @@ EXAMPLES: list[tuple[str, str]] = [
 ]
 
 
-def render_examples(limit: int | None = None) -> str:
-    rows = EXAMPLES if limit is None else EXAMPLES[:limit]
+# 评测集冻结之后才加的示例。**默认不参与正式评测。**
+#
+# 加它的依据来自评测的失败样本（系列题 9 道），所以它带着对评测集的过拟合，
+# 测出来的不是留出估计。run_eval.py 默认关掉，加 --with-posthoc 才启用 ——
+# 这样头条数字可以由一条命令复现，不依赖某个历史遗留的跑分记录。
+#
+# 它本身是个合理修复：schema 里 `model` 只写了属性名，没交代它就是设备系列。
+EXAMPLES_POSTHOC: list[tuple[str, str]] = [
+    # 系列限定。tenlong / yuelong / chengxin 这些「系列」存在 Equipment.model 里，
+    # 它既是设备型号也是 id 前缀，两条路等价。
+    #
+    # 实测模型三种错法，全都返回 0 行：
+    #   把系列当区域名   (l:Location {name:'tenlong'})   schema 里 Location 确实有 name
+    #   通配符塞进等值   {id:'tenlong-*'}                Cypher 的通配要写 STARTS WITH
+    #   直接编个设备号   {id:'chengxin-006'}             问题里根本没有这一台
+    #
+    # 校验层拦不住：Cypher 合法、schema 合法，只是匹配不到东西，
+    # outcome 还是 answered。这类静默返回 0 行只能靠示例教。
+    #
+    # 措辞刻意跟评测题错开：评测问的是「X 系列里哪些设备还有未完成的检修」
+    # （带第二重条件），这里只问「有哪些设备」。结构和答案都不一样，
+    # 学到的才是「系列 -> model」这条映射，而不是背下那道题的答案。
+    ("yuelong 系列有哪些设备？",
+     "MATCH (e:Equipment {model:'yuelong'})\n"
+     "RETURN e.id AS 设备"),
+]
+
+
+def render_examples(limit: int | None = None, *,
+                    include_posthoc: bool = False) -> str:
+    rows = EXAMPLES + EXAMPLES_POSTHOC if include_posthoc else EXAMPLES
+    if limit is not None:
+        rows = rows[:limit]
     parts = []
     for q, a in rows:
         parts.append(f"问题：{q}\nCypher：{a}")
@@ -119,6 +150,7 @@ def render_examples(limit: int | None = None) -> str:
 
 def build_prompt(question: str, *, with_examples: bool = True,
                  with_direction_hints: bool = True,
+                 with_posthoc_examples: bool = False,
                  schema_text: str | None = None) -> str:
     """组装完整 prompt。
 
@@ -141,7 +173,7 @@ def build_prompt(question: str, *, with_examples: bool = True,
     if with_examples:
         blocks.append("")
         blocks.append("## 示例")
-        blocks.append(render_examples())
+        blocks.append(render_examples(include_posthoc=with_posthoc_examples))
 
     blocks.append("")
     blocks.append("## 问题")

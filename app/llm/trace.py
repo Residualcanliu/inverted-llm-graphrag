@@ -77,6 +77,14 @@ class QueryTrace:
     exec_ms: int = 0
     sample_rows: list = field(default_factory=list)
 
+    # 完整结果集，**不落日志**（见 append）。
+    #
+    # sample_rows 是给日志看的样本，截前 5 行是为了不让 trace 文件膨胀。
+    # 但调用方要拿它当答案用 —— 早期倒置链路直接读 sample_rows，
+    # 于是「43 台受影响设备」被截成 5 台去判分，B1/B3 全判错。
+    # 两者用途不同，必须分开：日志要小，答案要全。
+    result_rows: list = field(default_factory=list)
+
     # 汇总
     total_ms: int = 0
     outcome: str = ""                 # answered | validation_failed | exec_failed | repair_exhausted
@@ -91,8 +99,12 @@ class QueryTrace:
 def append(trace: QueryTrace) -> Path:
     """追加一条记录。返回文件路径。"""
     TRACE_DIR.mkdir(parents=True, exist_ok=True)
+    d = asdict(trace)
+    # result_rows 是完整结果集，只给调用方用，不落日志 ——
+    # 落了的话一条 B1 题就能写进去几十行，trace 文件很快就没法看了。
+    d.pop("result_rows", None)
     with TRACE_FILE.open("a", encoding="utf-8") as f:
-        f.write(json.dumps(asdict(trace), ensure_ascii=False) + "\n")
+        f.write(json.dumps(d, ensure_ascii=False) + "\n")
     return TRACE_FILE
 
 

@@ -25,11 +25,16 @@ except Exception:                                     # noqa: BLE001
 
 from app import config
 from app.eval import judge as J
+from app.eval import aliases as A
 from app.eval import stats as S
 from app.pipelines import PIPELINES, all_pipelines, get
 
 QA = config.DATA_DIR / "qa_set.json"
 OUT = config.ROOT / "eval_runs"
+
+# 实体别名表（备件的 id <-> name）。标准答案存 id，模型常答 name，
+# 不归一的话答对了也判错。见 app/eval/aliases.py
+ALIASES = A.build(config.DATA_DIR / "clean")
 
 LAYER_NAME = {"A": "A 类 事实", "B1": "B1 多跳", "B2": "B2 聚合",
               "B3": "B3 补集", "B4": "B4 排序", "B5": "B5 根因",
@@ -48,7 +53,68 @@ def load_done(path) -> dict[str, dict]:
     return out
 
 
-def run_one(pipe_name: str, items: list[dict], *, use_llm: bool) -> int:
+def capture(ans) -> dict:
+    """把「判定要用的输入」存下来。
+
+    `docs/评测框架.md` 第七节把流程拆成 ③跑 和 ⑤判定 两步，但实现把两步
+    揉在一起了：落盘的是**判定结果**，不是判定的输入。于是每改一次判定逻辑
+    就得把 153 道题连模型带数据库重跑一遍（十几分钟）。
+
+    而判定恰恰是最容易改的一层 —— 这个项目里已经因为取值方式错过三次。
+    存下输入之后，`--rejudge` 秒级就能重算。
+    """
+    return {
+        "pipeline": getattr(ans, "pipeline", ""),
+        "text": getattr(ans, "text", "") or "",
+        "raw": getattr(ans, "raw", "") or "",
+        "cypher": getattr(ans, "cypher", "") or "",
+        "fields": getattr(ans, "fields", None) or {},
+        "error": getattr(ans, "error", "") or "",
+    }
+
+
+def restore(pipe_name: str, question: str, d: dict):
+    """把 capture 存下来的东西还原成一个能交给 judge 的对象。"""
+    from app.pipelines.base import Answer
+
+    return Answer(pipeline=d.get("pipeline") or pipe_name, question=question,
+                  text=d.get("text", ""), fields=d.get("fields") or {},
+                  cypher=d.get("cypher", ""), raw=d.get("raw", ""),
+                  error=d.get("error", ""))
+
+
+def rejudge(names: list[str], items: list[dict], *, use_llm: bool) -> int:
+    """只重算判定，不重跑链路。前提是记录里有 capture 存下的输入。"""
+    by_id = {it["id"]: it for it in items}
+    n = 0
+    for name in names:
+        path = OUT / f"{name}.jsonl"
+        if not path.exists():
+            continue
+        records = [json.loads(x) for x in
+                   path.read_text(encoding="utf-8").splitlines() if x.strip()]
+        out = []
+        for r in records:
+            it = by_id.get(r["qid"])
+            if it is None or "captured" not in r:
+                out.append(r)                        # 没存输入的原样留着
+                continue
+            ans = restore(name, r.get("question", ""), r["captured"])
+            v = J.judge(it, ans, use_llm=use_llm, aliases=ALIASES)
+            out.append({**v.to_dict(), "layer": it["layer"],
+                        "question": r.get("question", ""),
+                        "captured": r["captured"]})
+            n += 1
+        tmp = path.with_suffix(".jsonl.tmp")
+        tmp.write_text("".join(json.dumps(x, ensure_ascii=False) + "\n"
+                               for x in out), encoding="utf-8")
+        tmp.replace(path)
+        print(f"  {name:<14} 重算 {len(out)} 条")
+    return n
+
+
+def run_one(pipe_name: str, items: list[dict], *, use_llm: bool,
+            with_posthoc: bool = False) -> int:
     OUT.mkdir(parents=True, exist_ok=True)
     path = OUT / f"{pipe_name}.jsonl"
     done = load_done(path)
@@ -58,21 +124,27 @@ def run_one(pipe_name: str, items: list[dict], *, use_llm: bool) -> int:
         print(f"  {pipe_name:<14} 已全部跑完（{len(done)} 题），跳过")
         return 0
 
-    pipe = get(pipe_name, seed=42)
+    # include_posthoc 只有 ③ 认，别的链路没有这个开关，不能盲传给 get()
+    kw = {"seed": 42}
+    if pipe_name == "inverted":
+        kw["include_posthoc"] = with_posthoc
+    pipe = get(pipe_name, **kw)
     pipe.warmup() if hasattr(pipe, "warmup") else None
     print(f"  {pipe_name:<14} {len(todo)} 题待跑（已完成 {len(done)}）")
 
     t0 = time.time()
     with path.open("a", encoding="utf-8") as f:
         for i, it in enumerate(todo, 1):
+            ans = None
             try:
                 ans = pipe.answer(it["question"])
-                v = J.judge(it, ans, use_llm=use_llm)
+                v = J.judge(it, ans, use_llm=use_llm, aliases=ALIASES)
             except Exception as e:                    # noqa: BLE001
                 v = J.Verdict(it["id"], pipe_name, False, 0.0, "error",
                               f"{type(e).__name__}: {e}")
             rec = {**v.to_dict(), "layer": it["layer"],
-                   "question": it["question"]}
+                   "question": it["question"],
+                   "captured": capture(ans) if ans is not None else {}}
             f.write(json.dumps(rec, ensure_ascii=False) + "\n")
             f.flush()
             if i % 10 == 0 or i == len(todo):
@@ -164,6 +236,11 @@ def main() -> int:
     ap.add_argument("--limit", type=int, default=None)
     ap.add_argument("--no-llm", action="store_true",
                     help="文档链路判分时不用 LLM 兜底")
+    ap.add_argument("--rejudge", action="store_true",
+                    help="不重跑链路，只用已存下的答案重算判定（秒级）")
+    ap.add_argument("--with-posthoc", action="store_true",
+                    help="③ 启用评测集冻结后补的示例（会引入对评测集的过拟合，"
+                         "默认关，见 app/llm/prompt.py 的 EXAMPLES_POSTHOC）")
     args = ap.parse_args()
 
     if not QA.exists():
@@ -178,8 +255,13 @@ def main() -> int:
     print(f"对照实验  {len(items)} 题 × {len(names)} 条链路")
     print("=" * 70)
 
-    for n in names:
-        run_one(n, items, use_llm=not args.no_llm)
+    if args.rejudge:
+        n = rejudge(names, items, use_llm=not args.no_llm)
+        print(f"  重算 {n} 条判定（缺 captured 字段的记录跳过）")
+    else:
+        for n in names:
+            run_one(n, items, use_llm=not args.no_llm,
+                    with_posthoc=args.with_posthoc)
 
     print()
     rep = report(names, use_llm=not args.no_llm)

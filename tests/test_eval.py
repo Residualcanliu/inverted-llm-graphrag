@@ -6,7 +6,12 @@
 跑法：pytest tests/ -v
 """
 
-from app.eval.judge import Verdict, judge, values_from_rows, _f1
+import json
+
+import pytest
+
+from app.eval.judge import (REFUSE_MARKERS, Verdict, judge, values_from_rows,
+                            _f1)
 from app.eval.stats import (bootstrap_diff, compare, mcnemar,
                             min_detectable, wilson)
 from app.pipelines.base import Answer
@@ -250,3 +255,213 @@ def test_wilson_bounds():
     assert lo == 0.0 and 0 < hi < 0.4
     lo, hi = wilson(10, 10)
     assert 0.6 < lo < 1.0 and hi == 1.0
+
+
+# ---------------- 回归：判定必须拿到完整结果集 ----------------
+#
+# 踩过的坑。trace 里的 sample_rows 是给日志看的**前 5 行样本**，
+# 而倒置链路当时直接把它当答案交给了判定，于是
+# 「43 台受影响设备」被截成 5 台 → 记成「命中 5/43」→ 判错。
+#
+# 后果不是小数目：B1 多跳 25 题全判 0，B3 补集 19 题大部分判 0，
+# 共约 44 题被系统性压低。而且它伪装得很好 ——
+# 报告上看起来就是「倒置链路多跳不行」，像个真结论。
+#
+# 日志要小、答案要全，这两个需求是冲突的，必须用两个字段分开。
+
+def test_judge_scores_full_result_not_log_sample():
+    """43 项全中要判对。截成 5 项就会退回 5/43。"""
+    want = [f"dev-{i:03d}" for i in range(43)]
+    it = _item(answer={"受影响设备": want})
+    full = [{"受影响设备": v} for v in want]
+
+    v_full = judge(it, _ans(rows=full), use_llm=False)
+    v_sampled = judge(it, _ans(rows=full[:5]), use_llm=False)
+
+    assert v_full.correct and v_full.score == 1.0
+    assert not v_sampled.correct               # 截断确实会判错，这就是当初的症状
+    # 5/43 的 F1 = 2*5/(5+43) ≈ 0.208，正是报告里那批「命中 5/N，多余 0」
+    assert v_sampled.score == pytest.approx(10 / 48)
+    assert "命中 5/43" in v_sampled.detail
+
+
+def test_inverted_hands_judge_the_full_rows(monkeypatch):
+    """倒置链路交给判定的 fields['rows'] 必须是完整结果集。"""
+    from app.llm import text2cypher
+    from app.llm.trace import QueryTrace
+    from app.pipelines.inverted import InvertedPipeline
+
+    full = [{"受影响设备": f"dev-{i:03d}"} for i in range(43)]
+
+    def fake_query(question, **kw):
+        t = QueryTrace(question=question)
+        t.exec_ok = True
+        t.cypher = "MATCH (e:Equipment)<-[:DEPENDS_ON*1..5]-(x) RETURN x.id AS 受影响设备"
+        t.row_count = len(full)
+        t.sample_rows = full[:5]      # 日志样本，故意只有 5 行
+        t.result_rows = full          # 完整结果集
+        return t.finish("answered")
+
+    monkeypatch.setattr(text2cypher, "query", fake_query)
+    ans = InvertedPipeline().answer("yuelong-001 停机会影响哪些设备？")
+
+    assert len(ans.fields["rows"]) == 43
+    assert ans.fields["row_count"] == 43
+    assert len(ans.rows) == 43
+
+
+def test_trace_log_does_not_carry_full_rows(monkeypatch, tmp_path):
+    """完整结果集不落日志。落了的话一条 B1 题就能写几十行，trace 就废了。"""
+    from app.llm import trace as trace_mod
+    from app.llm.trace import QueryTrace
+
+    monkeypatch.setattr(trace_mod, "TRACE_DIR", tmp_path)
+    monkeypatch.setattr(trace_mod, "TRACE_FILE", tmp_path / "t.jsonl")
+
+    t = QueryTrace(question="yuelong-001 停机会影响哪些设备？")
+    t.sample_rows = [{"受影响设备": "dev-000"}]
+    t.result_rows = [{"受影响设备": f"dev-{i:03d}"} for i in range(43)]
+    trace_mod.append(t)
+
+    rec = json.loads((tmp_path / "t.jsonl").read_text(encoding="utf-8"))
+    assert "result_rows" not in rec
+    assert rec["sample_rows"] == [{"受影响设备": "dev-000"}]
+
+
+def test_trace_reload_has_no_full_rows(monkeypatch, tmp_path):
+    """读回来的 trace 不该有 result_rows —— 落盘的字段和读回的字段要一致。"""
+    from app.llm import trace as trace_mod
+    from app.llm.trace import QueryTrace
+
+    monkeypatch.setattr(trace_mod, "TRACE_DIR", tmp_path)
+    monkeypatch.setattr(trace_mod, "TRACE_FILE", tmp_path / "t.jsonl")
+
+    trace_mod.append(QueryTrace(question="?"))
+    got = trace_mod.load_all()
+    assert len(got) == 1 and "result_rows" not in got[0]
+
+
+# ---------------- 回归：判定取值要和答案语义对齐 ----------------
+#
+# 判定的取值方式错了，测出来的就是判定 bug 而不是系统差异。
+# 同一个坑踩了三次，成因都是「从查询结果里取值」这一步：
+#   ① 取了日志用的 5 行样本，不是完整结果      → B1 全灭
+#   ② 把所有列的值都当答案，排序键也混进来     → B4 全灭
+#   ③ 只认 id，模型答 name 就判错              → B3 两道
+
+def test_judge_ranking_ignores_sort_key_column():
+    """排序题返回「答案列 + 排序列」，排序列不是答案。
+
+    实测：问前 3 台，模型答对 3 台并附带被依赖数 22，
+    值集合成了 4 项，卡在 len(got) == len(want) 上判错。
+    """
+    it = _item(atype="list", answer={"设备": ["a", "b", "c"],
+                                     "_tied": ["a", "b", "c"]})
+    rows = [{"设备": "a", "被依赖数": 22},
+            {"设备": "b", "被依赖数": 22},
+            {"设备": "c", "被依赖数": 22}]
+    v = judge(it, _ans(rows=rows), use_llm=False)
+    assert v.correct, v.detail
+
+
+def test_judge_ranking_still_rejects_extra_entities():
+    """丢掉的只能是排序键，多答的实体照样算错。"""
+    it = _item(atype="list", answer={"设备": ["a", "b"], "_tied": ["a", "b"]})
+    rows = [{"设备": "a", "被依赖数": 3},
+            {"设备": "b", "被依赖数": 3},
+            {"设备": "z", "被依赖数": 3}]
+    v = judge(it, _ans(rows=rows), use_llm=False)
+    assert not v.correct
+
+
+def test_judge_set_accepts_name_when_truth_stores_id():
+    """标准答案存 id、模型答 name —— 是同一批对象，该判对。
+
+    实测 B3-088：模型给的 39 项与标准答案交集 39/39，只因写法不同判 0/39。
+    """
+    it = _item(answer={"备件": ["A-001", "A-002"]})
+    rows = [{"备件": "刀架"}, {"备件": "寻边器"}]
+    aliases = {"A-001": {"A-001"}, "刀架": {"A-001"},
+               "A-002": {"A-002"}, "寻边器": {"A-002"}}
+
+    assert not judge(it, _ans(rows=rows), use_llm=False).correct   # 不传表就判错
+    v = judge(it, _ans(rows=rows), use_llm=False, aliases=aliases)
+    assert v.correct, v.detail
+
+
+def test_judge_ambiguous_name_matches_any_of_its_ids():
+    """重名的备件，答名字要能跟它的任意一个 id 配上。
+
+    实测 B4-104：「主轴轴承」有两台（B-013 和 B-015），模型答的那台确实
+    在并列区内，但表里只留了一个 id，映射到区外的同名备件，判成错。
+    """
+    it = _item(answer={"备件": ["B-015", "A-018"]})
+    rows = [{"备件": "主轴轴承"}, {"备件": "伺服驱动器"}]
+    aliases = {"A-018": {"A-018"}, "伺服驱动器": {"A-018"},
+               "B-013": {"B-013"}, "B-015": {"B-015"},
+               "主轴轴承": {"B-013", "B-015"}}       # 一个名字两个 id
+    v = judge(it, _ans(rows=rows), use_llm=False, aliases=aliases)
+    assert v.correct, v.detail
+
+
+def test_doc_rag_text_matches_name_for_id_answer():
+    """散文里写的是 name，标准答案存 id —— 两种写法都要认。
+
+    不然文档链路会因为「答了名字没答编号」被判错，凭空放大图链路的优势。
+    """
+    it = _item(answer={"备件": ["A-001"]})
+    aliases = {"A-001": {"A-001"}, "刀架": {"A-001"}}
+    ans = _ans(text="资料显示，刀架 没有设置安全库存。",
+               pipeline="doc_rag")
+    v = judge(it, ans, use_llm=False, aliases=aliases)
+    assert v.correct, v.detail
+
+
+def test_chain_empty_result_text_counts_as_refusal():
+    """链路查空时生成的那句话，判定必须认得出是拒答。
+
+    挂了就说明 _to_text 的措辞和 REFUSE_MARKERS 脱节了 —— 链路明明拒答，
+    却会被判成幻觉。实测栽过：文案是「没有查到匹配的数据。」，
+    词表里只有「查不到」，10 道拒答题全判 0。
+    """
+    from app.pipelines.inverted import _to_text
+
+    empty = _to_text([], [])
+    assert any(m in empty for m in REFUSE_MARKERS), \
+        f"链路空结果文案「{empty}」不在 REFUSE_MARKERS 里"
+
+
+def test_set_of_numbers_is_not_stripped_as_sort_key():
+    """标准答案本身就是数值集合时不能丢 —— 丢了就成了空集比对。"""
+    it = _item(answer={"次数": ["5", "3"]})
+    rows = [{"次数": "5"}, {"次数": "3"}]
+    assert judge(it, _ans(rows=rows), use_llm=False).correct
+
+
+def test_aliases_build_only_uses_tables_with_both_fields(tmp_path):
+    """只有同时有 id 和 name 的表才产生别名。"""
+    from app.eval import aliases as A
+
+    (tmp_path / "spare_parts.json").write_text(
+        json.dumps([{"id": "A-001", "name": "刀架"}]), encoding="utf-8")
+    # 只有 id 的表不产生别名（Equipment 就是这种）
+    (tmp_path / "equipment.json").write_text(
+        json.dumps([{"id": "tenlong-001", "model": "T-1"}]), encoding="utf-8")
+    (tmp_path / "broken.json").write_text("{ 不是 json", encoding="utf-8")
+
+    t = A.build(tmp_path)
+    assert t["刀架"] == {"A-001"} and t["A-001"] == {"A-001"}
+    assert "tenlong-001" not in t
+
+
+def test_aliases_build_keeps_every_id_for_a_duplicate_name(tmp_path):
+    """重名要把所有 id 都收进集合，不能只留最后一个。"""
+    from app.eval import aliases as A
+
+    (tmp_path / "spare_parts.json").write_text(json.dumps([
+        {"id": "B-013", "name": "主轴轴承"},
+        {"id": "B-015", "name": "主轴轴承"},
+    ]), encoding="utf-8")
+
+    t = A.build(tmp_path)
+    assert t["主轴轴承"] == {"B-013", "B-015"}

@@ -4,7 +4,7 @@
 """
 
 from app.graph.validate import validate
-from app.llm.prompt import EXAMPLES
+from app.llm.prompt import EXAMPLES, EXAMPLES_POSTHOC, render_examples
 
 
 # ---------- 正向：不该误伤 ----------
@@ -19,6 +19,24 @@ def test_few_shot_examples_all_pass():
         r = validate(cypher)
         assert r.ok, f"示例「{q}」没通过校验：{r.summary()} " \
                      f"{[i.detail for i in r.errors]}"
+
+
+def test_posthoc_examples_also_pass():
+    """后补的示例同样要过校验，不能因为不参与正式评测就放宽。"""
+    for q, cypher in EXAMPLES_POSTHOC:
+        r = validate(cypher)
+        assert r.ok, f"后补示例「{q}」没通过校验：{r.summary()} " \
+                     f"{[i.detail for i in r.errors]}"
+
+
+def test_posthoc_examples_are_off_by_default():
+    """默认 prompt 不能含后补示例。
+
+    它们是对着评测失败样本加的，混进默认配置会把头条数字抬高，
+    那条命令也就不再复现得出报告的 ③ 准确率。
+    """
+    assert "yuelong 系列" not in render_examples()
+    assert "yuelong 系列" in render_examples(include_posthoc=True)
 
 
 def test_legit_queries_pass():

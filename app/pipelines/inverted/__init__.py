@@ -34,10 +34,13 @@ class InvertedPipeline(Pipeline):
     label = "③ 倒置LLM 增强版"
 
     def __init__(self, use_examples: bool = True,
-                 use_direction_hints: bool = True, seed: int | None = None):
+                 use_direction_hints: bool = True, seed: int | None = None,
+                 include_posthoc: bool = False):
         self.use_examples = use_examples
         self.use_direction_hints = use_direction_hints
         self.seed = seed
+        # 评测集冻结后补的示例。默认关，正式评测走默认（见 prompt.EXAMPLES_POSTHOC）
+        self.include_posthoc = include_posthoc
 
     def answer(self, question: str, **kw) -> Answer:
         try:
@@ -45,6 +48,7 @@ class InvertedPipeline(Pipeline):
                 question,
                 use_examples=self.use_examples,
                 use_direction_hints=self.use_direction_hints,
+                include_posthoc=self.include_posthoc,
                 seed=self.seed,
                 source="eval",
             )
@@ -54,18 +58,24 @@ class InvertedPipeline(Pipeline):
 
         # fields 直接就是查询结果 —— 图链路的答案天生是结构化的，
         # 不需要事后抽取，这是它相对文档模式的一个便宜之处。
-        fields = {"rows": t.sample_rows, "row_count": t.row_count}
-        cols = list(t.sample_rows[0].keys()) if t.sample_rows else []
+        #
+        # 取 result_rows 而不是 sample_rows：后者是给日志看的 5 行样本，
+        # 拿它当答案会让「43 台受影响设备」被截成 5 台判分（B1/B3 曾因此全判错）。
+        # 上限跟 ② 朴素链路对齐，两条图链路的取数范围保持一致，
+        # 否则链路之间的差异里会混进一个和实现无关的截断差异。
+        rows = t.result_rows[:200]
+        fields = {"rows": rows, "row_count": t.row_count}
+        cols = list(rows[0].keys()) if rows else []
         return Answer(
             pipeline=self.name,
             question=question,
-            text=_to_text(t.sample_rows, cols),
+            text=_to_text(rows, cols),
             fields=fields,
             cypher=t.cypher,
             raw=t.raw_output,
             trace_id=t.run_id,
             latency_ms=t.total_ms,
-            rows=t.sample_rows,
+            rows=rows,
             validation_ok=t.validation_ok,
             error="" if t.exec_ok else (t.exec_error or t.outcome),
         )

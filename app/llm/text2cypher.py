@@ -67,6 +67,7 @@ def query(
     max_repairs: int | None = None,
     use_examples: bool = True,
     use_direction_hints: bool = True,
+    include_posthoc: bool = False,
     source: str = "manual",
     seed: int | None = None,
     dry_run: bool = False,
@@ -90,6 +91,7 @@ def query(
         question,
         with_examples=use_examples,
         with_direction_hints=use_direction_hints,
+        with_posthoc_examples=include_posthoc,
     )
     trace.prompt_chars = len(prompt)
 
@@ -161,6 +163,7 @@ def query(
             trace.row_count = len(r.rows)
             trace.exec_ms = r.elapsed_ms
             trace.sample_rows = r.rows[:5]
+            trace.result_rows = r.rows
             outcome = "answered"
         except Exception as e:                        # noqa: BLE001
             trace.exec_ok = False

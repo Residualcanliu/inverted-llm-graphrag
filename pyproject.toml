@@ -3,7 +3,7 @@ requires = ["setuptools>=68"]
 build-backend = "setuptools.build_meta"
 
 [project]
-name = "huigong-graphrag"
+name = "inverted-llm-graphrag"
 version = "0.1.0"
 description = "Inverted-LLM GraphRAG — 大模型只生成查询语句，由图引擎确定性执行"
 requires-python = ">=3.10"
